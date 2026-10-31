@@ -46,7 +46,7 @@
           <button merch-button type="button" (click)="clearFilters()">Limpar filtros</button>
         </merch-empty-state>
       } @else {
-        <merch-product-grid [products]="visible()" [priorityCount]="4" />
+        <merch-product-grid [products]="visible()" [priorityCount]="8" />
         @if (remaining() > 0) {
           <div class="more">
             <p class="more-status">Mostrando {{ visible().length }} de {{ results().length }}</p>

@@ -6,7 +6,7 @@
         type="button"
         class="nav"
         [disabled]="atStart()"
-        [attr.aria-label]="'Rolar ' + heading().toLowerCase() + ' para trás'"
+        [attr.aria-label]="prevLabel()"
         (click)="scroll(-1)"
       >
         <merch-icon name="chevron-left" />
@@ -15,7 +15,7 @@
         type="button"
         class="nav"
         [disabled]="atEnd()"
-        [attr.aria-label]="'Rolar ' + heading().toLowerCase() + ' para frente'"
+        [attr.aria-label]="nextLabel()"
         (click)="scroll(1)"
       >
         <merch-icon name="chevron-right" />

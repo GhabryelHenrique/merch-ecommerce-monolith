@@ -9,7 +9,7 @@
           <input
             type="radio"
             name="cor"
-            class="visually-hidden"
+            class="native"
             [value]="c.slug"
             [checked]="c.slug === color()"
             [disabled]="!c.available"
@@ -34,7 +34,7 @@
           <input
             type="radio"
             name="tamanho"
-            class="visually-hidden"
+            class="native"
             [value]="s.value"
             [checked]="s.value === size()"
             [disabled]="!s.available"

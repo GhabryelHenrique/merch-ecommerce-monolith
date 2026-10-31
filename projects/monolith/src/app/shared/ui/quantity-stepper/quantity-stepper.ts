@@ -11,7 +11,7 @@ import { Icon } from '../icon/icon';
         type="button"
         class="step"
         [disabled]="disabled() || value() <= min()"
-        [attr.aria-label]="'Diminuir ' + label().toLowerCase()"
+        [attr.aria-label]="decreaseLabel()"
         (click)="set(value() - 1)"
       >
         <merch-icon name="minus" [size]="18" />
@@ -30,7 +30,7 @@ import { Icon } from '../icon/icon';
         type="button"
         class="step"
         [disabled]="disabled() || value() >= max()"
-        [attr.aria-label]="'Aumentar ' + label().toLowerCase()"
+        [attr.aria-label]="increaseLabel()"
         (click)="set(value() + 1)"
       >
         <merch-icon name="plus" [size]="18" />
@@ -49,6 +49,8 @@ export class QuantityStepper {
   readonly label = input('Quantidade');
   readonly disabled = input(false);
 
+  protected readonly decreaseLabel = computed(() => `Diminuir ${this.label().toLowerCase()}`);
+  protected readonly increaseLabel = computed(() => `Aumentar ${this.label().toLowerCase()}`);
   protected readonly atLimit = computed(() => this.max() > this.min() && this.value() >= this.max());
 
   protected set(next: number): void {

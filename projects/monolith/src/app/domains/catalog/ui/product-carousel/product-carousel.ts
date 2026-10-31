@@ -1,4 +1,4 @@
-import { Component, ElementRef, input, signal, viewChild } from '@angular/core';
+import { Component, ElementRef, computed, input, signal, viewChild } from '@angular/core';
 import { Icon } from '@merch/shared/ui';
 import type { Product } from '../../data/models';
 import { ProductCard } from '../product-card/product-card';
@@ -19,6 +19,8 @@ export class ProductCarousel {
   readonly products = input.required<readonly Product[]>();
 
   private readonly track = viewChild.required<ElementRef<HTMLElement>>('track');
+  protected readonly prevLabel = computed(() => `Rolar ${this.heading().toLowerCase()} para trás`);
+  protected readonly nextLabel = computed(() => `Rolar ${this.heading().toLowerCase()} para frente`);
   protected readonly atStart = signal(true);
   protected readonly atEnd = signal(false);
 

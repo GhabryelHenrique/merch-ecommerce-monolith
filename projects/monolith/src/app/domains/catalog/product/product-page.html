@@ -10,10 +10,10 @@
           @if (soldOut()) {
             <merch-badge tone="soldout">Esgotado</merch-badge>
           }
-          @if (p.badges.includes('new')) {
+          @if (isNew()) {
             <merch-badge tone="new">Novo</merch-badge>
           }
-          @if (p.badges.includes('bestseller')) {
+          @if (isBestseller()) {
             <merch-badge tone="bestseller">Mais vendido</merch-badge>
           }
         </div>

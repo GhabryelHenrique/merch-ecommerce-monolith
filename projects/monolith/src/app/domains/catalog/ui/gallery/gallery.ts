@@ -20,6 +20,10 @@ export class Gallery {
   private readonly thumbs = viewChildren<ElementRef<HTMLButtonElement>>('thumb');
 
   protected readonly safeIndex = computed(() => Math.min(Math.max(this.activeIndex(), 0), this.images().length - 1));
+  protected readonly thumbnails = computed(() => {
+    const total = this.images().length;
+    return this.images().map((img, i) => ({ src: img.src, label: `Ver imagem ${i + 1} de ${total}: ${img.alt}` }));
+  });
   protected readonly current = computed(() => [this.images()[this.safeIndex()]]);
 
   protected select(index: number): void {

@@ -8,7 +8,10 @@
     "watch": "ng build monolith --watch --configuration development",
     "test": "ng test monolith --watch=false",
     "lint": "ng lint monolith",
-    "e2e": "echo \"e2e: configurado na etapa 8\""
+    "e2e": "playwright test",
+    "e2e:report": "playwright show-report",
+    "build:stats": "ng build monolith --stats-json",
+    "check:bundles": "npm run build:stats && node tools/check-bundles.mjs"
   },
   "private": true,
   "packageManager": "npm@11.13.0",

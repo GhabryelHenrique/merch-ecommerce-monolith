@@ -74,6 +74,8 @@ export class ProductPage {
     const p = this.product();
     return p ? isSoldOut(p) : false;
   });
+  protected readonly isNew = computed(() => this.product()?.badges.includes('new') ?? false);
+  protected readonly isBestseller = computed(() => this.product()?.badges.includes('bestseller') ?? false);
   protected readonly canAdd = computed(() => this.stock() > 0);
   protected readonly hint = computed(() => {
     const p = this.product();

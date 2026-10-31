@@ -38,7 +38,12 @@
     </nav>
 
     <section id="newsletter" class="col col--wide" tabindex="-1" aria-label="Newsletter">
-      <merch-newsletter-form />
+      <!-- Abaixo da dobra: tira @angular/forms (Signal Forms) do bundle inicial. -->
+      @defer (on viewport) {
+        <merch-newsletter-form />
+      } @placeholder {
+        <merch-skeleton aspectRatio="4 / 1" />
+      }
     </section>
   </div>
 

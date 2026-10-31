@@ -1,13 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Icon } from '@merch/shared/ui';
+import { Icon, Skeleton } from '@merch/shared/ui';
 import { APP_CONFIG } from '@merch/shared/util';
 import { FOOTER_LINKS, MAIN_MENU } from '../../navigation/menu';
 import { NewsletterForm } from '../newsletter-form/newsletter-form';
 
 @Component({
   selector: 'merch-footer',
-  imports: [RouterLink, Icon, NewsletterForm],
+  imports: [RouterLink, Icon, Skeleton, NewsletterForm],
   templateUrl: './footer.html',
   styleUrl: './footer.scss',
 })
