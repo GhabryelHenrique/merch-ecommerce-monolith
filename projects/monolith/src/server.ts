@@ -10,7 +10,7 @@ import { join } from 'node:path';
 import { beginRender, markServerReady, runtimeConfigFromEnv } from './server-telemetry';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
-const port = process.env['PORT'] || '4000';
+const port = process.env['PORT'] || '8080';
 
 /** Só quando este módulo sobe o próprio servidor (Cloud Run, `npm run serve:ssr`). No `ng serve`, quem escuta é o CLI. */
 let listening = false;
