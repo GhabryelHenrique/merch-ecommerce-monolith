@@ -1,0 +1,100 @@
+:host {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.group {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.legend {
+  margin-bottom: var(--space-2);
+  padding: 0;
+  font-weight: var(--font-weight-medium);
+}
+
+.value {
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-regular);
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+// Cor
+.swatch {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: var(--tap-target);
+  height: var(--tap-target);
+  border: var(--border-width-strong) solid transparent;
+  border-radius: var(--radius-round);
+  cursor: pointer;
+}
+
+.swatch:has(input:checked) {
+  border-color: var(--color-text);
+}
+
+.swatch:has(input:focus-visible) {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.dot {
+  width: 2rem;
+  height: 2rem;
+  border: var(--border-width) solid var(--color-border-strong);
+  border-radius: var(--radius-round);
+}
+
+.swatch--unavailable {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.swatch--unavailable::after {
+  content: '';
+  position: absolute;
+  width: 2.25rem;
+  height: var(--border-width-strong);
+  background: var(--color-text);
+  transform: rotate(-45deg);
+}
+
+// Tamanho
+.size {
+  display: grid;
+  place-items: center;
+  min-width: 3rem;
+  height: var(--tap-target);
+  padding: 0 var(--space-3);
+  border: var(--border-width) solid var(--color-border-strong);
+  border-radius: var(--radius-pill);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+}
+
+.size:has(input:checked) {
+  border-color: var(--color-text);
+  background: var(--color-text);
+  color: var(--color-text-inverse);
+}
+
+.size:has(input:focus-visible) {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.size--unavailable {
+  border-style: dashed;
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+  cursor: not-allowed;
+}

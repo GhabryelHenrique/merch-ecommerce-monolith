@@ -1,0 +1,49 @@
+@if (colors().length > 0) {
+  <fieldset class="group">
+    <legend class="legend">
+      Cor: <span class="value">{{ colorLabel() ?? 'selecione' }}</span>
+    </legend>
+    <div class="options">
+      @for (c of colors(); track c.slug) {
+        <label class="swatch" [class.swatch--unavailable]="!c.available" [title]="c.label">
+          <input
+            type="radio"
+            name="cor"
+            class="visually-hidden"
+            [value]="c.slug"
+            [checked]="c.slug === color()"
+            [disabled]="!c.available"
+            (change)="pickColor(c.slug)"
+          />
+          <span class="dot" [style.background-color]="c.hex" aria-hidden="true"></span>
+          <span class="visually-hidden">{{ c.label }}{{ c.available ? '' : ' (esgotado)' }}</span>
+        </label>
+      }
+    </div>
+  </fieldset>
+}
+
+@if (sizes().length > 0) {
+  <fieldset class="group">
+    <legend class="legend">
+      Tamanho: <span class="value">{{ size() ?? 'selecione' }}</span>
+    </legend>
+    <div class="options">
+      @for (s of sizes(); track s.value) {
+        <label class="size" [class.size--unavailable]="!s.available">
+          <input
+            type="radio"
+            name="tamanho"
+            class="visually-hidden"
+            [value]="s.value"
+            [checked]="s.value === size()"
+            [disabled]="!s.available"
+            (change)="size.set(s.value)"
+          />
+          <span aria-hidden="true">{{ s.value }}</span>
+          <span class="visually-hidden">{{ s.value }}{{ s.available ? '' : ' (esgotado)' }}</span>
+        </label>
+      }
+    </div>
+  </fieldset>
+}

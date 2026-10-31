@@ -1,0 +1,93 @@
+<div class="page">
+  @if (product(); as p) {
+    <merch-breadcrumb [items]="breadcrumb()" />
+
+    <div class="layout">
+      <merch-gallery class="gallery" [images]="p.images" [(activeIndex)]="imageIndex" />
+
+      <div class="info">
+        <div class="badges">
+          @if (soldOut()) {
+            <merch-badge tone="soldout">Esgotado</merch-badge>
+          }
+          @if (p.badges.includes('new')) {
+            <merch-badge tone="new">Novo</merch-badge>
+          }
+          @if (p.badges.includes('bestseller')) {
+            <merch-badge tone="bestseller">Mais vendido</merch-badge>
+          }
+        </div>
+
+        <h1 class="name">{{ p.name }}</h1>
+        <merch-price
+          size="lg"
+          [priceInCents]="p.priceInCents"
+          [compareAtPriceInCents]="p.compareAtPriceInCents"
+          [showInstallments]="true"
+        />
+
+        <merch-variant-picker [product]="p" [(color)]="color" [(size)]="size" />
+
+        <div class="buy">
+          <div class="qty">
+            <merch-quantity-stepper
+              [(value)]="quantity"
+              [max]="stock() || 1"
+              [disabled]="!canAdd()"
+            />
+            @if (stockText()) {
+              <p class="stock">{{ stockText() }}</p>
+            }
+          </div>
+          <button
+            merch-button
+            type="button"
+            size="lg"
+            [block]="true"
+            [disabled]="!canAdd()"
+            [attr.aria-describedby]="hint() ? 'dica-compra' : null"
+            (click)="addToCart()"
+          >
+            <merch-icon name="cart" [size]="20" />
+            Adicionar ao carrinho
+          </button>
+          @if (hint()) {
+            <p id="dica-compra" class="hint">{{ hint() }}</p>
+          }
+        </div>
+
+        <merch-product-details [product]="p" [collections]="collections()" />
+      </div>
+    </div>
+
+    @defer (on viewport) {
+      @if (related().length > 0) {
+        <section class="related" aria-labelledby="relacionados-titulo">
+          <h2 id="relacionados-titulo" class="related-title">Você também pode gostar</h2>
+          <merch-product-grid [products]="related()" />
+        </section>
+      }
+    } @placeholder {
+      <merch-skeleton aspectRatio="4 / 1" />
+    }
+  } @else if (loading()) {
+    <div class="layout" aria-busy="true">
+      <span class="visually-hidden" role="status">Carregando produto…</span>
+      <merch-skeleton aspectRatio="1 / 1" />
+      <div class="info">
+        <merch-skeleton shape="text" width="60%" height="2.5rem" />
+        <merch-skeleton shape="text" width="30%" />
+        <merch-skeleton aspectRatio="3 / 1" />
+      </div>
+    </div>
+  } @else {
+    <merch-empty-state
+      heading="Produto não encontrado"
+      description="O produto que você procura não existe ou saiu do catálogo."
+      icon="alert"
+      [headingLevel]="1"
+    >
+      <a merch-button routerLink="/">Voltar para a página inicial</a>
+    </merch-empty-state>
+  }
+</div>

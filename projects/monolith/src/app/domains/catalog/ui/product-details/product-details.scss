@@ -1,0 +1,56 @@
+.accordion {
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+.heading {
+  margin: 0;
+  font-size: inherit;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 3.5rem;
+  padding: 0 var(--space-1);
+  border: 0;
+  border-bottom: var(--border-width) solid var(--color-border);
+  background: transparent;
+  color: var(--color-text);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  text-align: left;
+}
+
+.trigger[aria-expanded='true'] merch-icon {
+  transform: rotate(180deg);
+}
+
+.panel {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-1);
+  border-bottom: var(--border-width) solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.panel[inert] {
+  display: none;
+}
+
+.specs {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-2) var(--space-6);
+  margin: 0;
+}
+
+dt {
+  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+}
+
+dd {
+  margin: 0;
+}

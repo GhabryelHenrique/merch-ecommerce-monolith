@@ -1,0 +1,47 @@
+<div ngAccordionGroup [multiExpandable]="true" class="accordion">
+  <h2 class="heading">
+    <button ngAccordionTrigger type="button" class="trigger" [panel]="descricao" [expanded]="true">
+      Descrição
+      <merch-icon name="chevron-down" [size]="20" />
+    </button>
+  </h2>
+  <div ngAccordionPanel #descricao="ngAccordionPanel" class="panel">
+    <ng-template ngAccordionContent>
+      <p>{{ product().description }}</p>
+    </ng-template>
+  </div>
+
+  <h2 class="heading">
+    <button ngAccordionTrigger type="button" class="trigger" [panel]="especificacoes">
+      Especificações
+      <merch-icon name="chevron-down" [size]="20" />
+    </button>
+  </h2>
+  <div ngAccordionPanel #especificacoes="ngAccordionPanel" class="panel">
+    <ng-template ngAccordionContent>
+      <dl class="specs">
+        <dt>Código</dt>
+        <dd>MS-{{ product().id }}</dd>
+        @if (collectionNames()) {
+          <dt>Coleção</dt>
+          <dd>{{ collectionNames() }}</dd>
+        }
+        <dt>Cuidados</dt>
+        <dd>Lavar à mão ou em ciclo delicado, sem alvejante. Não usar secadora.</dd>
+      </dl>
+    </ng-template>
+  </div>
+
+  <h2 class="heading">
+    <button ngAccordionTrigger type="button" class="trigger" [panel]="entrega">
+      Entrega e trocas
+      <merch-icon name="chevron-down" [size]="20" />
+    </button>
+  </h2>
+  <div ngAccordionPanel #entrega="ngAccordionPanel" class="panel">
+    <ng-template ngAccordionContent>
+      <p>Frete calculado pelo CEP no checkout. Econômico grátis acima de R$ 299,00.</p>
+      <p>Trocas e devoluções gratuitas em até 30 dias.</p>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,78 @@
+@use 'breakpoints' as bp;
+
+.page {
+  display: grid;
+  gap: var(--space-6);
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: var(--space-6) var(--layout-gutter) 0;
+}
+
+.layout {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.info {
+  display: grid;
+  align-content: start;
+  gap: var(--space-5);
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.badges:empty {
+  display: none;
+}
+
+.name {
+  font-size: var(--font-size-3xl);
+}
+
+.buy {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.stock {
+  color: var(--color-success);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.hint {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.related {
+  margin-top: var(--space-12);
+}
+
+.related-title {
+  margin-bottom: var(--space-6);
+  font-size: var(--font-size-2xl);
+}
+
+@include bp.up(lg) {
+  .layout {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: var(--space-12);
+  }
+
+  .gallery {
+    position: sticky;
+    top: calc(var(--header-height) + var(--space-4));
+    align-self: start;
+  }
+}
