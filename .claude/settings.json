@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "enabledMcpjsonServers": ["angular-cli"],
+  "env": {
+    "NG_CLI_ANALYTICS": "false"
+  },
+  "permissions": {
+    "allow": [
+      "mcp__angular-cli",
+      "Bash(npx -y @angular/cli@22.2:*)",
+      "Bash(npx ng:*)",
+      "Bash(ng:*)",
+      "Bash(npm install:*)",
+      "Bash(npm ci:*)",
+      "Bash(npm view:*)",
+      "Bash(npm run:*)",
+      "Bash(npm test:*)",
+      "Bash(npx playwright:*)",
+      "Bash(node -v)",
+      "Bash(npm -v)",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(git init:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git tag:*)",
+      "WebFetch(domain:your.merch.google)",
+      "WebFetch(domain:angular.dev)",
+      "WebFetch(domain:native-federation.com)"
+    ],
+    "ask": [
+      "Bash(git push:*)",
+      "Bash(gcloud:*)",
+      "Bash(docker push:*)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)"
+    ]
+  }
+}

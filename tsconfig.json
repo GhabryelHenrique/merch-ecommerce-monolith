@@ -1,0 +1,44 @@
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "preserve",
+    "paths": {
+      "@merch/core": ["./projects/monolith/src/app/core/index.ts"],
+      "@merch/shared/ui": ["./projects/monolith/src/app/shared/ui/index.ts"],
+      "@merch/shared/cart": ["./projects/monolith/src/app/shared/cart/index.ts"],
+      "@merch/shared/util": ["./projects/monolith/src/app/shared/util/index.ts"],
+      "@merch/catalog": ["./projects/monolith/src/app/domains/catalog/index.ts"],
+      "@merch/checkout": ["./projects/monolith/src/app/domains/checkout/index.ts"]
+    }
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true,
+    "extendedDiagnostics": {
+      "defaultCategory": "error"
+    }
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./projects/monolith/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/monolith/tsconfig.spec.json"
+    }
+  ]
+}

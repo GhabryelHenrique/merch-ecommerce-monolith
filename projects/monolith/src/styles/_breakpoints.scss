@@ -1,0 +1,27 @@
+@use 'sass:map';
+
+// Breakpoints (mobile-first). Custom properties não funcionam em media queries,
+// por isso os componentes usam estes mixins: `@use 'breakpoints' as bp;`.
+
+$breakpoints: (
+  sm: 36rem,
+  // 576px
+  md: 48rem,
+  // 768px
+  lg: 64rem,
+  // 1024px
+  xl: 80rem,
+  // 1280px
+);
+
+@mixin up($name) {
+  @media (min-width: map.get($breakpoints, $name)) {
+    @content;
+  }
+}
+
+@mixin down($name) {
+  @media (max-width: calc(map.get($breakpoints, $name) - 0.02rem)) {
+    @content;
+  }
+}

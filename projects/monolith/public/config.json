@@ -1,0 +1,14 @@
+{
+  "storeName": "Merch Store",
+  "environment": "local",
+  "promo": {
+    "message": "Cadastre-se e ganhe 10% de desconto com o cupom WORKSHOP10",
+    "linkLabel": "Cadastrar",
+    "linkUrl": "#newsletter"
+  },
+  "contact": {
+    "email": "atendimento@merchstore.example",
+    "phone": "(11) 4000-0000",
+    "hours": "Segunda a sexta, das 9h às 18h"
+  }
+}
