@@ -1,0 +1,15 @@
+<div class="page">
+  @if (topic(); as t) {
+    <article class="article">
+      <h1>{{ t.title }}</h1>
+      @for (p of t.paragraphs; track $index) {
+        <p>{{ p }}</p>
+      }
+      <a merch-button variant="secondary" routerLink="/">Voltar para a loja</a>
+    </article>
+  } @else {
+    <merch-empty-state heading="Página não encontrada" [headingLevel]="1" icon="alert">
+      <a merch-button routerLink="/">Voltar para a página inicial</a>
+    </merch-empty-state>
+  }
+</div>

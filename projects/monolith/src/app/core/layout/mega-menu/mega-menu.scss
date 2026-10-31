@@ -1,0 +1,95 @@
+.nav {
+  position: static;
+}
+
+.menubar {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.top {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: var(--tap-target);
+  padding: 0 var(--space-3);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.top:hover,
+.top:focus-visible,
+.top[aria-expanded='true'] {
+  background: var(--color-surface-alt);
+}
+
+.top[aria-expanded='true'] merch-icon {
+  transform: rotate(180deg);
+}
+
+// Painel de largura total sob o header (o header é o contexto de posição).
+.panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: var(--z-menu);
+  border-top: var(--border-width) solid var(--color-border);
+  background: var(--color-bg);
+  box-shadow: var(--shadow-md);
+}
+
+.panel[data-visible='false'] {
+  display: none;
+}
+
+.panel-inner {
+  display: grid;
+  grid-template-columns: 14rem 1fr;
+  gap: var(--space-8);
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: var(--space-8) var(--layout-gutter);
+}
+
+.panel-title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.panel-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: var(--space-1) var(--space-6);
+  align-content: start;
+}
+
+.link {
+  display: block;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.link:hover,
+.link:focus-visible {
+  background: var(--color-surface-alt);
+  text-decoration: underline;
+}
+
+.link--all {
+  grid-column: 1 / -1;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}

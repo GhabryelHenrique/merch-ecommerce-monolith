@@ -1,0 +1,20 @@
+.page {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: var(--space-12) var(--layout-gutter);
+}
+
+.article {
+  display: grid;
+  gap: var(--space-4);
+  justify-items: start;
+}
+
+h1 {
+  font-size: var(--font-size-3xl);
+}
+
+p {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-lg);
+}

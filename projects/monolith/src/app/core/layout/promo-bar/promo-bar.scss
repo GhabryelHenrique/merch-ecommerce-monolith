@@ -1,0 +1,36 @@
+.promo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 2.5rem;
+  padding: var(--space-1) var(--space-12);
+  position: relative;
+  background: var(--color-promo-bg);
+  color: var(--color-promo-text);
+  font-size: var(--font-size-sm);
+  text-align: center;
+}
+
+.message a {
+  margin-left: var(--space-2);
+  color: inherit;
+  font-weight: var(--font-weight-bold);
+}
+
+.close {
+  position: absolute;
+  right: var(--space-2);
+  display: grid;
+  place-items: center;
+  width: var(--tap-target);
+  height: var(--tap-target);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: inherit;
+}
+
+.close:focus-visible {
+  outline-color: var(--color-promo-text);
+}

@@ -1,0 +1,33 @@
+<nav class="nav" aria-label="Menu principal">
+  <!-- Padrão APG de menubar de navegação: <li role="none"> agrupa o item e o seu submenu.
+       Os painéis precisam ser descendentes do menubar (o foco não pode "sair" dele ao abrir). -->
+  <ul ngMenuBar class="menubar" (itemSelected)="navigate($event)">
+    @for (section of sections; track section.label) {
+      <li role="none" class="entry">
+        @if (section.children; as children) {
+          <button type="button" ngMenuItem class="top" [value]="url(section)" [submenu]="panel">
+            {{ section.label }}
+            <merch-icon name="chevron-down" [size]="16" />
+          </button>
+          <div ngMenu #panel="ngMenu" class="panel" [attr.aria-label]="section.label" (itemSelected)="navigate($event)">
+            <div class="panel-inner" role="none">
+              <p class="panel-title" aria-hidden="true">{{ section.label }}</p>
+              <div class="panel-links" role="none">
+                <a ngMenuItem class="link link--all" [value]="url(section)" [routerLink]="section.path">
+                  Ver tudo em {{ section.label }}
+                </a>
+                @for (child of children; track trackLink(child)) {
+                  <a ngMenuItem class="link" [value]="url(child)" [routerLink]="child.path" [queryParams]="child.query">
+                    {{ child.label }}
+                  </a>
+                }
+              </div>
+            </div>
+          </div>
+        } @else {
+          <a ngMenuItem class="top" [value]="url(section)" [routerLink]="section.path">{{ section.label }}</a>
+        }
+      </li>
+    }
+  </ul>
+</nav>

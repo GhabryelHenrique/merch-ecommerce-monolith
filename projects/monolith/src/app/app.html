@@ -1,3 +1,8 @@
-<main id="conteudo" tabindex="-1">
+<a class="skip-link" href="#conteudo" (click)="skipToMain($event)">Pular para o conteúdo</a>
+<merch-promo-bar />
+<merch-header />
+<main #main id="conteudo" tabindex="-1">
   <router-outlet />
 </main>
+<merch-footer />
+<merch-toast-host />

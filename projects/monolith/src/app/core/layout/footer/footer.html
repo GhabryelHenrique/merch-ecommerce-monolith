@@ -1,0 +1,48 @@
+<footer class="footer">
+  <div class="grid">
+    <section class="col" aria-labelledby="rodape-contato">
+      <h2 id="rodape-contato" class="heading">Atendimento</h2>
+      <ul role="list" class="list">
+        @if (contact.email) {
+          <li>
+            <a [href]="'mailto:' + contact.email"><merch-icon name="mail" [size]="18" /> {{ contact.email }}</a>
+          </li>
+        }
+        @if (contact.phone) {
+          <li>
+            <a [href]="phoneHref"><merch-icon name="phone" [size]="18" /> {{ contact.phone }}</a>
+          </li>
+        }
+        @if (contact.hours) {
+          <li class="muted">{{ contact.hours }}</li>
+        }
+      </ul>
+    </section>
+
+    <nav class="col" aria-labelledby="rodape-institucional">
+      <h2 id="rodape-institucional" class="heading">Institucional</h2>
+      <ul role="list" class="list">
+        @for (link of institutional; track link.path) {
+          <li><a [routerLink]="link.path">{{ link.label }}</a></li>
+        }
+      </ul>
+    </nav>
+
+    <nav class="col" aria-labelledby="rodape-categorias">
+      <h2 id="rodape-categorias" class="heading">Categorias</h2>
+      <ul role="list" class="list">
+        @for (section of categories; track section.label) {
+          <li><a [routerLink]="section.path">{{ section.label }}</a></li>
+        }
+      </ul>
+    </nav>
+
+    <section id="newsletter" class="col col--wide" tabindex="-1" aria-label="Newsletter">
+      <merch-newsletter-form />
+    </section>
+  </div>
+
+  <div class="bottom">
+    <p>© {{ year }} {{ storeName }}. Loja de demonstração do workshop — nenhum pedido é real.</p>
+  </div>
+</footer>

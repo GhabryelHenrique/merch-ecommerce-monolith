@@ -1,0 +1,27 @@
+<header class="header">
+  <div class="bar">
+    <div class="mobile-only">
+      <merch-mobile-menu />
+    </div>
+
+    <a routerLink="/" class="logo">
+      <span class="logo-mark" aria-hidden="true">M</span>
+      <span class="logo-text">{{ storeName }}</span>
+      <span class="visually-hidden">, página inicial</span>
+    </a>
+
+    <div class="desktop-only menu">
+      <merch-mega-menu />
+    </div>
+
+    <div class="desktop-only search">
+      <merch-search-box inputId="busca-header" />
+    </div>
+
+    <merch-cart-badge class="cart" />
+  </div>
+
+  <div class="mobile-only search-row">
+    <merch-search-box inputId="busca-header-mobile" />
+  </div>
+</header>

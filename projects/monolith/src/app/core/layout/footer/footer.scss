@@ -1,0 +1,76 @@
+@use 'breakpoints' as bp;
+
+.footer {
+  margin-top: var(--space-16);
+  border-top: var(--border-width) solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-8);
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: var(--space-12) var(--layout-gutter);
+}
+
+.heading {
+  margin-bottom: var(--space-3);
+  font-size: var(--font-size-md);
+}
+
+.list {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  font-size: var(--font-size-sm);
+}
+
+.list a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 1.5rem;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.list a:hover {
+  text-decoration: underline;
+}
+
+.muted {
+  color: var(--color-text-muted);
+}
+
+#newsletter:focus {
+  outline: none;
+}
+
+.bottom {
+  padding: var(--space-4) var(--layout-gutter);
+  border-top: var(--border-width) solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  text-align: center;
+}
+
+@include bp.up(md) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .col--wide {
+    grid-column: 1 / -1;
+  }
+}
+
+@include bp.up(lg) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr) 1.6fr;
+  }
+
+  .col--wide {
+    grid-column: auto;
+  }
+}
