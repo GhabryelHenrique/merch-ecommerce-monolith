@@ -1,10 +1,10 @@
 {
   "hero": {
     "eyebrow": "Nova coleção",
-    "title": "Aurora chegou",
-    "subtitle": "Moletons, camisetas e acessórios em tons de amanhecer. Edição limitada.",
+    "title": "Holiday 2026 chegou",
+    "subtitle": "Suéter, gorro e globo de neve para as festas de fim de ano. Edição limitada.",
     "ctaLabel": "Conhecer a coleção",
-    "ctaUrl": "/c/todos?colecao=aurora",
+    "ctaUrl": "/c/todos?colecao=holiday-2026",
     "image": {
       "src": "catalog/images/banner-hero.svg",
       "alt": "",
@@ -15,7 +15,7 @@
   "seasonal": {
     "eyebrow": "Temporada de presentes",
     "title": "Presentes que todo mundo usa",
-    "subtitle": "Kits prontos para presentear, com embalagem reutilizável.",
+    "subtitle": "Colecionáveis Chrome Dino, miniaturas G Bike e brinquedos para todas as idades.",
     "ctaLabel": "Ver presentes",
     "ctaUrl": "/c/presentes",
     "image": {
@@ -27,8 +27,8 @@
   },
   "sustainability": {
     "title": "Feito para durar",
-    "text": "Usamos algodão reciclado, tintas à base d’água e embalagens sem plástico em toda a Linha Eco.",
-    "ctaLabel": "Conhecer a Linha Eco",
-    "ctaUrl": "/c/todos?colecao=eco"
+    "text": "Algodão orgânico, materiais reciclados e garrafas reutilizáveis em toda a linha Sustentável.",
+    "ctaLabel": "Conhecer a linha Sustentável",
+    "ctaUrl": "/c/todos?colecao=sustentavel"
   }
 }

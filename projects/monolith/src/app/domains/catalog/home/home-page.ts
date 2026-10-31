@@ -8,7 +8,7 @@ import { ProductCarousel } from '../ui/product-carousel/product-carousel';
 import { SustainabilityStrip } from '../ui/sustainability-strip/sustainability-strip';
 
 /** Coleção que já é a campanha do hero não se repete nos cards. */
-const HERO_COLLECTION = 'aurora';
+const HERO_COLLECTION = 'holiday-2026';
 
 @Component({
   selector: 'merch-home-page',

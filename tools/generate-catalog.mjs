@@ -7,10 +7,12 @@
  * Saída: projects/monolith/public/catalog/{products,categories,collections,banners}.json
  *        projects/monolith/public/catalog/images/*.svg
  *
- * Tudo é fictício e determinístico (sem aleatoriedade): rodar de novo produz os mesmos arquivos.
- * Nenhuma marca, logo ou texto de terceiros — as silhuetas e o monograma "M" são próprios.
+ * Determinístico (sem aleatoriedade): rodar de novo produz os mesmos arquivos.
+ * Nomes, preços e URLs das fotos vêm do catálogo público da Google Merch Shop (preços convertidos
+ * para BRL; fotos referenciadas por URL a partir de tools/official-images.json). Descrições,
+ * banners e imagens de coleção são próprios (SVG gerado aqui).
  */
-import { mkdirSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -19,6 +21,7 @@ const OUT = join(ROOT, 'projects/monolith/public/catalog');
 const IMAGES = join(OUT, 'images');
 const IMG_PREFIX = 'catalog/images';
 const SIZE = 800;
+const OFFICIAL_IMAGES = JSON.parse(readFileSync(join(ROOT, 'tools/official-images.json'), 'utf8'));
 
 // ---------------------------------------------------------------------------
 // Paleta de cores das variantes
@@ -34,7 +37,9 @@ const COLORS = {
   amarelo: { label: 'Amarelo', hex: '#f9ab00' },
   cinza: { label: 'Cinza', hex: '#9aa0a6' },
   areia: { label: 'Areia', hex: '#e6d5b8' },
-  lilas: { label: 'Lilás', hex: '#a142f4' },
+  bordo: { label: 'Bordô', hex: '#912a36' },
+  creme: { label: 'Creme', hex: '#faeed4' },
+  mocha: { label: 'Mocha', hex: '#715c57' },
 };
 
 // ---------------------------------------------------------------------------
@@ -44,7 +49,7 @@ const categories = [
   {
     slug: 'vestuario',
     name: 'Vestuário',
-    description: 'Camisetas, moletons, jaquetas e bonés para o dia a dia.',
+    description: 'Camisetas, moletons, jaquetas, bonés e roupas infantis.',
     subcategories: [
       { slug: 'camisetas', name: 'Camisetas' },
       { slug: 'moletons', name: 'Moletons' },
@@ -56,7 +61,7 @@ const categories = [
   {
     slug: 'bolsas-acessorios',
     name: 'Bolsas & Acessórios',
-    description: 'Mochilas, bolsas, pins e chaveiros para levar a marca com você.',
+    description: 'Mochilas, bolsas, pins e chaveiros.',
     subcategories: [
       { slug: 'mochilas', name: 'Mochilas' },
       { slug: 'bolsas-sacolas', name: 'Bolsas e sacolas' },
@@ -66,7 +71,7 @@ const categories = [
   {
     slug: 'lifestyle',
     name: 'Lifestyle',
-    description: 'Garrafas, canecas, papelaria e itens para casa.',
+    description: 'Garrafas, cadernos, adesivos e itens para casa.',
     subcategories: [
       { slug: 'garrafas-canecas', name: 'Garrafas e canecas' },
       { slug: 'escritorio', name: 'Escritório' },
@@ -76,120 +81,159 @@ const categories = [
   {
     slug: 'presentes',
     name: 'Presentes',
-    description: 'Kits prontos e pelúcias para presentear.',
+    description: 'Colecionáveis e brinquedos para presentear.',
     subcategories: [
-      { slug: 'kits', name: 'Kits' },
-      { slug: 'pelucias', name: 'Pelúcias' },
+      { slug: 'colecionaveis', name: 'Colecionáveis' },
+      { slug: 'brinquedos', name: 'Brinquedos' },
     ],
   },
 ];
 
 const collections = [
   {
-    slug: 'aurora',
-    name: 'Coleção Aurora',
-    tagline: 'Cores do amanhecer para a nova estação',
-    description: 'Tons de azul e lilás inspirados no céu da manhã, em peças macias e versáteis.',
-    theme: 'campaign-1',
-    palette: ['#a142f4', '#1a73e8', '#e8f0fe'],
-  },
-  {
-    slug: 'essenciais',
-    name: 'Linha Essencial',
-    tagline: 'Os básicos que combinam com tudo',
-    description: 'Peças atemporais em cores neutras, feitas para durar e usar todos os dias.',
-    theme: 'campaign-2',
-    palette: ['#202124', '#9aa0a6', '#fef7e0'],
-  },
-  {
-    slug: 'dev',
-    name: 'Coleção Dev',
-    tagline: 'Para quem vive entre commits e cafés',
-    description: 'Estampas de pixel, código e terminal para quem desenvolve software.',
+    slug: 'holiday-2026',
+    name: 'Holiday 2026',
+    tagline: 'Clima de festa para o fim de ano',
+    description: 'Suéter, gorro e globo de neve em vermelho e verde para as festas.',
     theme: 'campaign-4',
-    palette: ['#188038', '#202124', '#fce8e6'],
+    palette: ['#d93025', '#188038', '#fce8e6'],
+    art: { shape: 'hoodie', mark: 'dots' },
   },
   {
-    slug: 'eco',
-    name: 'Linha Eco',
-    tagline: 'Materiais reciclados e reutilizáveis',
-    description: 'Algodão reciclado, garrafas reutilizáveis e embalagens sem plástico.',
+    slug: 'google-g',
+    name: 'Google G',
+    tagline: 'As quatro cores em peças do dia a dia',
+    description: 'Camisetas, moletons, garrafas e acessórios com as cores clássicas.',
+    theme: 'campaign-1',
+    palette: ['#1a73e8', '#d93025', '#e8f0fe'],
+    art: { shape: 'tshirt', mark: 'dots' },
+  },
+  {
+    slug: 'chrome-dino',
+    name: 'Chrome Dino',
+    tagline: 'Para quem já ficou sem internet',
+    description: 'Peças em pixel art inspiradas no jogo do navegador offline.',
+    theme: 'campaign-2',
+    palette: ['#5f6368', '#202124', '#fef7e0'],
+    art: { shape: 'tshirt', mark: 'pixel' },
+  },
+  {
+    slug: 'g-bike',
+    name: 'G Bike',
+    tagline: 'As bicicletas coloridas do campus',
+    description: 'Camisetas, garrafas e miniaturas inspiradas nas bicicletas do campus.',
+    theme: 'campaign-3',
+    palette: ['#188038', '#f9ab00', '#e6f4ea'],
+    art: { shape: 'bike', mark: 'dots' },
+  },
+  {
+    slug: 'sustentavel',
+    name: 'Sustentável',
+    tagline: 'Orgânico, reciclado e reutilizável',
+    description: 'Algodão orgânico, materiais reciclados e garrafas reutilizáveis.',
     theme: 'campaign-3',
     palette: ['#5f6b3a', '#188038', '#e6f4ea'],
+    art: { shape: 'tote', mark: 'dots' },
   },
 ];
 
 const banners = {
   hero: {
     eyebrow: 'Nova coleção',
-    title: 'Aurora chegou',
-    subtitle: 'Moletons, camisetas e acessórios em tons de amanhecer. Edição limitada.',
+    title: 'Holiday 2026 chegou',
+    subtitle: 'Suéter, gorro e globo de neve para as festas de fim de ano. Edição limitada.',
     ctaLabel: 'Conhecer a coleção',
-    ctaUrl: '/c/todos?colecao=aurora',
+    ctaUrl: '/c/todos?colecao=holiday-2026',
     image: { src: `${IMG_PREFIX}/banner-hero.svg`, alt: '', width: 1600, height: 900 },
   },
   seasonal: {
     eyebrow: 'Temporada de presentes',
     title: 'Presentes que todo mundo usa',
-    subtitle: 'Kits prontos para presentear, com embalagem reutilizável.',
+    subtitle: 'Colecionáveis Chrome Dino, miniaturas G Bike e brinquedos para todas as idades.',
     ctaLabel: 'Ver presentes',
     ctaUrl: '/c/presentes',
     image: { src: `${IMG_PREFIX}/banner-sazonal.svg`, alt: '', width: 1600, height: 700 },
   },
   sustainability: {
     title: 'Feito para durar',
-    text: 'Usamos algodão reciclado, tintas à base d’água e embalagens sem plástico em toda a Linha Eco.',
-    ctaLabel: 'Conhecer a Linha Eco',
-    ctaUrl: '/c/todos?colecao=eco',
+    text: 'Algodão orgânico, materiais reciclados e garrafas reutilizáveis em toda a linha Sustentável.',
+    ctaLabel: 'Conhecer a linha Sustentável',
+    ctaUrl: '/c/todos?colecao=sustentavel',
   },
 };
 
 // ---------------------------------------------------------------------------
 // Produtos
 // ---------------------------------------------------------------------------
+// Nomes e preços baseados no catálogo público da Google Merch Shop (página "Brands › Google").
+// Preço em libras convertido a R$ 7/£ e arredondado para ,90 — `gbp(21)` → 14690 centavos.
+// Fotos: URLs oficiais (your.merch.google), carregadas do próprio site — não são copiadas para o repo.
+// Itens de outras marcas (The North Face, Lululemon, Stanley, Columbia…) ficaram de fora.
+const gbp = (pounds) => Math.ceil(pounds * 7) * 100 - 10;
+
 const ADULT = ['P', 'M', 'G', 'GG'];
 const KIDS = ['4', '6', '8', '10'];
+const BABY = ['6-12M', '12-18M', '18-24M'];
 
-/** Definição compacta. `out` = combinações esgotadas ("cor" ou "cor/tamanho" ou "*"). */
+/**
+ * Definição compacta. `out` = combinações esgotadas ("cor" ou "cor/tamanho" ou "*").
+ * `ref` = slug do produto na Google Merch Shop; as fotos vêm de `tools/official-images.json`.
+ */
 const defs = [
   // Vestuário — camisetas
-  { name: 'Camiseta Clássica', shape: 'tshirt', cat: 'vestuario/camisetas', cols: ['essenciais'], price: 7990, colors: ['preto', 'branco', 'azul'], sizes: ADULT, badges: ['bestseller'], featured: true, pop: 98, date: '2025-03-10', out: ['branco/GG'], desc: 'Camiseta de algodão penteado com o monograma M bordado no peito. Modelagem reta e gola reforçada.' },
-  { name: 'Camiseta Aurora Degradê', shape: 'tshirt', cat: 'vestuario/camisetas', cols: ['aurora'], price: 9990, colors: ['lilas', 'azul'], sizes: ADULT, badges: ['new'], featured: true, pop: 72, date: '2026-10-20', desc: 'Estampa em degradê inspirada no amanhecer, com toque macio e tinta à base d’água.' },
-  { name: 'Camiseta Modo Escuro', shape: 'tshirt', cat: 'vestuario/camisetas', cols: ['dev'], price: 8990, compareAt: 11990, colors: ['preto', 'cinza'], sizes: ADULT, badges: ['sale'], pop: 66, date: '2025-08-02', desc: 'Para quem prefere o tema escuro também fora da tela. Estampa de terminal nas costas.' },
-  { name: 'Camiseta Algodão Reciclado', shape: 'tshirt', cat: 'vestuario/camisetas', cols: ['eco'], price: 8490, colors: ['areia', 'oliva'], sizes: ADULT, badges: ['bestseller'], pop: 93, date: '2025-05-18', desc: 'Feita com 60% de algodão reciclado e 40% de poliéster de garrafas PET.' },
+  { name: 'Camiseta Google G', ref: 'super-g-black-tee', cat: 'vestuario/camisetas', cols: ['google-g'], price: gbp(30), colors: ['preto'], sizes: ADULT, badges: ['bestseller'], featured: true, pop: 98, date: '2025-03-10', out: ['preto/GG'], desc: 'Camiseta unissex de algodão orgânico com o G em quatro cores no peito. Modelagem reta e gola reforçada.' },
+  { name: 'Camiseta Google Cloud Azul-marinho', ref: 'google-cloud-navy-tee', cat: 'vestuario/camisetas', cols: [], price: gbp(26), colors: ['marinho'], sizes: ADULT, badges: [], pop: 63, date: '2025-06-12', desc: 'Camiseta azul-marinho com a nuvem do Google Cloud estampada em branco.' },
+  { name: 'Camiseta Unissex Chrome Dino', ref: 'stan-dino-unisex-tee', cat: 'vestuario/camisetas', cols: ['chrome-dino'], price: gbp(26), colors: ['branco'], sizes: ADULT, badges: ['bestseller'], pop: 90, date: '2025-04-20', desc: 'Estampa em pixel art do dinossauro mais famoso do navegador. Algodão macio e toque leve.' },
+  { name: 'Camiseta G Bike Azul-gelo', ref: 'g-bike-unisex-tee-blue-ice', cat: 'vestuario/camisetas', cols: ['g-bike'], price: gbp(36), colors: ['azul'], sizes: ADULT, badges: [], pop: 58, date: '2025-08-01', desc: 'Camiseta com a bicicleta colorida do campus estampada nas costas.' },
+  { name: 'Camiseta Boxy Verde-oliva', ref: 'olive-boxy-tee', cat: 'vestuario/camisetas', cols: ['holiday-2026', 'sustentavel'], price: gbp(32), colors: ['oliva'], sizes: ADULT, badges: ['new'], pop: 70, date: '2026-10-12', desc: 'Modelagem ampla e ombro caído, em algodão orgânico encorpado.' },
+  { name: 'Camiseta Google Oceano Profundo', ref: 'ocean-depth-tee', cat: 'vestuario/camisetas', cols: [], price: gbp(20.16), compareAt: gbp(30), colors: ['marinho'], sizes: ADULT, badges: ['sale'], pop: 52, date: '2025-05-14', desc: 'Camiseta unissex em azul profundo com a logo bordada em tom sobre tom.' },
   // Vestuário — moletons
-  { name: 'Moletom Canguru Essencial', shape: 'hoodie', cat: 'vestuario/moletons', cols: ['essenciais'], price: 22990, colors: ['cinza', 'preto', 'marinho'], sizes: ADULT, badges: ['bestseller'], featured: true, pop: 97, date: '2025-04-01', out: ['marinho/P'], desc: 'Moletom felpado com capuz forrado, bolso canguru e punhos em ribana.' },
-  { name: 'Moletom Aurora', shape: 'hoodie', cat: 'vestuario/moletons', cols: ['aurora'], price: 25990, colors: ['lilas', 'azul'], sizes: ADULT, badges: ['new'], featured: true, pop: 75, date: '2026-10-22', desc: 'O favorito da nova coleção: capuz amplo, tecido encorpado e bordado tom sobre tom.' },
-  { name: 'Moletom Dev com Zíper', shape: 'jacket', cat: 'vestuario/moletons', cols: ['dev'], price: 24990, compareAt: 29990, colors: ['preto'], sizes: ADULT, badges: ['sale'], pop: 61, date: '2025-09-12', out: ['preto/P', 'preto/GG'], desc: 'Moletom aberto com zíper reforçado e bolso interno para fones.' },
+  { name: 'Moletom com Zíper Google Plymouth 3.0', ref: 'google-plymouth-3-0-navy-zip-hoodie', cat: 'vestuario/moletons', cols: [], price: gbp(73), colors: ['marinho'], sizes: ADULT, badges: ['bestseller'], featured: true, pop: 97, date: '2025-09-01', out: ['marinho/P'], desc: 'Moletom aberto com capuz, zíper frontal e bolsos laterais. Felpa macia por dentro.' },
+  { name: 'Suéter Google Holidays 2026', ref: 'google-holidays-2026-jumper', cat: 'vestuario/moletons', cols: ['holiday-2026'], price: gbp(60), colors: ['vermelho'], sizes: ADULT, badges: ['new'], featured: true, pop: 82, date: '2026-10-20', desc: 'Suéter de tricô com padronagem natalina, edição limitada de fim de ano.' },
+  { name: 'Moletom Google G Bordô', ref: 'super-g-unisex-burgundy-hoodie', cat: 'vestuario/moletons', cols: ['google-g'], price: gbp(35), compareAt: gbp(70), colors: ['bordo'], sizes: ADULT, badges: ['sale'], pop: 66, date: '2025-07-15', desc: 'Moletom canguru com capuz forrado e o G bordado no peito.' },
+  { name: 'Moletom Google G Retrô Azul', ref: 'super-g-unisex-retro-blue-sweatshirt', cat: 'vestuario/moletons', cols: ['google-g'], price: gbp(35), compareAt: gbp(70), colors: ['azul'], sizes: ADULT, badges: ['sale'], pop: 56, date: '2025-02-18', desc: 'Moletom gola careca com estampa retrô e punhos em ribana.' },
+  { name: 'Moletom Nano Banana Butter', ref: 'nano-banana-butter-sweatshirt', cat: 'vestuario/moletons', cols: [], price: gbp(81), colors: ['amarelo'], sizes: ADULT, badges: ['new'], pop: 74, date: '2026-10-05', desc: 'Moletom amarelo-manteiga com bordado do Nano Banana. Tecido encorpado e caimento solto.' },
+  { name: 'Moletom Unissex Google Mocha', ref: 'google-unisex-mocha-sweatshirt', cat: 'vestuario/moletons', cols: ['sustentavel'], price: gbp(56), colors: ['mocha'], sizes: ADULT, badges: [], pop: 55, date: '2025-11-03', desc: 'Moletom de algodão orgânico na cor mocha, com logo discreta no peito.' },
   // Vestuário — jaquetas
-  { name: 'Jaqueta Corta-Vento', shape: 'jacket', cat: 'vestuario/jaquetas', cols: ['essenciais'], price: 32990, colors: ['azul', 'preto'], sizes: ADULT, badges: [], pop: 58, date: '2025-06-25', desc: 'Leve, repelente à água e dobrável na própria bolsa. Ideal para viagens.' },
-  { name: 'Jaqueta Puffer Eco', shape: 'jacket', cat: 'vestuario/jaquetas', cols: ['eco'], price: 44990, compareAt: 52990, colors: ['oliva', 'preto'], sizes: ADULT, badges: ['sale'], pop: 54, date: '2025-07-30', desc: 'Enchimento térmico de fibras recicladas e tecido externo resistente ao vento.' },
+  { name: 'Fleece Google Creme', ref: 'google-unisex-cream-fleece', cat: 'vestuario/jaquetas', cols: ['holiday-2026'], price: gbp(74), colors: ['creme'], sizes: ADULT, badges: ['new'], pop: 60, date: '2026-10-08', desc: 'Jaqueta de fleece felpudo com zíper inteiro e bolsos com zíper.' },
+  { name: 'Colete Google Cloud Azul-marinho', ref: 'google-cloud-gilet-navy', cat: 'vestuario/jaquetas', cols: [], price: gbp(70.56), compareAt: gbp(94), colors: ['marinho'], sizes: ADULT, badges: ['sale'], pop: 51, date: '2025-02-10', desc: 'Colete acolchoado leve, repelente à água, com a nuvem do Google Cloud.' },
+  { name: 'Colete Matelassê Super G Preto', ref: 'super-g-quilted-black-gilet', cat: 'vestuario/jaquetas', cols: ['google-g'], price: gbp(39), compareAt: gbp(78), colors: ['preto'], sizes: ADULT, badges: ['sale'], pop: 48, date: '2025-01-22', out: ['preto/P', 'preto/GG'], desc: 'Colete matelassê com gola alta e o Super G bordado.' },
+  { name: 'Jaqueta Google Joey', ref: 'google-joey-jacket', cat: 'vestuario/jaquetas', cols: [], price: gbp(43), compareAt: gbp(86), colors: ['preto'], sizes: ADULT, badges: ['sale'], pop: 46, date: '2025-04-04', desc: 'Jaqueta leve com capuz embutido na gola, dobrável na própria bolsa.' },
   // Vestuário — bonés e gorros
-  { name: 'Boné Aba Curva', shape: 'cap', cat: 'vestuario/bones-gorros', cols: ['essenciais'], price: 8990, colors: ['preto', 'branco', 'azul'], sizes: [], badges: ['bestseller'], pop: 91, date: '2025-02-14', out: ['branco'], desc: 'Boné de sarja com regulagem traseira em metal e monograma bordado.' },
-  { name: 'Gorro Tricô Pompom', shape: 'beanie', cat: 'vestuario/bones-gorros', cols: ['aurora'], price: 6990, colors: ['vermelho', 'cinza'], sizes: [], badges: ['new'], pop: 64, date: '2026-10-18', desc: 'Gorro de tricô canelado com pompom removível. Quentinho e macio.' },
-  { name: 'Boné Trucker Dev', shape: 'cap', cat: 'vestuario/bones-gorros', cols: ['dev'], price: 7990, colors: ['cinza', 'preto'], sizes: [], badges: [], pop: 40, date: '2025-01-20', out: ['*'], desc: 'Boné trucker com tela respirável e patch de pixel na frente.' },
+  { name: 'Boné Google Preto', ref: 'google-black-baseball-cap', cat: 'vestuario/bones-gorros', cols: [], price: gbp(21), colors: ['preto'], sizes: [], badges: ['new'], featured: true, pop: 91, date: '2026-10-01', desc: 'Boné de beisebol em sarja com a logo bordada e regulagem traseira em metal.' },
+  { name: 'Gorro Google Holidays 2026', ref: 'google-holidays-2026-beanie', cat: 'vestuario/bones-gorros', cols: ['holiday-2026'], price: gbp(15), colors: ['vermelho'], sizes: [], badges: ['new'], pop: 73, date: '2026-10-18', desc: 'Gorro de tricô canelado com padronagem de fim de ano.' },
+  { name: 'Gorro Pescador Google', ref: 'fisherman-beanie', cat: 'vestuario/bones-gorros', cols: [], price: gbp(21), colors: ['cinza'], sizes: [], badges: [], pop: 45, date: '2025-12-01', out: ['*'], desc: 'Gorro curto estilo pescador em tricô grosso, com etiqueta bordada.' },
   // Vestuário — infantil
-  { name: 'Camiseta Infantil Pixel', shape: 'tshirt', cat: 'vestuario/infantil', cols: ['dev'], price: 5990, colors: ['amarelo', 'azul'], sizes: KIDS, badges: [], pop: 47, date: '2025-10-05', desc: 'Camiseta infantil com estampa de pixel que brilha no escuro.' },
-  { name: 'Moletom Infantil', shape: 'hoodie', cat: 'vestuario/infantil', cols: ['essenciais'], price: 14990, compareAt: 17990, colors: ['amarelo', 'azul'], sizes: KIDS, badges: ['sale'], pop: 50, date: '2025-05-02', desc: 'Moletom infantil com capuz e punhos ajustados. Lavável na máquina.' },
-  // Bolsas & Acessórios
-  { name: 'Mochila Urbana', shape: 'backpack', cat: 'bolsas-acessorios/mochilas', cols: ['essenciais'], price: 34990, colors: ['preto', 'marinho'], sizes: [], badges: ['bestseller'], featured: true, pop: 95, date: '2025-03-28', desc: 'Compartimento acolchoado para notebook de até 15", alças ergonômicas e tecido impermeável.' },
-  { name: 'Mochila Dev Notebook', shape: 'backpack', cat: 'bolsas-acessorios/mochilas', cols: ['dev'], price: 39990, colors: ['cinza'], sizes: [], badges: ['new'], pop: 70, date: '2026-10-25', desc: 'Abertura total estilo mala, organizador de cabos e bolso antifurto nas costas.' },
-  { name: 'Ecobag de Algodão', shape: 'tote', cat: 'bolsas-acessorios/bolsas-sacolas', cols: ['eco'], price: 4990, colors: ['areia', 'oliva'], sizes: [], badges: ['bestseller'], pop: 92, date: '2025-04-22', desc: 'Sacola de algodão cru reforçada, com alças longas e bolso interno.' },
-  { name: 'Bolsa Tiracolo Aurora', shape: 'tote', cat: 'bolsas-acessorios/bolsas-sacolas', cols: ['aurora'], price: 15990, compareAt: 19990, colors: ['lilas'], sizes: [], badges: ['sale'], pop: 57, date: '2025-11-11', desc: 'Bolsa transversal com alça ajustável e fechamento em zíper.' },
-  { name: 'Kit de Pins Pixel', shape: 'pin', cat: 'bolsas-acessorios/chaveiros-pins', cols: ['dev'], price: 3990, colors: [], sizes: [], badges: [], pop: 45, date: '2025-02-02', desc: 'Conjunto com três pins esmaltados de pixel art e trava de borracha.' },
-  { name: 'Chaveiro Monograma', shape: 'keychain', cat: 'bolsas-acessorios/chaveiros-pins', cols: ['essenciais'], price: 2990, colors: ['azul', 'vermelho', 'amarelo', 'verde'], sizes: [], badges: [], pop: 52, date: '2025-06-06', desc: 'Chaveiro de acrílico com argola de metal e o monograma M.' },
-  // Lifestyle
-  { name: 'Garrafa Térmica 500 ml', shape: 'bottle', cat: 'lifestyle/garrafas-canecas', cols: ['eco'], price: 12990, colors: ['preto', 'branco', 'verde'], sizes: [], badges: ['bestseller'], featured: true, pop: 96, date: '2025-03-03', out: ['verde'], desc: 'Aço inox com parede dupla: mantém bebidas geladas por 24 h e quentes por 12 h.' },
-  { name: 'Caneca de Cerâmica 350 ml', shape: 'mug', cat: 'lifestyle/garrafas-canecas', cols: ['essenciais'], price: 5990, colors: ['branco', 'preto'], sizes: [], badges: ['bestseller'], pop: 90, date: '2025-01-15', desc: 'Caneca de cerâmica esmaltada, pode ir ao micro-ondas e à lava-louças.' },
-  { name: 'Copo Térmico com Tampa', shape: 'bottle', cat: 'lifestyle/garrafas-canecas', cols: ['eco'], price: 7990, compareAt: 9990, colors: ['azul'], sizes: [], badges: ['sale'], pop: 55, date: '2025-08-19', desc: 'Copo reutilizável com tampa deslizante, perfeito para o café da manhã.' },
-  { name: 'Caneca Esmaltada', shape: 'mug', cat: 'lifestyle/garrafas-canecas', cols: ['eco'], price: 6990, colors: ['verde', 'branco'], sizes: [], badges: [], pop: 42, date: '2025-09-01', desc: 'Caneca de metal esmaltado, leve e resistente para acampar ou para a mesa do escritório.' },
-  { name: 'Caderno Pontilhado A5', shape: 'notebook', cat: 'lifestyle/escritorio', cols: ['dev'], price: 5490, colors: ['preto', 'azul'], sizes: [], badges: [], pop: 60, date: '2025-07-07', desc: 'Capa dura, 160 páginas pontilhadas de 90 g/m² e marcador de fita.' },
-  { name: 'Kit de Adesivos Dev', shape: 'stickers', cat: 'lifestyle/escritorio', cols: ['dev'], price: 2490, colors: [], sizes: [], badges: [], pop: 38, date: '2025-02-20', out: ['*'], desc: 'Doze adesivos de vinil resistentes à água para notebook e garrafa.' },
-  { name: 'Almofada Aurora', shape: 'cushion', cat: 'lifestyle/casa', cols: ['aurora'], price: 11990, colors: ['lilas', 'azul'], sizes: [], badges: ['new'], pop: 62, date: '2026-10-15', desc: 'Almofada de veludo com enchimento de fibra, capa removível e lavável.' },
-  // Presentes
-  { name: 'Kit Boas-Vindas', shape: 'giftbox', cat: 'presentes/kits', cols: ['essenciais'], price: 29990, compareAt: 34990, colors: [], sizes: [], badges: ['sale'], featured: true, pop: 80, date: '2025-11-20', desc: 'Caneca, caderno, garrafa e adesivos em uma caixa reutilizável. O presente certo para novos colegas.' },
-  { name: 'Kit Dev Starter', shape: 'giftbox', cat: 'presentes/kits', cols: ['dev'], price: 19990, colors: [], sizes: [], badges: ['new'], pop: 68, date: '2026-10-28', desc: 'Camiseta Modo Escuro, pins de pixel e caderno pontilhado para quem está começando.' },
-  { name: 'Pelúcia Mascote Bit', shape: 'plush', cat: 'presentes/pelucias', cols: ['dev'], price: 9990, colors: ['amarelo'], sizes: [], badges: [], pop: 78, date: '2025-12-01', desc: 'O Bit, nosso mascote, em pelúcia antialérgica de 25 cm.' },
+  { name: 'Camiseta Infantil Chrome Dino Verde', ref: 'chrome-dino-kids-tee-green', cat: 'vestuario/infantil', cols: ['chrome-dino'], price: gbp(23), colors: ['verde'], sizes: KIDS, badges: [], pop: 57, date: '2025-04-02', desc: 'Camiseta infantil com o dinossauro em pixel art. Lavável na máquina.' },
+  { name: 'Body Googler em Treinamento', ref: 'googler-in-training-body-suit', cat: 'vestuario/infantil', cols: [], price: gbp(28), colors: ['azul'], sizes: BABY, badges: [], pop: 49, date: '2025-06-30', desc: 'Body de algodão orgânico com botões de pressão, para os futuros Googlers.' },
+  { name: 'Camiseta Infantil G Bike Amarela', ref: 'g-bike-kids-tee-yellow', cat: 'vestuario/infantil', cols: ['g-bike'], price: gbp(30), colors: ['amarelo'], sizes: KIDS, badges: [], pop: 44, date: '2025-08-10', desc: 'Camiseta infantil amarela com a bicicleta colorida do campus.' },
+  // Bolsas & Acessórios — mochilas
+  { name: 'Mochila Google com Cordão', ref: 'google-cinched-backpack', cat: 'bolsas-acessorios/mochilas', cols: [], price: gbp(63), colors: ['preto'], sizes: [], badges: ['bestseller'], featured: true, pop: 95, date: '2025-03-28', desc: 'Mochila com fechamento por cordão, aba magnética e compartimento acolchoado para notebook.' },
+  { name: 'Mini Mochila Google', ref: 'google-mini-backpack', cat: 'bolsas-acessorios/mochilas', cols: [], price: gbp(29), colors: ['preto'], sizes: [], badges: ['new'], pop: 68, date: '2026-09-28', desc: 'Mochila compacta para o dia a dia, com bolso frontal e alças acolchoadas.' },
+  // Bolsas & Acessórios — bolsas e sacolas
+  { name: 'Sacola de Algodão Google', ref: 'google-cotton-shopper', cat: 'bolsas-acessorios/bolsas-sacolas', cols: ['sustentavel'], price: gbp(4), colors: ['areia'], sizes: [], badges: ['bestseller'], pop: 92, date: '2025-04-22', desc: 'Sacola de algodão cru com alças longas e a logo em quatro cores.' },
+  { name: 'Bolsa Transversal Google', ref: 'google-crossbody-bag-black', cat: 'bolsas-acessorios/bolsas-sacolas', cols: [], price: gbp(27), colors: ['preto'], sizes: [], badges: ['new'], pop: 64, date: '2026-10-03', desc: 'Bolsa transversal com alça ajustável, fechamento em zíper e bolso interno.' },
+  { name: 'Ecobag Reciclada G Bike', ref: 'g-bike-recycled-tote-bag-navy', cat: 'bolsas-acessorios/bolsas-sacolas', cols: ['g-bike', 'sustentavel'], price: gbp(8), colors: ['marinho'], sizes: [], badges: [], pop: 40, date: '2025-08-15', out: ['*'], desc: 'Ecobag de poliéster reciclado com a bicicleta do campus estampada.' },
+  // Bolsas & Acessórios — chaveiros e pins
+  { name: 'Chaveiro Google G', ref: 'super-g-keychain', cat: 'bolsas-acessorios/chaveiros-pins', cols: ['google-g'], price: gbp(4), colors: [], sizes: [], badges: ['bestseller'], pop: 89, date: '2025-06-06', desc: 'Chaveiro de silicone com argola de metal, em quatro cores.' },
+  { name: 'Pin Google G', ref: 'super-g-pin', cat: 'bolsas-acessorios/chaveiros-pins', cols: ['google-g'], price: gbp(4), colors: [], sizes: [], badges: ['new'], pop: 46, date: '2026-09-15', desc: 'Pin esmaltado com trava de borracha, para mochila ou jaqueta.' },
+  // Lifestyle — garrafas e canecas
+  { name: 'Garrafa Térmica Google G', ref: 'super-g-insulated-capri-bottle', cat: 'lifestyle/garrafas-canecas', cols: ['google-g', 'sustentavel'], price: gbp(29), colors: [], sizes: [], badges: ['bestseller'], featured: true, pop: 96, date: '2025-03-03', desc: 'Garrafa de aço inox com parede dupla: mantém bebidas geladas por 24 h e quentes por 12 h.' },
+  { name: 'Garrafa Térmica G Bike', ref: 'g-bike-fuel-insulated-bottle', cat: 'lifestyle/garrafas-canecas', cols: ['g-bike'], price: gbp(36), colors: [], sizes: [], badges: [], pop: 50, date: '2025-08-20', desc: 'Garrafa térmica com bico esportivo, do tamanho do suporte de bicicleta.' },
+  { name: 'Copo Térmico Google Corzo', ref: 'google-corzo-insulated-cup-white', cat: 'lifestyle/garrafas-canecas', cols: [], price: gbp(19), colors: ['branco'], sizes: [], badges: [], pop: 54, date: '2025-08-19', desc: 'Copo térmico com tampa deslizante, para o café do caminho.' },
+  { name: 'Garrafa Chrome Dino', ref: 'stan-dino-bottle', cat: 'lifestyle/garrafas-canecas', cols: ['chrome-dino'], price: gbp(32), colors: [], sizes: [], badges: [], pop: 59, date: '2025-05-25', desc: 'Garrafa reutilizável com estampa em pixel art e tampa de rosca.' },
+  // Lifestyle — escritório
+  { name: 'Caderno A5 Reciclado Google', ref: 'google-a5-recycled-notebook-green', cat: 'lifestyle/escritorio', cols: ['sustentavel'], price: gbp(10), colors: ['verde'], sizes: [], badges: ['bestseller'], pop: 88, date: '2025-07-07', desc: 'Caderno A5 com capa de papel reciclado e 120 páginas pautadas.' },
+  { name: 'Caderno A5 Capa Dura G Bike', ref: 'g-bike-a5-harcover-notebook', cat: 'lifestyle/escritorio', cols: ['g-bike'], price: gbp(16), colors: [], sizes: [], badges: [], pop: 42, date: '2025-08-12', desc: 'Caderno de capa dura com a bicicleta do campus e marcador de fita.' },
+  { name: 'Kit de Adesivos Google G', ref: 'super-g-sticker-pack', cat: 'lifestyle/escritorio', cols: ['google-g'], price: gbp(4), colors: [], sizes: [], badges: ['new'], pop: 47, date: '2026-09-20', desc: 'Adesivos de vinil resistentes à água para notebook e garrafa.' },
+  // Lifestyle — casa
+  { name: 'Guarda-chuva Médio Google', ref: 'google-midsize-umbrella', cat: 'lifestyle/casa', cols: [], price: gbp(45), colors: [], sizes: [], badges: [], pop: 41, date: '2025-11-20', desc: 'Guarda-chuva de abertura automática com hastes de fibra resistentes ao vento.' },
+  // Presentes — colecionáveis
+  { name: 'Globo de Neve Chrome Dino', ref: 'stan-dino-glass-globe', cat: 'presentes/colecionaveis', cols: ['chrome-dino', 'holiday-2026'], price: gbp(26), colors: [], sizes: [], badges: ['new'], featured: true, pop: 80, date: '2026-10-25', desc: 'Globo de vidro com neve e o dinossauro em pixel art na base.' },
+  { name: 'Bicicleta Miniatura Google', ref: 'google-model-bike', cat: 'presentes/colecionaveis', cols: ['g-bike'], price: gbp(45), colors: [], sizes: [], badges: [], pop: 62, date: '2025-09-09', desc: 'Miniatura de metal da bicicleta colorida do campus, com rodas que giram.' },
+  // Presentes — brinquedos
+  { name: 'Quebra-cabeça de Blocos Chrome Dino', ref: 'stan-dino-brick-puzzle', cat: 'presentes/brinquedos', cols: ['chrome-dino'], price: gbp(23), colors: [], sizes: [], badges: [], pop: 53, date: '2025-10-01', desc: 'Blocos de montar para criar o dinossauro em 3D. A partir de 8 anos.' },
+  { name: 'Kit de Mágica Chrome Dino', ref: 'chrome-dino-magic-accessory-pack', cat: 'presentes/brinquedos', cols: ['chrome-dino'], price: gbp(15), colors: [], sizes: [], badges: [], pop: 39, date: '2025-12-05', desc: 'Cartola, varinha e capa em miniatura para os fãs do dinossauro.' },
 ];
 
 // ---------------------------------------------------------------------------
@@ -206,12 +250,6 @@ const slugify = (s) =>
 /** Estoque determinístico por índice (3..14). */
 const stockFor = (i, j) => 3 + ((i * 7 + j * 5) % 12);
 
-function luminance(hex) {
-  const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255);
-  const lin = (c) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
-  return 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b);
-}
-
 function shade(hex, amount) {
   const n = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16));
   const out = n.map((c) => Math.max(0, Math.min(255, Math.round(c * (1 + amount)))));
@@ -219,14 +257,37 @@ function shade(hex, amount) {
 }
 
 // ---------------------------------------------------------------------------
-// Silhuetas (viewBox 0 0 800 800)
+// Silhuetas dos banners e coleções (viewBox 0 0 800 800)
 // ---------------------------------------------------------------------------
-/** Monograma "M" próprio, centrado em (cx, cy) com largura w. */
-function monogram(cx, cy, w, color) {
-  const s = w / 32;
-  const x = cx - 16 * s;
-  const y = cy - 14 * s;
-  return `<path transform="translate(${x} ${y}) scale(${s})" d="M0 28V0h7l9 13 9-13h7v28h-7V12l-9 12-9-12v16z" fill="${color}"/>`;
+const DOTS = ['#4285f4', '#ea4335', '#fbbc04', '#34a853'];
+const PIXELS = ['01110', '11011', '11111', '10101'];
+
+/**
+ * Estampa genérica (não reproduz logo nem arte de terceiros), centrada em (cx, cy) com largura w.
+ * `m` é a cor da estampa ou `{ color, kind }` com kind = 'dots' | 'pixel' | 'cloud'.
+ */
+function monogram(cx, cy, w, m) {
+  const { color, kind } = typeof m === 'string' ? { color: m, kind: 'dots' } : m;
+  if (kind === 'pixel') {
+    const p = w / 5;
+    const x0 = cx - w / 2;
+    const y0 = cy - 2 * p;
+    return PIXELS.flatMap((row, r) =>
+      [...row].map((on, c) =>
+        on === '1' ? `<rect x="${x0 + c * p}" y="${y0 + r * p}" width="${p}" height="${p}" fill="${color}"/>` : '',
+      ),
+    ).join('');
+  }
+  if (kind === 'cloud') {
+    const s = w / 100;
+    return `<path transform="translate(${cx - 50 * s} ${cy - 40 * s}) scale(${s})" d="M25 60a20 20 0 0 1 2-40 28 28 0 0 1 50 6 18 18 0 0 1-2 34z" fill="${color}"/>`;
+  }
+  const r = w / 10;
+  const step = w / 4;
+  return DOTS.map(
+    (fill, i) =>
+      `<circle cx="${cx - 1.5 * step + i * step}" cy="${cy}" r="${r}" fill="${fill}" stroke="${color}" stroke-width="${r * 0.4}"/>`,
+  ).join('');
 }
 
 const SHAPES = {
@@ -240,101 +301,36 @@ const SHAPES = {
     <path d="M300 520h200l-20 90H320z" fill="${shade(c, -0.1)}" stroke="${shade(c, -0.25)}" stroke-width="4"/>
     <path d="M380 250v70M420 250v70" stroke="${shade(c, -0.35)}" stroke-width="6" stroke-linecap="round"/>
     ${monogram(400, 400, 80, m)}`,
-  jacket: (c, m) => `
-    <path d="M300 160 360 140h80l60 20 120 70 70 380-82 14-38-260v318H230V364l-38 260-82-14 70-380z" fill="${c}" stroke="${shade(c, -0.25)}" stroke-width="6" stroke-linejoin="round"/>
-    <path d="M360 140l40 50 40-50" fill="${shade(c, -0.2)}"/>
-    <path d="M400 190v492" stroke="${shade(c, -0.4)}" stroke-width="8"/>
-    <path d="M250 520h110M440 520h110" stroke="${shade(c, -0.3)}" stroke-width="6" stroke-linecap="round"/>
-    ${monogram(320, 300, 50, m)}`,
-  cap: (c, m) => `
-    <path d="M200 480q0-230 200-235 200 5 200 235z" fill="${c}" stroke="${shade(c, -0.25)}" stroke-width="6"/>
-    <path d="M180 478q240-40 520 30 18 30-30 44-240-56-490-30z" fill="${shade(c, -0.18)}" stroke="${shade(c, -0.3)}" stroke-width="6"/>
-    <circle cx="400" cy="250" r="16" fill="${shade(c, -0.3)}"/>
-    <path d="M400 255v220" stroke="${shade(c, -0.2)}" stroke-width="5"/>
-    ${monogram(400, 380, 80, m)}`,
   beanie: (c, m) => `
     <circle cx="400" cy="205" r="58" fill="${shade(c, 0.15)}" stroke="${shade(c, -0.2)}" stroke-width="6"/>
     <path d="M230 540q0-280 170-285 170 5 170 285z" fill="${c}" stroke="${shade(c, -0.25)}" stroke-width="6"/>
     <rect x="215" y="520" width="370" height="120" rx="30" fill="${shade(c, -0.15)}" stroke="${shade(c, -0.3)}" stroke-width="6"/>
     ${[260, 310, 360, 410, 460, 510].map((x) => `<path d="M${x + 15} 535v90" stroke="${shade(c, -0.3)}" stroke-width="5"/>`).join('')}
     ${monogram(400, 420, 70, m)}`,
-  backpack: (c, m) => `
-    <path d="M330 190q0-70 70-70t70 70" fill="none" stroke="${shade(c, -0.3)}" stroke-width="22" stroke-linecap="round"/>
-    <rect x="220" y="190" width="360" height="500" rx="90" fill="${c}" stroke="${shade(c, -0.25)}" stroke-width="6"/>
-    <rect x="270" y="440" width="260" height="200" rx="40" fill="${shade(c, -0.12)}" stroke="${shade(c, -0.3)}" stroke-width="5"/>
-    <path d="M290 470h220" stroke="${shade(c, -0.4)}" stroke-width="6" stroke-linecap="round"/>
-    ${monogram(400, 320, 80, m)}`,
   tote: (c, m) => `
     <path d="M300 320q0-170 100-170t100 170" fill="none" stroke="${shade(c, -0.3)}" stroke-width="20"/>
     <path d="M210 300h380l-30 390H240z" fill="${c}" stroke="${shade(c, -0.25)}" stroke-width="6" stroke-linejoin="round"/>
     ${monogram(400, 480, 110, m)}`,
-  pin: (c, m) => `
-    <circle cx="280" cy="330" r="120" fill="#1a73e8" stroke="#174ea6" stroke-width="8"/>
-    <rect x="410" y="200" width="200" height="200" rx="40" fill="#f9ab00" stroke="#c77c00" stroke-width="8"/>
-    <path d="M400 470l110 190H290z" fill="#188038" stroke="#0d652d" stroke-width="8" stroke-linejoin="round"/>
-    ${monogram(280, 330, 90, '#ffffff')}
-    <rect x="460" y="250" width="40" height="40" fill="#202124"/><rect x="520" y="250" width="40" height="40" fill="#202124"/>
-    <path d="M460 330h100v30H460z" fill="#202124"/>`,
-  keychain: (c, m) => `
-    <circle cx="400" cy="200" r="60" fill="none" stroke="#9aa0a6" stroke-width="16"/>
-    <rect x="385" y="250" width="30" height="70" rx="10" fill="#80868b"/>
-    <rect x="250" y="310" width="300" height="300" rx="70" fill="${c}" stroke="${shade(c, -0.25)}" stroke-width="8"/>
-    ${monogram(400, 460, 150, m)}`,
-  bottle: (c, m) => `
-    <rect x="345" y="110" width="110" height="80" rx="20" fill="${shade(c, -0.3)}"/>
-    <rect x="360" y="185" width="80" height="30" fill="${shade(c, -0.2)}"/>
-    <rect x="290" y="210" width="220" height="490" rx="70" fill="${c}" stroke="${shade(c, -0.25)}" stroke-width="6"/>
-    <rect x="315" y="250" width="22" height="400" rx="11" fill="#ffffff" opacity="0.25"/>
-    ${monogram(400, 450, 80, m)}`,
-  mug: (c, m) => `
-    <path d="M520 330h40q80 0 80 90t-80 90h-40" fill="none" stroke="${shade(c, -0.2)}" stroke-width="36"/>
-    <rect x="220" y="260" width="320" height="380" rx="40" fill="${c}" stroke="${shade(c, -0.25)}" stroke-width="6"/>
-    <ellipse cx="380" cy="265" rx="160" ry="22" fill="${shade(c, -0.2)}"/>
-    ${monogram(380, 450, 110, m)}`,
-  notebook: (c, m) => `
-    <rect x="240" y="150" width="340" height="500" rx="22" fill="${c}" stroke="${shade(c, -0.25)}" stroke-width="6"/>
-    <rect x="240" y="150" width="46" height="500" rx="16" fill="${shade(c, -0.2)}"/>
-    <rect x="520" y="150" width="18" height="500" fill="${shade(c, -0.35)}"/>
-    <path d="M440 640v80l20-20 20 20v-80" fill="#d93025"/>
-    ${monogram(410, 360, 110, m)}`,
-  stickers: () => `
-    <rect x="170" y="180" width="260" height="260" rx="50" fill="#1a73e8" transform="rotate(-10 300 310)"/>
-    <circle cx="530" cy="300" r="130" fill="#f9ab00"/>
-    <rect x="230" y="430" width="240" height="200" rx="100" fill="#188038" transform="rotate(8 350 530)"/>
-    <path d="M520 470l110 60-110 140-90-80z" fill="#d93025"/>
-    ${monogram(300, 310, 110, '#ffffff')}
-    ${monogram(530, 300, 90, '#202124')}`,
-  cushion: (c, m) => `
-    <path d="M190 210q210-40 420 0 40 190 0 380-210 40-420 0-40-190 0-380z" fill="${c}" stroke="${shade(c, -0.25)}" stroke-width="6"/>
-    <path d="M230 250q170-30 340 0 30 150 0 300-170 30-340 0-30-150 0-300z" fill="none" stroke="${shade(c, -0.15)}" stroke-width="4" stroke-dasharray="14 10"/>
-    ${monogram(400, 400, 130, m)}`,
   giftbox: (c, m) => `
     <rect x="200" y="330" width="400" height="340" rx="20" fill="#1a73e8" stroke="#174ea6" stroke-width="6"/>
     <rect x="180" y="270" width="440" height="90" rx="20" fill="#4285f4" stroke="#174ea6" stroke-width="6"/>
     <rect x="370" y="270" width="60" height="400" fill="#f9ab00"/>
     <path d="M400 270q-120-130-150-40-10 40 150 40zm0 0q120-130 150-40 10 40-150 40z" fill="#f9ab00" stroke="#c77c00" stroke-width="6"/>
     ${monogram(290, 510, 90, '#ffffff')}`,
-  plush: (c) => `
-    <circle cx="290" cy="210" r="60" fill="${shade(c, -0.1)}"/><circle cx="510" cy="210" r="60" fill="${shade(c, -0.1)}"/>
-    <ellipse cx="400" cy="530" rx="190" ry="170" fill="${c}" stroke="${shade(c, -0.25)}" stroke-width="6"/>
-    <circle cx="400" cy="310" r="150" fill="${c}" stroke="${shade(c, -0.25)}" stroke-width="6"/>
-    <circle cx="350" cy="295" r="16" fill="#202124"/><circle cx="450" cy="295" r="16" fill="#202124"/>
-    <ellipse cx="400" cy="350" rx="40" ry="26" fill="${shade(c, 0.3)}"/>
-    <path d="M385 345h30" stroke="#202124" stroke-width="8" stroke-linecap="round"/>
-    <ellipse cx="400" cy="560" rx="100" ry="90" fill="${shade(c, 0.25)}"/>`,
+  globe: (c, m) => `
+    <circle cx="400" cy="330" r="210" fill="#e8f0fe" stroke="#9aa0a6" stroke-width="8"/>
+    <path d="M230 450q170-50 340 0l-20 50H250z" fill="#ffffff"/>
+    ${[[320, 230], [470, 210], [380, 170], [520, 320], [270, 340], [430, 280]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r="9" fill="#ffffff" stroke="#dadce0" stroke-width="2"/>`).join('')}
+    <path d="M385 300h30v150h-30zM340 350h25v50h-25zM340 390h45v25h-45zM435 330h25v50h-25zM415 370h45v25h-45z" fill="#5f6368"/>
+    <path d="M250 520h300l40 150H210z" fill="${c}" stroke="${shade(c, -0.25)}" stroke-width="6" stroke-linejoin="round"/>
+    ${monogram(400, 600, 90, m)}`,
+  bike: (c) => `
+    <circle cx="240" cy="500" r="120" fill="none" stroke="#202124" stroke-width="18"/>
+    <circle cx="560" cy="500" r="120" fill="none" stroke="#202124" stroke-width="18"/>
+    <path d="M240 500 360 300l60 200zM360 300h160l-100 200M520 300l40 200" fill="none" stroke="${c}" stroke-width="22" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M325 285h80M520 300l10-50h50" fill="none" stroke="#202124" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="420" cy="500" r="18" fill="#202124"/>`,
 };
-
-function productSvg(shape, hex, { detail = false } = {}) {
-  const markColor = luminance(hex) > 0.45 ? '#202124' : '#ffffff';
-  const body = SHAPES[shape](hex, markColor);
-  const viewBox = detail ? '200 200 400 400' : `0 0 ${SIZE} ${SIZE}`;
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${viewBox}" width="${SIZE}" height="${SIZE}">
-  <rect x="0" y="0" width="${SIZE}" height="${SIZE}" fill="#f1f3f4"/>
-  <ellipse cx="400" cy="720" rx="230" ry="26" fill="#000" opacity="0.06"/>
-  ${body.trim()}
-</svg>
-`;
-}
 
 // ---------------------------------------------------------------------------
 // Banners (formas abstratas; o texto fica no HTML, acessível)
@@ -343,16 +339,16 @@ function heroSvg() {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#e8f0fe"/><stop offset="0.55" stop-color="#d7c4fb"/><stop offset="1" stop-color="#fbd2e6"/>
+      <stop offset="0" stop-color="#fce8e6"/><stop offset="0.55" stop-color="#fef7e0"/><stop offset="1" stop-color="#e6f4ea"/>
     </linearGradient>
   </defs>
   <rect width="1600" height="900" fill="url(#sky)"/>
   <circle cx="1220" cy="430" r="300" fill="#ffffff" opacity="0.45"/>
-  <circle cx="1220" cy="430" r="210" fill="#f9ab00" opacity="0.35"/>
-  <path d="M0 720q400-120 800-20t800-60v260H0z" fill="#a142f4" opacity="0.25"/>
-  <path d="M0 790q420-90 820 0t780-30v140H0z" fill="#1a73e8" opacity="0.25"/>
-  <g transform="translate(1000 230) scale(0.55)">${SHAPES.hoodie('#a142f4', '#ffffff')}</g>
-  <g transform="translate(1180 330) scale(0.42)">${SHAPES.tshirt('#1a73e8', '#ffffff')}</g>
+  <circle cx="1220" cy="430" r="210" fill="#f9ab00" opacity="0.3"/>
+  <path d="M0 720q400-120 800-20t800-60v260H0z" fill="#188038" opacity="0.22"/>
+  <path d="M0 790q420-90 820 0t780-30v140H0z" fill="#d93025" opacity="0.2"/>
+  <g transform="translate(1000 230) scale(0.55)">${SHAPES.hoodie('#d93025', '#ffffff')}</g>
+  <g transform="translate(1190 340) scale(0.42)">${SHAPES.beanie('#188038', '#ffffff')}</g>
 </svg>
 `;
 }
@@ -363,19 +359,19 @@ function seasonalSvg() {
   <circle cx="1350" cy="120" r="180" fill="#f9ab00" opacity="0.25"/>
   <circle cx="980" cy="640" r="220" fill="#d93025" opacity="0.12"/>
   <g transform="translate(900 120) scale(0.6)">${SHAPES.giftbox()}</g>
-  <g transform="translate(1180 230) scale(0.45)">${SHAPES.plush('#f9ab00')}</g>
+  <g transform="translate(1180 230) scale(0.45)">${SHAPES.globe('#188038', { color: '#ffffff', kind: 'pixel' })}</g>
 </svg>
 `;
 }
 
 function collectionSvg(col) {
   const [a, b, bg] = col.palette;
-  const shape = { aurora: 'hoodie', essenciais: 'tshirt', dev: 'backpack', eco: 'bottle' }[col.slug];
+  const { shape, mark } = col.art;
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
   <rect width="800" height="600" fill="${bg}"/>
   <circle cx="600" cy="140" r="160" fill="${a}" opacity="0.18"/>
   <circle cx="160" cy="520" r="200" fill="${b}" opacity="0.14"/>
-  <g transform="translate(160 40) scale(0.65)">${SHAPES[shape](a, '#ffffff')}</g>
+  <g transform="translate(160 40) scale(0.65)">${SHAPES[shape](a, { color: '#ffffff', kind: mark })}</g>
 </svg>
 `;
 }
@@ -398,21 +394,14 @@ const products = defs.map((d, i) => {
   const colorKeys = d.colors.length ? d.colors : [null];
   const sizeKeys = d.sizes.length ? d.sizes : [null];
 
-  const images = [];
-  for (const key of colorKeys) {
-    const hex = key ? COLORS[key].hex : '#1a73e8';
-    const file = key ? `${slug}-${key}.svg` : `${slug}.svg`;
-    write(join(IMAGES, file), productSvg(d.shape, hex));
-    images.push({
-      src: `${IMG_PREFIX}/${file}`,
-      alt: key ? `${d.name} na cor ${COLORS[key].label.toLowerCase()}, vista frontal` : `${d.name}, vista frontal`,
-      width: SIZE,
-      height: SIZE,
-    });
-  }
-  const firstHex = colorKeys[0] ? COLORS[colorKeys[0]].hex : '#1a73e8';
-  write(join(IMAGES, `${slug}-detalhe.svg`), productSvg(d.shape, firstHex, { detail: true }));
-  images.push({ src: `${IMG_PREFIX}/${slug}-detalhe.svg`, alt: `Detalhe ampliado de ${d.name}`, width: SIZE, height: SIZE });
+  const urls = OFFICIAL_IMAGES[d.ref];
+  if (!urls?.length) throw new Error(`sem foto oficial para ${d.name} (${d.ref})`);
+  const images = urls.map((src, k) => ({
+    src,
+    alt: k === 0 ? `${d.name}, foto do produto` : `${d.name}, outra vista`,
+    width: SIZE,
+    height: SIZE,
+  }));
 
   const variants = [];
   colorKeys.forEach((color, ci) =>
@@ -457,7 +446,7 @@ for (const col of collections) {
 write(join(IMAGES, 'banner-hero.svg'), heroSvg());
 write(join(IMAGES, 'banner-sazonal.svg'), seasonalSvg());
 
-const collectionsJson = collections.map(({ palette: _palette, ...c }) => ({
+const collectionsJson = collections.map(({ palette: _palette, art: _art, ...c }) => ({
   ...c,
   image: { src: `${IMG_PREFIX}/colecao-${c.slug}.svg`, alt: '', width: 800, height: 600 },
 }));

@@ -1,51 +1,64 @@
 [
   {
-    "slug": "aurora",
-    "name": "Coleção Aurora",
-    "tagline": "Cores do amanhecer para a nova estação",
-    "description": "Tons de azul e lilás inspirados no céu da manhã, em peças macias e versáteis.",
-    "theme": "campaign-1",
-    "image": {
-      "src": "catalog/images/colecao-aurora.svg",
-      "alt": "",
-      "width": 800,
-      "height": 600
-    }
-  },
-  {
-    "slug": "essenciais",
-    "name": "Linha Essencial",
-    "tagline": "Os básicos que combinam com tudo",
-    "description": "Peças atemporais em cores neutras, feitas para durar e usar todos os dias.",
-    "theme": "campaign-2",
-    "image": {
-      "src": "catalog/images/colecao-essenciais.svg",
-      "alt": "",
-      "width": 800,
-      "height": 600
-    }
-  },
-  {
-    "slug": "dev",
-    "name": "Coleção Dev",
-    "tagline": "Para quem vive entre commits e cafés",
-    "description": "Estampas de pixel, código e terminal para quem desenvolve software.",
+    "slug": "holiday-2026",
+    "name": "Holiday 2026",
+    "tagline": "Clima de festa para o fim de ano",
+    "description": "Suéter, gorro e globo de neve em vermelho e verde para as festas.",
     "theme": "campaign-4",
     "image": {
-      "src": "catalog/images/colecao-dev.svg",
+      "src": "catalog/images/colecao-holiday-2026.svg",
       "alt": "",
       "width": 800,
       "height": 600
     }
   },
   {
-    "slug": "eco",
-    "name": "Linha Eco",
-    "tagline": "Materiais reciclados e reutilizáveis",
-    "description": "Algodão reciclado, garrafas reutilizáveis e embalagens sem plástico.",
+    "slug": "google-g",
+    "name": "Google G",
+    "tagline": "As quatro cores em peças do dia a dia",
+    "description": "Camisetas, moletons, garrafas e acessórios com as cores clássicas.",
+    "theme": "campaign-1",
+    "image": {
+      "src": "catalog/images/colecao-google-g.svg",
+      "alt": "",
+      "width": 800,
+      "height": 600
+    }
+  },
+  {
+    "slug": "chrome-dino",
+    "name": "Chrome Dino",
+    "tagline": "Para quem já ficou sem internet",
+    "description": "Peças em pixel art inspiradas no jogo do navegador offline.",
+    "theme": "campaign-2",
+    "image": {
+      "src": "catalog/images/colecao-chrome-dino.svg",
+      "alt": "",
+      "width": 800,
+      "height": 600
+    }
+  },
+  {
+    "slug": "g-bike",
+    "name": "G Bike",
+    "tagline": "As bicicletas coloridas do campus",
+    "description": "Camisetas, garrafas e miniaturas inspiradas nas bicicletas do campus.",
     "theme": "campaign-3",
     "image": {
-      "src": "catalog/images/colecao-eco.svg",
+      "src": "catalog/images/colecao-g-bike.svg",
+      "alt": "",
+      "width": 800,
+      "height": 600
+    }
+  },
+  {
+    "slug": "sustentavel",
+    "name": "Sustentável",
+    "tagline": "Orgânico, reciclado e reutilizável",
+    "description": "Algodão orgânico, materiais reciclados e garrafas reutilizáveis.",
+    "theme": "campaign-3",
+    "image": {
+      "src": "catalog/images/colecao-sustentavel.svg",
       "alt": "",
       "width": 800,
       "height": 600

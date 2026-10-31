@@ -13,7 +13,8 @@ const TOPICS: Record<string, InfoTopic> = {
     title: 'Sobre a loja',
     paragraphs: [
       'A Merch Store é uma loja de demonstração criada para o workshop "Do monólito aos Micro Frontends".',
-      'Todos os produtos, preços e coleções são fictícios. Nenhum pedido é processado e nenhum dado de pagamento é coletado.',
+      'Os produtos, preços e fotos vêm do catálogo público da Google Merch Shop (preços convertidos para reais). Esta loja de demonstração não tem vínculo com o Google.',
+      'Nenhum pedido é processado e nenhum dado de pagamento é coletado.',
     ],
   },
   entregas: {

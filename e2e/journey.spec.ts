@@ -7,7 +7,7 @@ test.describe('Jornada de compra', () => {
     // Home
     await page.goto('/');
     await expect(page).toHaveTitle(/Merch Store/);
-    await expect(page.getByRole('heading', { level: 1, name: 'Aurora chegou' })).toBeVisible();
+    await expect(page.getByRole('heading', { level: 1, name: 'Holiday 2026 chegou' })).toBeVisible();
 
     // Categoria pelo menu
     await openCategoryFromMenu(page, 'Vestuário');
@@ -17,17 +17,17 @@ test.describe('Jornada de compra', () => {
     // Filtro (estado na URL)
     await page.getByLabel('Tipo').selectOption({ label: 'Camisetas' });
     await expect(page).toHaveURL(/subcategoria=camisetas/);
-    await expect(page.getByRole('main').getByRole('status')).toHaveText('4 produtos');
+    await expect(page.getByRole('main').getByRole('status')).toHaveText('6 produtos');
 
     // Produto
-    await page.getByRole('link', { name: 'Camiseta Clássica' }).click();
-    await expect(page).toHaveURL(/\/p\/camiseta-classica$/);
-    await expect(page.getByRole('heading', { level: 1, name: 'Camiseta Clássica' })).toBeVisible();
+    await page.getByRole('link', { name: 'Camiseta Google G', exact: true }).click();
+    await expect(page).toHaveURL(/\/p\/camiseta-google-g$/);
+    await expect(page.getByRole('heading', { level: 1, name: 'Camiseta Google G' })).toBeVisible();
     const add = page.getByRole('button', { name: 'Adicionar ao carrinho' });
     await expect(add).toBeDisabled();
 
     // Variante: cor + tamanho
-    await page.getByRole('radio', { name: 'Azul' }).check();
+    await page.getByRole('radio', { name: 'Preto' }).check();
     await page.getByRole('radio', { name: 'M', exact: true }).check();
     await expect(add).toBeEnabled();
     await page.getByRole('button', { name: 'Aumentar quantidade' }).click();
@@ -43,7 +43,7 @@ test.describe('Jornada de compra', () => {
     await page.getByLabel('Cupom de desconto').fill('WORKSHOP10');
     await page.getByRole('button', { name: 'Aplicar' }).click();
     await expect(page.getByText('Cupom WORKSHOP10 aplicado.')).toBeVisible();
-    await expect(page.getByRole('definition').filter({ hasText: '−R$' })).toHaveText(/−R\$\s15,98/);
+    await expect(page.getByRole('definition').filter({ hasText: '−R$' })).toHaveText(/−R\$\s41,98/);
     await page.getByRole('link', { name: 'Continuar', exact: true }).click();
 
     // Entrega

@@ -2,7 +2,7 @@
   {
     "slug": "vestuario",
     "name": "Vestuário",
-    "description": "Camisetas, moletons, jaquetas e bonés para o dia a dia.",
+    "description": "Camisetas, moletons, jaquetas, bonés e roupas infantis.",
     "subcategories": [
       {
         "slug": "camisetas",
@@ -29,7 +29,7 @@
   {
     "slug": "bolsas-acessorios",
     "name": "Bolsas & Acessórios",
-    "description": "Mochilas, bolsas, pins e chaveiros para levar a marca com você.",
+    "description": "Mochilas, bolsas, pins e chaveiros.",
     "subcategories": [
       {
         "slug": "mochilas",
@@ -48,7 +48,7 @@
   {
     "slug": "lifestyle",
     "name": "Lifestyle",
-    "description": "Garrafas, canecas, papelaria e itens para casa.",
+    "description": "Garrafas, cadernos, adesivos e itens para casa.",
     "subcategories": [
       {
         "slug": "garrafas-canecas",
@@ -67,15 +67,15 @@
   {
     "slug": "presentes",
     "name": "Presentes",
-    "description": "Kits prontos e pelúcias para presentear.",
+    "description": "Colecionáveis e brinquedos para presentear.",
     "subcategories": [
       {
-        "slug": "kits",
-        "name": "Kits"
+        "slug": "colecionaveis",
+        "name": "Colecionáveis"
       },
       {
-        "slug": "pelucias",
-        "name": "Pelúcias"
+        "slug": "brinquedos",
+        "name": "Brinquedos"
       }
     ]
   }

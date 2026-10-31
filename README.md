@@ -1,6 +1,6 @@
 # Merch Store — monólito Angular (fase 1)
 
-Loja de merch fictícia do workshop **"Do monólito aos Micro Frontends em produção: Native Federation + Cloud Run"**.
+Loja de merch de demonstração (produtos do catálogo público da Google Merch Shop, fotos oficiais referenciadas por URL) do workshop **"Do monólito aos Micro Frontends em produção: Native Federation + Cloud Run"**.
 Esta é a **fase 1**: um monólito Angular 22 bem componentizado, com fronteiras de domínio explícitas
 (`core` → shell, `domains/catalog`, `domains/checkout`, `shared/*`), pronto para ser fatiado na fase 2.
 

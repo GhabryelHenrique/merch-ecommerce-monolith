@@ -125,7 +125,8 @@ O ESLint (`no-restricted-imports`) aplica as regras 1 a 4. Lint vermelho é viol
 - Estilos globais só em `src/styles/` (reset + tokens). O resto é estilo de componente, encapsulado. Componentes usam tokens (`var(--color-…)`), nunca valores soltos.
 - Interface em **pt-BR**; código em inglês; mensagens de commit em pt-BR.
 - `LOCALE_ID` `pt-BR`, moeda BRL. Preços sempre em **centavos inteiros** (`priceInCents`); formatação só na exibição.
-- Assets próprios (SVGs gerados no repositório). Não use logos, fotos, nomes de marca ou textos da Google. Nenhuma requisição a hosts externos em runtime — inclusive fontes (use stack de sistema).
+- Produtos: **nomes, preços e fotos** vêm do catálogo público da Google Merch Shop (preços convertidos para BRL por `tools/generate-catalog.mjs`). As fotos são **referenciadas por URL** (`tools/official-images.json`), nunca copiadas para o repositório. Banners, coleções e ícones são SVGs próprios; descrições são texto próprio; produtos de outras marcas ficam de fora.
+- Nenhuma requisição a hosts externos em runtime — inclusive fontes (use stack de sistema). **Única exceção:** imagens de `https://your.merch.google` (liberada na CSP do nginx e no guard do e2e).
 - WCAG 2.2 AA: HTML semântico, label em todo campo, foco visível, navegação completa por teclado, `alt` descritivo, contraste AA, skip link e foco movido para o conteúdo principal ao navegar. Menu, accordion e tabs com `@angular/aria`.
 
 ## 9. Testes
@@ -144,6 +145,8 @@ Uma etapa só termina quando:
 
 Não rode `git push`, `gcloud`, `docker push` nem nada que publique ou gaste recursos sem pedido explícito.
 
+Não adicione trailer Co-Authored-By nos commits.
+
 ## 11. Não faça
 
-NgModules · `standalone: true` explícito · `@Input`/`@Output`/`@HostBinding`/`@HostListener` · `*ngIf`/`*ngFor`/`ngClass`/`ngStyle` · `any` · SSR · Angular Material, Tailwind, NgRx, libs de carrossel, ícones ou máscara · fontes, imagens ou APIs externas em runtime · coleta de dados reais de pagamento · import entre domínios · atualizar versões sem pedido.
+NgModules · `standalone: true` explícito · `@Input`/`@Output`/`@HostBinding`/`@HostListener` · `*ngIf`/`*ngFor`/`ngClass`/`ngStyle` · `any` · SSR · Angular Material, Tailwind, NgRx, libs de carrossel, ícones ou máscara · fontes, imagens ou APIs externas em runtime (exceto as fotos oficiais dos produtos, ver §8) · coleta de dados reais de pagamento · import entre domínios · atualizar versões sem pedido.

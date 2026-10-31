@@ -7,13 +7,12 @@
     <rect x="180" y="270" width="440" height="90" rx="20" fill="#4285f4" stroke="#174ea6" stroke-width="6"/>
     <rect x="370" y="270" width="60" height="400" fill="#f9ab00"/>
     <path d="M400 270q-120-130-150-40-10 40 150 40zm0 0q120-130 150-40 10 40-150 40z" fill="#f9ab00" stroke="#c77c00" stroke-width="6"/>
-    <path transform="translate(245 470.625) scale(2.8125)" d="M0 28V0h7l9 13 9-13h7v28h-7V12l-9 12-9-12v16z" fill="#ffffff"/></g>
+    <circle cx="256.25" cy="510" r="9" fill="#4285f4" stroke="#ffffff" stroke-width="3.6"/><circle cx="278.75" cy="510" r="9" fill="#ea4335" stroke="#ffffff" stroke-width="3.6"/><circle cx="301.25" cy="510" r="9" fill="#fbbc04" stroke="#ffffff" stroke-width="3.6"/><circle cx="323.75" cy="510" r="9" fill="#34a853" stroke="#ffffff" stroke-width="3.6"/></g>
   <g transform="translate(1180 230) scale(0.45)">
-    <circle cx="290" cy="210" r="60" fill="#e09a00"/><circle cx="510" cy="210" r="60" fill="#e09a00"/>
-    <ellipse cx="400" cy="530" rx="190" ry="170" fill="#f9ab00" stroke="#bb8000" stroke-width="6"/>
-    <circle cx="400" cy="310" r="150" fill="#f9ab00" stroke="#bb8000" stroke-width="6"/>
-    <circle cx="350" cy="295" r="16" fill="#202124"/><circle cx="450" cy="295" r="16" fill="#202124"/>
-    <ellipse cx="400" cy="350" rx="40" ry="26" fill="#ffde00"/>
-    <path d="M385 345h30" stroke="#202124" stroke-width="8" stroke-linecap="round"/>
-    <ellipse cx="400" cy="560" rx="100" ry="90" fill="#ffd600"/></g>
+    <circle cx="400" cy="330" r="210" fill="#e8f0fe" stroke="#9aa0a6" stroke-width="8"/>
+    <path d="M230 450q170-50 340 0l-20 50H250z" fill="#ffffff"/>
+    <circle cx="320" cy="230" r="9" fill="#ffffff" stroke="#dadce0" stroke-width="2"/><circle cx="470" cy="210" r="9" fill="#ffffff" stroke="#dadce0" stroke-width="2"/><circle cx="380" cy="170" r="9" fill="#ffffff" stroke="#dadce0" stroke-width="2"/><circle cx="520" cy="320" r="9" fill="#ffffff" stroke="#dadce0" stroke-width="2"/><circle cx="270" cy="340" r="9" fill="#ffffff" stroke="#dadce0" stroke-width="2"/><circle cx="430" cy="280" r="9" fill="#ffffff" stroke="#dadce0" stroke-width="2"/>
+    <path d="M385 300h30v150h-30zM340 350h25v50h-25zM340 390h45v25h-45zM435 330h25v50h-25zM415 370h45v25h-45z" fill="#5f6368"/>
+    <path d="M250 520h300l40 150H210z" fill="#188038" stroke="#12602a" stroke-width="6" stroke-linejoin="round"/>
+    <rect x="373" y="564" width="18" height="18" fill="#ffffff"/><rect x="391" y="564" width="18" height="18" fill="#ffffff"/><rect x="409" y="564" width="18" height="18" fill="#ffffff"/><rect x="355" y="582" width="18" height="18" fill="#ffffff"/><rect x="373" y="582" width="18" height="18" fill="#ffffff"/><rect x="409" y="582" width="18" height="18" fill="#ffffff"/><rect x="427" y="582" width="18" height="18" fill="#ffffff"/><rect x="355" y="600" width="18" height="18" fill="#ffffff"/><rect x="373" y="600" width="18" height="18" fill="#ffffff"/><rect x="391" y="600" width="18" height="18" fill="#ffffff"/><rect x="409" y="600" width="18" height="18" fill="#ffffff"/><rect x="427" y="600" width="18" height="18" fill="#ffffff"/><rect x="355" y="618" width="18" height="18" fill="#ffffff"/><rect x="391" y="618" width="18" height="18" fill="#ffffff"/><rect x="427" y="618" width="18" height="18" fill="#ffffff"/></g>
 </svg>

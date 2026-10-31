@@ -15,8 +15,8 @@ test.describe('Acessibilidade (axe, sem violações serious/critical)', () => {
   });
 
   test('produto', async ({ page }) => {
-    await page.goto('/p/camiseta-classica');
-    await expect(page.getByRole('heading', { level: 1, name: 'Camiseta Clássica' })).toBeVisible();
+    await page.goto('/p/camiseta-google-g');
+    await expect(page.getByRole('heading', { level: 1, name: 'Camiseta Google G' })).toBeVisible();
     await scrollThrough(page);
     expect(await seriousA11yViolations(page)).toEqual([]);
   });

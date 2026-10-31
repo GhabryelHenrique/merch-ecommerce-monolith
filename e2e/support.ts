@@ -8,9 +8,12 @@ import { type Page, expect, test as base } from '@playwright/test';
  */
 const DEV_ONLY_NOISE = /Transition was aborted because of invalid state/;
 
+/** Única exceção externa: as fotos oficiais dos produtos (tools/official-images.json). */
+const ALLOWED_IMAGE_ORIGIN = 'https://your.merch.google';
+
 /**
  * Fixture comum: falha o teste se houver erro no console, exceção na página
- * ou requisição para outro host (critério de aceite: nada externo em runtime).
+ * ou requisição para outro host — exceto imagens do site oficial.
  */
 export const test = base.extend<{ guard: void }>({
   guard: [
@@ -23,7 +26,10 @@ export const test = base.extend<{ guard: void }>({
       page.on('pageerror', (err) => problems.push(`pageerror: ${err.message}`));
       page.on('request', (req) => {
         const url = req.url();
-        if (!url.startsWith('data:') && new URL(url).origin !== origin) problems.push(`externa: ${url}`);
+        if (url.startsWith('data:')) return;
+        const target = new URL(url).origin;
+        const officialImage = target === ALLOWED_IMAGE_ORIGIN && req.resourceType() === 'image';
+        if (target !== origin && !officialImage) problems.push(`externa: ${url}`);
       });
       await use();
       expect(problems, 'erros de console, exceções ou requisições externas').toEqual([]);
@@ -70,7 +76,7 @@ export async function openCategoryFromMenu(page: Page, section: string): Promise
 
 /** Adiciona um produto simples (sem tamanho) ao carrinho pela UI. */
 export async function addBottleToCart(page: Page): Promise<void> {
-  await page.goto('/p/garrafa-termica-500-ml');
+  await page.goto('/p/garrafa-termica-google-g');
   await page.getByRole('button', { name: 'Adicionar ao carrinho' }).click();
   await expect(page.getByRole('link', { name: /^Carrinho, 1 item/ })).toBeVisible();
 }

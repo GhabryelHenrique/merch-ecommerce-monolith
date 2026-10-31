@@ -59,16 +59,17 @@ export const MAIN_MENU: readonly MenuSection[] = [
     label: 'Coleções',
     path: '/c/todos',
     children: [
-      collection('aurora', 'Coleção Aurora'),
-      collection('essenciais', 'Linha Essencial'),
-      collection('dev', 'Coleção Dev'),
-      collection('eco', 'Linha Eco'),
+      collection('holiday-2026', 'Holiday 2026'),
+      collection('google-g', 'Google G'),
+      collection('chrome-dino', 'Chrome Dino'),
+      collection('g-bike', 'G Bike'),
+      collection('sustentavel', 'Sustentável'),
     ],
   },
   {
     label: 'Presentes',
     path: '/c/presentes',
-    children: [sub('presentes', 'kits', 'Kits'), sub('presentes', 'pelucias', 'Pelúcias')],
+    children: [sub('presentes', 'colecionaveis', 'Colecionáveis'), sub('presentes', 'brinquedos', 'Brinquedos')],
   },
   { label: 'Promoções', path: '/c/promocoes' },
 ];

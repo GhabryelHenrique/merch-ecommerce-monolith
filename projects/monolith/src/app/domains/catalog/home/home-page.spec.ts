@@ -7,9 +7,9 @@ import { HomePage } from './home-page';
 
 const image = { src: 'catalog/images/x.svg', alt: '', width: 1600, height: 900 };
 const banners: Banners = {
-  hero: { eyebrow: 'Nova', title: 'Aurora chegou', subtitle: '', ctaLabel: 'Ver', ctaUrl: '/c/todos', image },
+  hero: { eyebrow: 'Nova', title: 'Holiday 2026 chegou', subtitle: '', ctaLabel: 'Ver', ctaUrl: '/c/todos', image },
   seasonal: { eyebrow: 'Presentes', title: 'Presentes que todo mundo usa', subtitle: '', ctaLabel: 'Ver', ctaUrl: '/c/presentes', image },
-  sustainability: { title: 'Feito para durar', text: '', ctaLabel: 'Eco', ctaUrl: '/c/todos?colecao=eco' },
+  sustainability: { title: 'Feito para durar', text: '', ctaLabel: 'Eco', ctaUrl: '/c/todos?colecao=sustentavel' },
 };
 
 describe('HomePage', () => {
@@ -21,7 +21,7 @@ describe('HomePage', () => {
         provideFakeProductApi({
           banners,
           products: Array.from({ length: 10 }, (_, i) => makeProduct({ id: String(i), popularity: i })),
-          collections: ['aurora', 'essenciais', 'dev', 'eco'].map((slug) => ({
+          collections: ['holiday-2026', 'google-g', 'chrome-dino', 'g-bike', 'sustentavel'].map((slug) => ({
             slug,
             name: `Coleção ${slug}`,
             tagline: '',
@@ -40,7 +40,7 @@ describe('HomePage', () => {
 
   it('hero acima da dobra com h1 e imagem prioritária', () => {
     const el = setup().nativeElement as HTMLElement;
-    expect(el.querySelector('h1')?.textContent).toBe('Aurora chegou');
+    expect(el.querySelector('h1')?.textContent).toBe('Holiday 2026 chegou');
     expect(el.querySelector('img')?.getAttribute('fetchpriority')).toBe('high');
   });
 
@@ -56,7 +56,7 @@ describe('HomePage', () => {
     expect(el.querySelectorAll('merch-product-carousel merch-product-card')).toHaveLength(8);
     expect(el.querySelector('#sazonal-titulo')?.textContent).toContain('Presentes');
     expect(el.querySelectorAll('merch-collection-card')).toHaveLength(3);
-    expect(el.textContent).not.toContain('Coleção aurora');
+    expect(el.textContent).not.toContain('Coleção holiday-2026');
     expect(el.querySelector('#sustentabilidade-titulo')).not.toBeNull();
   });
 });

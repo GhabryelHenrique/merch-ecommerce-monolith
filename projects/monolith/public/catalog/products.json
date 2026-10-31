@@ -1,37 +1,25 @@
 [
   {
     "id": "001",
-    "slug": "camiseta-classica",
-    "name": "Camiseta Clássica",
-    "description": "Camiseta de algodão penteado com o monograma M bordado no peito. Modelagem reta e gola reforçada.",
+    "slug": "camiseta-google-g",
+    "name": "Camiseta Google G",
+    "description": "Camiseta unissex de algodão orgânico com o G em quatro cores no peito. Modelagem reta e gola reforçada.",
     "categorySlug": "vestuario",
     "subcategorySlug": "camisetas",
     "collectionSlugs": [
-      "essenciais"
+      "google-g"
     ],
-    "priceInCents": 7990,
+    "priceInCents": 20990,
     "images": [
       {
-        "src": "catalog/images/camiseta-classica-preto.svg",
-        "alt": "Camiseta Clássica na cor preto, vista frontal",
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2422_001.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300&format=jpeg",
+        "alt": "Camiseta Google G, foto do produto",
         "width": 800,
         "height": 800
       },
       {
-        "src": "catalog/images/camiseta-classica-branco.svg",
-        "alt": "Camiseta Clássica na cor branco, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/camiseta-classica-azul.svg",
-        "alt": "Camiseta Clássica na cor azul, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/camiseta-classica-detalhe.svg",
-        "alt": "Detalhe ampliado de Camiseta Clássica",
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2422_002.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Camiseta Google G, outra vista",
         "width": 800,
         "height": 800
       }
@@ -42,16 +30,6 @@
           "slug": "preto",
           "label": "Preto",
           "hex": "#202124"
-        },
-        {
-          "slug": "branco",
-          "label": "Branco",
-          "hex": "#f8f9fa"
-        },
-        {
-          "slug": "azul",
-          "label": "Azul",
-          "hex": "#1a73e8"
         }
       ],
       "sizes": [
@@ -84,55 +62,7 @@
         "sku": "MS-001-PRETO-GG",
         "color": "preto",
         "size": "GG",
-        "stock": 6
-      },
-      {
-        "sku": "MS-001-BRANCO-P",
-        "color": "branco",
-        "size": "P",
-        "stock": 10
-      },
-      {
-        "sku": "MS-001-BRANCO-M",
-        "color": "branco",
-        "size": "M",
-        "stock": 3
-      },
-      {
-        "sku": "MS-001-BRANCO-G",
-        "color": "branco",
-        "size": "G",
-        "stock": 8
-      },
-      {
-        "sku": "MS-001-BRANCO-GG",
-        "color": "branco",
-        "size": "GG",
         "stock": 0
-      },
-      {
-        "sku": "MS-001-AZUL-P",
-        "color": "azul",
-        "size": "P",
-        "stock": 5
-      },
-      {
-        "sku": "MS-001-AZUL-M",
-        "color": "azul",
-        "size": "M",
-        "stock": 10
-      },
-      {
-        "sku": "MS-001-AZUL-G",
-        "color": "azul",
-        "size": "G",
-        "stock": 3
-      },
-      {
-        "sku": "MS-001-AZUL-GG",
-        "color": "azul",
-        "size": "GG",
-        "stock": 8
       }
     ],
     "badges": [
@@ -144,378 +74,29 @@
   },
   {
     "id": "002",
-    "slug": "camiseta-aurora-degrade",
-    "name": "Camiseta Aurora Degradê",
-    "description": "Estampa em degradê inspirada no amanhecer, com toque macio e tinta à base d’água.",
+    "slug": "camiseta-google-cloud-azul-marinho",
+    "name": "Camiseta Google Cloud Azul-marinho",
+    "description": "Camiseta azul-marinho com a nuvem do Google Cloud estampada em branco.",
     "categorySlug": "vestuario",
     "subcategorySlug": "camisetas",
-    "collectionSlugs": [
-      "aurora"
-    ],
-    "priceInCents": 9990,
+    "collectionSlugs": [],
+    "priceInCents": 18190,
     "images": [
       {
-        "src": "catalog/images/camiseta-aurora-degrade-lilas.svg",
-        "alt": "Camiseta Aurora Degradê na cor lilás, vista frontal",
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2226_003.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300",
+        "alt": "Camiseta Google Cloud Azul-marinho, foto do produto",
         "width": 800,
         "height": 800
       },
       {
-        "src": "catalog/images/camiseta-aurora-degrade-azul.svg",
-        "alt": "Camiseta Aurora Degradê na cor azul, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/camiseta-aurora-degrade-detalhe.svg",
-        "alt": "Detalhe ampliado de Camiseta Aurora Degradê",
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2226_023.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300",
+        "alt": "Camiseta Google Cloud Azul-marinho, outra vista",
         "width": 800,
         "height": 800
       }
     ],
     "options": {
       "colors": [
-        {
-          "slug": "lilas",
-          "label": "Lilás",
-          "hex": "#a142f4"
-        },
-        {
-          "slug": "azul",
-          "label": "Azul",
-          "hex": "#1a73e8"
-        }
-      ],
-      "sizes": [
-        "P",
-        "M",
-        "G",
-        "GG"
-      ]
-    },
-    "variants": [
-      {
-        "sku": "MS-002-LILAS-P",
-        "color": "lilas",
-        "size": "P",
-        "stock": 10
-      },
-      {
-        "sku": "MS-002-LILAS-M",
-        "color": "lilas",
-        "size": "M",
-        "stock": 3
-      },
-      {
-        "sku": "MS-002-LILAS-G",
-        "color": "lilas",
-        "size": "G",
-        "stock": 8
-      },
-      {
-        "sku": "MS-002-LILAS-GG",
-        "color": "lilas",
-        "size": "GG",
-        "stock": 13
-      },
-      {
-        "sku": "MS-002-AZUL-P",
-        "color": "azul",
-        "size": "P",
-        "stock": 5
-      },
-      {
-        "sku": "MS-002-AZUL-M",
-        "color": "azul",
-        "size": "M",
-        "stock": 10
-      },
-      {
-        "sku": "MS-002-AZUL-G",
-        "color": "azul",
-        "size": "G",
-        "stock": 3
-      },
-      {
-        "sku": "MS-002-AZUL-GG",
-        "color": "azul",
-        "size": "GG",
-        "stock": 8
-      }
-    ],
-    "badges": [
-      "new"
-    ],
-    "featured": true,
-    "popularity": 72,
-    "createdAt": "2026-10-20T12:00:00.000Z"
-  },
-  {
-    "id": "003",
-    "slug": "camiseta-modo-escuro",
-    "name": "Camiseta Modo Escuro",
-    "description": "Para quem prefere o tema escuro também fora da tela. Estampa de terminal nas costas.",
-    "categorySlug": "vestuario",
-    "subcategorySlug": "camisetas",
-    "collectionSlugs": [
-      "dev"
-    ],
-    "priceInCents": 8990,
-    "compareAtPriceInCents": 11990,
-    "images": [
-      {
-        "src": "catalog/images/camiseta-modo-escuro-preto.svg",
-        "alt": "Camiseta Modo Escuro na cor preto, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/camiseta-modo-escuro-cinza.svg",
-        "alt": "Camiseta Modo Escuro na cor cinza, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/camiseta-modo-escuro-detalhe.svg",
-        "alt": "Detalhe ampliado de Camiseta Modo Escuro",
-        "width": 800,
-        "height": 800
-      }
-    ],
-    "options": {
-      "colors": [
-        {
-          "slug": "preto",
-          "label": "Preto",
-          "hex": "#202124"
-        },
-        {
-          "slug": "cinza",
-          "label": "Cinza",
-          "hex": "#9aa0a6"
-        }
-      ],
-      "sizes": [
-        "P",
-        "M",
-        "G",
-        "GG"
-      ]
-    },
-    "variants": [
-      {
-        "sku": "MS-003-PRETO-P",
-        "color": "preto",
-        "size": "P",
-        "stock": 5
-      },
-      {
-        "sku": "MS-003-PRETO-M",
-        "color": "preto",
-        "size": "M",
-        "stock": 10
-      },
-      {
-        "sku": "MS-003-PRETO-G",
-        "color": "preto",
-        "size": "G",
-        "stock": 3
-      },
-      {
-        "sku": "MS-003-PRETO-GG",
-        "color": "preto",
-        "size": "GG",
-        "stock": 8
-      },
-      {
-        "sku": "MS-003-CINZA-P",
-        "color": "cinza",
-        "size": "P",
-        "stock": 12
-      },
-      {
-        "sku": "MS-003-CINZA-M",
-        "color": "cinza",
-        "size": "M",
-        "stock": 5
-      },
-      {
-        "sku": "MS-003-CINZA-G",
-        "color": "cinza",
-        "size": "G",
-        "stock": 10
-      },
-      {
-        "sku": "MS-003-CINZA-GG",
-        "color": "cinza",
-        "size": "GG",
-        "stock": 3
-      }
-    ],
-    "badges": [
-      "sale"
-    ],
-    "featured": false,
-    "popularity": 66,
-    "createdAt": "2025-08-02T12:00:00.000Z"
-  },
-  {
-    "id": "004",
-    "slug": "camiseta-algodao-reciclado",
-    "name": "Camiseta Algodão Reciclado",
-    "description": "Feita com 60% de algodão reciclado e 40% de poliéster de garrafas PET.",
-    "categorySlug": "vestuario",
-    "subcategorySlug": "camisetas",
-    "collectionSlugs": [
-      "eco"
-    ],
-    "priceInCents": 8490,
-    "images": [
-      {
-        "src": "catalog/images/camiseta-algodao-reciclado-areia.svg",
-        "alt": "Camiseta Algodão Reciclado na cor areia, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/camiseta-algodao-reciclado-oliva.svg",
-        "alt": "Camiseta Algodão Reciclado na cor verde-oliva, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/camiseta-algodao-reciclado-detalhe.svg",
-        "alt": "Detalhe ampliado de Camiseta Algodão Reciclado",
-        "width": 800,
-        "height": 800
-      }
-    ],
-    "options": {
-      "colors": [
-        {
-          "slug": "areia",
-          "label": "Areia",
-          "hex": "#e6d5b8"
-        },
-        {
-          "slug": "oliva",
-          "label": "Verde-oliva",
-          "hex": "#5f6b3a"
-        }
-      ],
-      "sizes": [
-        "P",
-        "M",
-        "G",
-        "GG"
-      ]
-    },
-    "variants": [
-      {
-        "sku": "MS-004-AREIA-P",
-        "color": "areia",
-        "size": "P",
-        "stock": 12
-      },
-      {
-        "sku": "MS-004-AREIA-M",
-        "color": "areia",
-        "size": "M",
-        "stock": 5
-      },
-      {
-        "sku": "MS-004-AREIA-G",
-        "color": "areia",
-        "size": "G",
-        "stock": 10
-      },
-      {
-        "sku": "MS-004-AREIA-GG",
-        "color": "areia",
-        "size": "GG",
-        "stock": 3
-      },
-      {
-        "sku": "MS-004-OLIVA-P",
-        "color": "oliva",
-        "size": "P",
-        "stock": 7
-      },
-      {
-        "sku": "MS-004-OLIVA-M",
-        "color": "oliva",
-        "size": "M",
-        "stock": 12
-      },
-      {
-        "sku": "MS-004-OLIVA-G",
-        "color": "oliva",
-        "size": "G",
-        "stock": 5
-      },
-      {
-        "sku": "MS-004-OLIVA-GG",
-        "color": "oliva",
-        "size": "GG",
-        "stock": 10
-      }
-    ],
-    "badges": [
-      "bestseller"
-    ],
-    "featured": false,
-    "popularity": 93,
-    "createdAt": "2025-05-18T12:00:00.000Z"
-  },
-  {
-    "id": "005",
-    "slug": "moletom-canguru-essencial",
-    "name": "Moletom Canguru Essencial",
-    "description": "Moletom felpado com capuz forrado, bolso canguru e punhos em ribana.",
-    "categorySlug": "vestuario",
-    "subcategorySlug": "moletons",
-    "collectionSlugs": [
-      "essenciais"
-    ],
-    "priceInCents": 22990,
-    "images": [
-      {
-        "src": "catalog/images/moletom-canguru-essencial-cinza.svg",
-        "alt": "Moletom Canguru Essencial na cor cinza, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/moletom-canguru-essencial-preto.svg",
-        "alt": "Moletom Canguru Essencial na cor preto, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/moletom-canguru-essencial-marinho.svg",
-        "alt": "Moletom Canguru Essencial na cor azul-marinho, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/moletom-canguru-essencial-detalhe.svg",
-        "alt": "Detalhe ampliado de Moletom Canguru Essencial",
-        "width": 800,
-        "height": 800
-      }
-    ],
-    "options": {
-      "colors": [
-        {
-          "slug": "cinza",
-          "label": "Cinza",
-          "hex": "#9aa0a6"
-        },
-        {
-          "slug": "preto",
-          "label": "Preto",
-          "hex": "#202124"
-        },
         {
           "slug": "marinho",
           "label": "Azul-marinho",
@@ -531,73 +112,384 @@
     },
     "variants": [
       {
-        "sku": "MS-005-CINZA-P",
-        "color": "cinza",
+        "sku": "MS-002-MARINHO-P",
+        "color": "marinho",
+        "size": "P",
+        "stock": 10
+      },
+      {
+        "sku": "MS-002-MARINHO-M",
+        "color": "marinho",
+        "size": "M",
+        "stock": 3
+      },
+      {
+        "sku": "MS-002-MARINHO-G",
+        "color": "marinho",
+        "size": "G",
+        "stock": 8
+      },
+      {
+        "sku": "MS-002-MARINHO-GG",
+        "color": "marinho",
+        "size": "GG",
+        "stock": 13
+      }
+    ],
+    "badges": [],
+    "featured": false,
+    "popularity": 63,
+    "createdAt": "2025-06-12T12:00:00.000Z"
+  },
+  {
+    "id": "003",
+    "slug": "camiseta-unissex-chrome-dino",
+    "name": "Camiseta Unissex Chrome Dino",
+    "description": "Estampa em pixel art do dinossauro mais famoso do navegador. Algodão macio e toque leve.",
+    "categorySlug": "vestuario",
+    "subcategorySlug": "camisetas",
+    "collectionSlugs": [
+      "chrome-dino"
+    ],
+    "priceInCents": 18190,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2064_064.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300",
+        "alt": "Camiseta Unissex Chrome Dino, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2064_079_1.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300",
+        "alt": "Camiseta Unissex Chrome Dino, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {
+      "colors": [
+        {
+          "slug": "branco",
+          "label": "Branco",
+          "hex": "#f8f9fa"
+        }
+      ],
+      "sizes": [
+        "P",
+        "M",
+        "G",
+        "GG"
+      ]
+    },
+    "variants": [
+      {
+        "sku": "MS-003-BRANCO-P",
+        "color": "branco",
+        "size": "P",
+        "stock": 5
+      },
+      {
+        "sku": "MS-003-BRANCO-M",
+        "color": "branco",
+        "size": "M",
+        "stock": 10
+      },
+      {
+        "sku": "MS-003-BRANCO-G",
+        "color": "branco",
+        "size": "G",
+        "stock": 3
+      },
+      {
+        "sku": "MS-003-BRANCO-GG",
+        "color": "branco",
+        "size": "GG",
+        "stock": 8
+      }
+    ],
+    "badges": [
+      "bestseller"
+    ],
+    "featured": false,
+    "popularity": 90,
+    "createdAt": "2025-04-20T12:00:00.000Z"
+  },
+  {
+    "id": "004",
+    "slug": "camiseta-g-bike-azul-gelo",
+    "name": "Camiseta G Bike Azul-gelo",
+    "description": "Camiseta com a bicicleta colorida do campus estampada nas costas.",
+    "categorySlug": "vestuario",
+    "subcategorySlug": "camisetas",
+    "collectionSlugs": [
+      "g-bike"
+    ],
+    "priceInCents": 25190,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2301_001.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300&format=jpeg",
+        "alt": "Camiseta G Bike Azul-gelo, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2301_002.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Camiseta G Bike Azul-gelo, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {
+      "colors": [
+        {
+          "slug": "azul",
+          "label": "Azul",
+          "hex": "#1a73e8"
+        }
+      ],
+      "sizes": [
+        "P",
+        "M",
+        "G",
+        "GG"
+      ]
+    },
+    "variants": [
+      {
+        "sku": "MS-004-AZUL-P",
+        "color": "azul",
+        "size": "P",
+        "stock": 12
+      },
+      {
+        "sku": "MS-004-AZUL-M",
+        "color": "azul",
+        "size": "M",
+        "stock": 5
+      },
+      {
+        "sku": "MS-004-AZUL-G",
+        "color": "azul",
+        "size": "G",
+        "stock": 10
+      },
+      {
+        "sku": "MS-004-AZUL-GG",
+        "color": "azul",
+        "size": "GG",
+        "stock": 3
+      }
+    ],
+    "badges": [],
+    "featured": false,
+    "popularity": 58,
+    "createdAt": "2025-08-01T12:00:00.000Z"
+  },
+  {
+    "id": "005",
+    "slug": "camiseta-boxy-verde-oliva",
+    "name": "Camiseta Boxy Verde-oliva",
+    "description": "Modelagem ampla e ombro caído, em algodão orgânico encorpado.",
+    "categorySlug": "vestuario",
+    "subcategorySlug": "camisetas",
+    "collectionSlugs": [
+      "holiday-2026",
+      "sustentavel"
+    ],
+    "priceInCents": 22390,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2525_14346.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300",
+        "alt": "Camiseta Boxy Verde-oliva, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2525_14312.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300",
+        "alt": "Camiseta Boxy Verde-oliva, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {
+      "colors": [
+        {
+          "slug": "oliva",
+          "label": "Verde-oliva",
+          "hex": "#5f6b3a"
+        }
+      ],
+      "sizes": [
+        "P",
+        "M",
+        "G",
+        "GG"
+      ]
+    },
+    "variants": [
+      {
+        "sku": "MS-005-OLIVA-P",
+        "color": "oliva",
         "size": "P",
         "stock": 7
       },
       {
-        "sku": "MS-005-CINZA-M",
-        "color": "cinza",
+        "sku": "MS-005-OLIVA-M",
+        "color": "oliva",
         "size": "M",
         "stock": 12
       },
       {
-        "sku": "MS-005-CINZA-G",
-        "color": "cinza",
+        "sku": "MS-005-OLIVA-G",
+        "color": "oliva",
         "size": "G",
         "stock": 5
       },
       {
-        "sku": "MS-005-CINZA-GG",
-        "color": "cinza",
+        "sku": "MS-005-OLIVA-GG",
+        "color": "oliva",
         "size": "GG",
         "stock": 10
+      }
+    ],
+    "badges": [
+      "new"
+    ],
+    "featured": false,
+    "popularity": 70,
+    "createdAt": "2026-10-12T12:00:00.000Z"
+  },
+  {
+    "id": "006",
+    "slug": "camiseta-google-oceano-profundo",
+    "name": "Camiseta Google Oceano Profundo",
+    "description": "Camiseta unissex em azul profundo com a logo bordada em tom sobre tom.",
+    "categorySlug": "vestuario",
+    "subcategorySlug": "camisetas",
+    "collectionSlugs": [],
+    "priceInCents": 14190,
+    "compareAtPriceInCents": 20990,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2182_001.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300&format=jpeg",
+        "alt": "Camiseta Google Oceano Profundo, foto do produto",
+        "width": 800,
+        "height": 800
       },
       {
-        "sku": "MS-005-PRETO-P",
-        "color": "preto",
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2182_002.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Camiseta Google Oceano Profundo, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {
+      "colors": [
+        {
+          "slug": "marinho",
+          "label": "Azul-marinho",
+          "hex": "#174ea6"
+        }
+      ],
+      "sizes": [
+        "P",
+        "M",
+        "G",
+        "GG"
+      ]
+    },
+    "variants": [
+      {
+        "sku": "MS-006-MARINHO-P",
+        "color": "marinho",
         "size": "P",
         "stock": 14
       },
       {
-        "sku": "MS-005-PRETO-M",
-        "color": "preto",
+        "sku": "MS-006-MARINHO-M",
+        "color": "marinho",
         "size": "M",
         "stock": 7
       },
       {
-        "sku": "MS-005-PRETO-G",
-        "color": "preto",
+        "sku": "MS-006-MARINHO-G",
+        "color": "marinho",
         "size": "G",
         "stock": 12
       },
       {
-        "sku": "MS-005-PRETO-GG",
-        "color": "preto",
+        "sku": "MS-006-MARINHO-GG",
+        "color": "marinho",
         "size": "GG",
         "stock": 5
+      }
+    ],
+    "badges": [
+      "sale"
+    ],
+    "featured": false,
+    "popularity": 52,
+    "createdAt": "2025-05-14T12:00:00.000Z"
+  },
+  {
+    "id": "007",
+    "slug": "moletom-com-ziper-google-plymouth-3-0",
+    "name": "Moletom com Zíper Google Plymouth 3.0",
+    "description": "Moletom aberto com capuz, zíper frontal e bolsos laterais. Felpa macia por dentro.",
+    "categorySlug": "vestuario",
+    "subcategorySlug": "moletons",
+    "collectionSlugs": [],
+    "priceInCents": 51090,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2443_002.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300&format=jpeg",
+        "alt": "Moletom com Zíper Google Plymouth 3.0, foto do produto",
+        "width": 800,
+        "height": 800
       },
       {
-        "sku": "MS-005-MARINHO-P",
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2443_001.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Moletom com Zíper Google Plymouth 3.0, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {
+      "colors": [
+        {
+          "slug": "marinho",
+          "label": "Azul-marinho",
+          "hex": "#174ea6"
+        }
+      ],
+      "sizes": [
+        "P",
+        "M",
+        "G",
+        "GG"
+      ]
+    },
+    "variants": [
+      {
+        "sku": "MS-007-MARINHO-P",
         "color": "marinho",
         "size": "P",
         "stock": 0
       },
       {
-        "sku": "MS-005-MARINHO-M",
+        "sku": "MS-007-MARINHO-M",
         "color": "marinho",
         "size": "M",
         "stock": 14
       },
       {
-        "sku": "MS-005-MARINHO-G",
+        "sku": "MS-007-MARINHO-G",
         "color": "marinho",
         "size": "G",
         "stock": 7
       },
       {
-        "sku": "MS-005-MARINHO-GG",
+        "sku": "MS-007-MARINHO-GG",
         "color": "marinho",
         "size": "GG",
         "stock": 12
@@ -608,512 +500,29 @@
     ],
     "featured": true,
     "popularity": 97,
-    "createdAt": "2025-04-01T12:00:00.000Z"
-  },
-  {
-    "id": "006",
-    "slug": "moletom-aurora",
-    "name": "Moletom Aurora",
-    "description": "O favorito da nova coleção: capuz amplo, tecido encorpado e bordado tom sobre tom.",
-    "categorySlug": "vestuario",
-    "subcategorySlug": "moletons",
-    "collectionSlugs": [
-      "aurora"
-    ],
-    "priceInCents": 25990,
-    "images": [
-      {
-        "src": "catalog/images/moletom-aurora-lilas.svg",
-        "alt": "Moletom Aurora na cor lilás, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/moletom-aurora-azul.svg",
-        "alt": "Moletom Aurora na cor azul, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/moletom-aurora-detalhe.svg",
-        "alt": "Detalhe ampliado de Moletom Aurora",
-        "width": 800,
-        "height": 800
-      }
-    ],
-    "options": {
-      "colors": [
-        {
-          "slug": "lilas",
-          "label": "Lilás",
-          "hex": "#a142f4"
-        },
-        {
-          "slug": "azul",
-          "label": "Azul",
-          "hex": "#1a73e8"
-        }
-      ],
-      "sizes": [
-        "P",
-        "M",
-        "G",
-        "GG"
-      ]
-    },
-    "variants": [
-      {
-        "sku": "MS-006-LILAS-P",
-        "color": "lilas",
-        "size": "P",
-        "stock": 14
-      },
-      {
-        "sku": "MS-006-LILAS-M",
-        "color": "lilas",
-        "size": "M",
-        "stock": 7
-      },
-      {
-        "sku": "MS-006-LILAS-G",
-        "color": "lilas",
-        "size": "G",
-        "stock": 12
-      },
-      {
-        "sku": "MS-006-LILAS-GG",
-        "color": "lilas",
-        "size": "GG",
-        "stock": 5
-      },
-      {
-        "sku": "MS-006-AZUL-P",
-        "color": "azul",
-        "size": "P",
-        "stock": 9
-      },
-      {
-        "sku": "MS-006-AZUL-M",
-        "color": "azul",
-        "size": "M",
-        "stock": 14
-      },
-      {
-        "sku": "MS-006-AZUL-G",
-        "color": "azul",
-        "size": "G",
-        "stock": 7
-      },
-      {
-        "sku": "MS-006-AZUL-GG",
-        "color": "azul",
-        "size": "GG",
-        "stock": 12
-      }
-    ],
-    "badges": [
-      "new"
-    ],
-    "featured": true,
-    "popularity": 75,
-    "createdAt": "2026-10-22T12:00:00.000Z"
-  },
-  {
-    "id": "007",
-    "slug": "moletom-dev-com-ziper",
-    "name": "Moletom Dev com Zíper",
-    "description": "Moletom aberto com zíper reforçado e bolso interno para fones.",
-    "categorySlug": "vestuario",
-    "subcategorySlug": "moletons",
-    "collectionSlugs": [
-      "dev"
-    ],
-    "priceInCents": 24990,
-    "compareAtPriceInCents": 29990,
-    "images": [
-      {
-        "src": "catalog/images/moletom-dev-com-ziper-preto.svg",
-        "alt": "Moletom Dev com Zíper na cor preto, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/moletom-dev-com-ziper-detalhe.svg",
-        "alt": "Detalhe ampliado de Moletom Dev com Zíper",
-        "width": 800,
-        "height": 800
-      }
-    ],
-    "options": {
-      "colors": [
-        {
-          "slug": "preto",
-          "label": "Preto",
-          "hex": "#202124"
-        }
-      ],
-      "sizes": [
-        "P",
-        "M",
-        "G",
-        "GG"
-      ]
-    },
-    "variants": [
-      {
-        "sku": "MS-007-PRETO-P",
-        "color": "preto",
-        "size": "P",
-        "stock": 0
-      },
-      {
-        "sku": "MS-007-PRETO-M",
-        "color": "preto",
-        "size": "M",
-        "stock": 14
-      },
-      {
-        "sku": "MS-007-PRETO-G",
-        "color": "preto",
-        "size": "G",
-        "stock": 7
-      },
-      {
-        "sku": "MS-007-PRETO-GG",
-        "color": "preto",
-        "size": "GG",
-        "stock": 0
-      }
-    ],
-    "badges": [
-      "sale"
-    ],
-    "featured": false,
-    "popularity": 61,
-    "createdAt": "2025-09-12T12:00:00.000Z"
+    "createdAt": "2025-09-01T12:00:00.000Z"
   },
   {
     "id": "008",
-    "slug": "jaqueta-corta-vento",
-    "name": "Jaqueta Corta-Vento",
-    "description": "Leve, repelente à água e dobrável na própria bolsa. Ideal para viagens.",
+    "slug": "sueter-google-holidays-2026",
+    "name": "Suéter Google Holidays 2026",
+    "description": "Suéter de tricô com padronagem natalina, edição limitada de fim de ano.",
     "categorySlug": "vestuario",
-    "subcategorySlug": "jaquetas",
+    "subcategorySlug": "moletons",
     "collectionSlugs": [
-      "essenciais"
+      "holiday-2026"
     ],
-    "priceInCents": 32990,
+    "priceInCents": 41990,
     "images": [
       {
-        "src": "catalog/images/jaqueta-corta-vento-azul.svg",
-        "alt": "Jaqueta Corta-Vento na cor azul, vista frontal",
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2451_15113.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300",
+        "alt": "Suéter Google Holidays 2026, foto do produto",
         "width": 800,
         "height": 800
       },
       {
-        "src": "catalog/images/jaqueta-corta-vento-preto.svg",
-        "alt": "Jaqueta Corta-Vento na cor preto, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/jaqueta-corta-vento-detalhe.svg",
-        "alt": "Detalhe ampliado de Jaqueta Corta-Vento",
-        "width": 800,
-        "height": 800
-      }
-    ],
-    "options": {
-      "colors": [
-        {
-          "slug": "azul",
-          "label": "Azul",
-          "hex": "#1a73e8"
-        },
-        {
-          "slug": "preto",
-          "label": "Preto",
-          "hex": "#202124"
-        }
-      ],
-      "sizes": [
-        "P",
-        "M",
-        "G",
-        "GG"
-      ]
-    },
-    "variants": [
-      {
-        "sku": "MS-008-AZUL-P",
-        "color": "azul",
-        "size": "P",
-        "stock": 4
-      },
-      {
-        "sku": "MS-008-AZUL-M",
-        "color": "azul",
-        "size": "M",
-        "stock": 9
-      },
-      {
-        "sku": "MS-008-AZUL-G",
-        "color": "azul",
-        "size": "G",
-        "stock": 14
-      },
-      {
-        "sku": "MS-008-AZUL-GG",
-        "color": "azul",
-        "size": "GG",
-        "stock": 7
-      },
-      {
-        "sku": "MS-008-PRETO-P",
-        "color": "preto",
-        "size": "P",
-        "stock": 11
-      },
-      {
-        "sku": "MS-008-PRETO-M",
-        "color": "preto",
-        "size": "M",
-        "stock": 4
-      },
-      {
-        "sku": "MS-008-PRETO-G",
-        "color": "preto",
-        "size": "G",
-        "stock": 9
-      },
-      {
-        "sku": "MS-008-PRETO-GG",
-        "color": "preto",
-        "size": "GG",
-        "stock": 14
-      }
-    ],
-    "badges": [],
-    "featured": false,
-    "popularity": 58,
-    "createdAt": "2025-06-25T12:00:00.000Z"
-  },
-  {
-    "id": "009",
-    "slug": "jaqueta-puffer-eco",
-    "name": "Jaqueta Puffer Eco",
-    "description": "Enchimento térmico de fibras recicladas e tecido externo resistente ao vento.",
-    "categorySlug": "vestuario",
-    "subcategorySlug": "jaquetas",
-    "collectionSlugs": [
-      "eco"
-    ],
-    "priceInCents": 44990,
-    "compareAtPriceInCents": 52990,
-    "images": [
-      {
-        "src": "catalog/images/jaqueta-puffer-eco-oliva.svg",
-        "alt": "Jaqueta Puffer Eco na cor verde-oliva, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/jaqueta-puffer-eco-preto.svg",
-        "alt": "Jaqueta Puffer Eco na cor preto, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/jaqueta-puffer-eco-detalhe.svg",
-        "alt": "Detalhe ampliado de Jaqueta Puffer Eco",
-        "width": 800,
-        "height": 800
-      }
-    ],
-    "options": {
-      "colors": [
-        {
-          "slug": "oliva",
-          "label": "Verde-oliva",
-          "hex": "#5f6b3a"
-        },
-        {
-          "slug": "preto",
-          "label": "Preto",
-          "hex": "#202124"
-        }
-      ],
-      "sizes": [
-        "P",
-        "M",
-        "G",
-        "GG"
-      ]
-    },
-    "variants": [
-      {
-        "sku": "MS-009-OLIVA-P",
-        "color": "oliva",
-        "size": "P",
-        "stock": 11
-      },
-      {
-        "sku": "MS-009-OLIVA-M",
-        "color": "oliva",
-        "size": "M",
-        "stock": 4
-      },
-      {
-        "sku": "MS-009-OLIVA-G",
-        "color": "oliva",
-        "size": "G",
-        "stock": 9
-      },
-      {
-        "sku": "MS-009-OLIVA-GG",
-        "color": "oliva",
-        "size": "GG",
-        "stock": 14
-      },
-      {
-        "sku": "MS-009-PRETO-P",
-        "color": "preto",
-        "size": "P",
-        "stock": 6
-      },
-      {
-        "sku": "MS-009-PRETO-M",
-        "color": "preto",
-        "size": "M",
-        "stock": 11
-      },
-      {
-        "sku": "MS-009-PRETO-G",
-        "color": "preto",
-        "size": "G",
-        "stock": 4
-      },
-      {
-        "sku": "MS-009-PRETO-GG",
-        "color": "preto",
-        "size": "GG",
-        "stock": 9
-      }
-    ],
-    "badges": [
-      "sale"
-    ],
-    "featured": false,
-    "popularity": 54,
-    "createdAt": "2025-07-30T12:00:00.000Z"
-  },
-  {
-    "id": "010",
-    "slug": "bone-aba-curva",
-    "name": "Boné Aba Curva",
-    "description": "Boné de sarja com regulagem traseira em metal e monograma bordado.",
-    "categorySlug": "vestuario",
-    "subcategorySlug": "bones-gorros",
-    "collectionSlugs": [
-      "essenciais"
-    ],
-    "priceInCents": 8990,
-    "images": [
-      {
-        "src": "catalog/images/bone-aba-curva-preto.svg",
-        "alt": "Boné Aba Curva na cor preto, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/bone-aba-curva-branco.svg",
-        "alt": "Boné Aba Curva na cor branco, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/bone-aba-curva-azul.svg",
-        "alt": "Boné Aba Curva na cor azul, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/bone-aba-curva-detalhe.svg",
-        "alt": "Detalhe ampliado de Boné Aba Curva",
-        "width": 800,
-        "height": 800
-      }
-    ],
-    "options": {
-      "colors": [
-        {
-          "slug": "preto",
-          "label": "Preto",
-          "hex": "#202124"
-        },
-        {
-          "slug": "branco",
-          "label": "Branco",
-          "hex": "#f8f9fa"
-        },
-        {
-          "slug": "azul",
-          "label": "Azul",
-          "hex": "#1a73e8"
-        }
-      ]
-    },
-    "variants": [
-      {
-        "sku": "MS-010-PRETO",
-        "color": "preto",
-        "stock": 6
-      },
-      {
-        "sku": "MS-010-BRANCO",
-        "color": "branco",
-        "stock": 0
-      },
-      {
-        "sku": "MS-010-AZUL",
-        "color": "azul",
-        "stock": 8
-      }
-    ],
-    "badges": [
-      "bestseller"
-    ],
-    "featured": false,
-    "popularity": 91,
-    "createdAt": "2025-02-14T12:00:00.000Z"
-  },
-  {
-    "id": "011",
-    "slug": "gorro-trico-pompom",
-    "name": "Gorro Tricô Pompom",
-    "description": "Gorro de tricô canelado com pompom removível. Quentinho e macio.",
-    "categorySlug": "vestuario",
-    "subcategorySlug": "bones-gorros",
-    "collectionSlugs": [
-      "aurora"
-    ],
-    "priceInCents": 6990,
-    "images": [
-      {
-        "src": "catalog/images/gorro-trico-pompom-vermelho.svg",
-        "alt": "Gorro Tricô Pompom na cor vermelho, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/gorro-trico-pompom-cinza.svg",
-        "alt": "Gorro Tricô Pompom na cor cinza, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/gorro-trico-pompom-detalhe.svg",
-        "alt": "Detalhe ampliado de Gorro Tricô Pompom",
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2451_15089.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300",
+        "alt": "Suéter Google Holidays 2026, outra vista",
         "width": 800,
         "height": 800
       }
@@ -1124,60 +533,70 @@
           "slug": "vermelho",
           "label": "Vermelho",
           "hex": "#d93025"
-        },
-        {
-          "slug": "cinza",
-          "label": "Cinza",
-          "hex": "#9aa0a6"
         }
+      ],
+      "sizes": [
+        "P",
+        "M",
+        "G",
+        "GG"
       ]
     },
     "variants": [
       {
-        "sku": "MS-011-VERMELHO",
+        "sku": "MS-008-VERMELHO-P",
         "color": "vermelho",
-        "stock": 13
+        "size": "P",
+        "stock": 4
       },
       {
-        "sku": "MS-011-CINZA",
-        "color": "cinza",
-        "stock": 8
+        "sku": "MS-008-VERMELHO-M",
+        "color": "vermelho",
+        "size": "M",
+        "stock": 9
+      },
+      {
+        "sku": "MS-008-VERMELHO-G",
+        "color": "vermelho",
+        "size": "G",
+        "stock": 14
+      },
+      {
+        "sku": "MS-008-VERMELHO-GG",
+        "color": "vermelho",
+        "size": "GG",
+        "stock": 7
       }
     ],
     "badges": [
       "new"
     ],
-    "featured": false,
-    "popularity": 64,
-    "createdAt": "2026-10-18T12:00:00.000Z"
+    "featured": true,
+    "popularity": 82,
+    "createdAt": "2026-10-20T12:00:00.000Z"
   },
   {
-    "id": "012",
-    "slug": "bone-trucker-dev",
-    "name": "Boné Trucker Dev",
-    "description": "Boné trucker com tela respirável e patch de pixel na frente.",
+    "id": "009",
+    "slug": "moletom-google-g-bordo",
+    "name": "Moletom Google G Bordô",
+    "description": "Moletom canguru com capuz forrado e o G bordado no peito.",
     "categorySlug": "vestuario",
-    "subcategorySlug": "bones-gorros",
+    "subcategorySlug": "moletons",
     "collectionSlugs": [
-      "dev"
+      "google-g"
     ],
-    "priceInCents": 7990,
+    "priceInCents": 24490,
+    "compareAtPriceInCents": 48990,
     "images": [
       {
-        "src": "catalog/images/bone-trucker-dev-cinza.svg",
-        "alt": "Boné Trucker Dev na cor cinza, vista frontal",
+        "src": "https://your.merch.google/media/catalog/product/g/g/gglstsuv_027.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300",
+        "alt": "Moletom Google G Bordô, foto do produto",
         "width": 800,
         "height": 800
       },
       {
-        "src": "catalog/images/bone-trucker-dev-preto.svg",
-        "alt": "Boné Trucker Dev na cor preto, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/bone-trucker-dev-detalhe.svg",
-        "alt": "Detalhe ampliado de Boné Trucker Dev",
+        "src": "https://your.merch.google/media/catalog/product/g/g/gglstsuv_015.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300",
+        "alt": "Moletom Google G Bordô, outra vista",
         "width": 800,
         "height": 800
       }
@@ -1185,276 +604,434 @@
     "options": {
       "colors": [
         {
-          "slug": "cinza",
-          "label": "Cinza",
-          "hex": "#9aa0a6"
-        },
-        {
-          "slug": "preto",
-          "label": "Preto",
-          "hex": "#202124"
-        }
-      ]
-    },
-    "variants": [
-      {
-        "sku": "MS-012-CINZA",
-        "color": "cinza",
-        "stock": 0
-      },
-      {
-        "sku": "MS-012-PRETO",
-        "color": "preto",
-        "stock": 0
-      }
-    ],
-    "badges": [],
-    "featured": false,
-    "popularity": 40,
-    "createdAt": "2025-01-20T12:00:00.000Z"
-  },
-  {
-    "id": "013",
-    "slug": "camiseta-infantil-pixel",
-    "name": "Camiseta Infantil Pixel",
-    "description": "Camiseta infantil com estampa de pixel que brilha no escuro.",
-    "categorySlug": "vestuario",
-    "subcategorySlug": "infantil",
-    "collectionSlugs": [
-      "dev"
-    ],
-    "priceInCents": 5990,
-    "images": [
-      {
-        "src": "catalog/images/camiseta-infantil-pixel-amarelo.svg",
-        "alt": "Camiseta Infantil Pixel na cor amarelo, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/camiseta-infantil-pixel-azul.svg",
-        "alt": "Camiseta Infantil Pixel na cor azul, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/camiseta-infantil-pixel-detalhe.svg",
-        "alt": "Detalhe ampliado de Camiseta Infantil Pixel",
-        "width": 800,
-        "height": 800
-      }
-    ],
-    "options": {
-      "colors": [
-        {
-          "slug": "amarelo",
-          "label": "Amarelo",
-          "hex": "#f9ab00"
-        },
-        {
-          "slug": "azul",
-          "label": "Azul",
-          "hex": "#1a73e8"
+          "slug": "bordo",
+          "label": "Bordô",
+          "hex": "#912a36"
         }
       ],
       "sizes": [
-        "4",
-        "6",
-        "8",
-        "10"
+        "P",
+        "M",
+        "G",
+        "GG"
       ]
     },
     "variants": [
       {
-        "sku": "MS-013-AMARELO-4",
-        "color": "amarelo",
-        "size": "4",
-        "stock": 3
+        "sku": "MS-009-BORDO-P",
+        "color": "bordo",
+        "size": "P",
+        "stock": 11
       },
       {
-        "sku": "MS-013-AMARELO-6",
-        "color": "amarelo",
-        "size": "6",
-        "stock": 8
+        "sku": "MS-009-BORDO-M",
+        "color": "bordo",
+        "size": "M",
+        "stock": 4
       },
       {
-        "sku": "MS-013-AMARELO-8",
-        "color": "amarelo",
-        "size": "8",
-        "stock": 13
+        "sku": "MS-009-BORDO-G",
+        "color": "bordo",
+        "size": "G",
+        "stock": 9
       },
       {
-        "sku": "MS-013-AMARELO-10",
-        "color": "amarelo",
-        "size": "10",
-        "stock": 6
-      },
-      {
-        "sku": "MS-013-AZUL-4",
-        "color": "azul",
-        "size": "4",
-        "stock": 10
-      },
-      {
-        "sku": "MS-013-AZUL-6",
-        "color": "azul",
-        "size": "6",
-        "stock": 3
-      },
-      {
-        "sku": "MS-013-AZUL-8",
-        "color": "azul",
-        "size": "8",
-        "stock": 8
-      },
-      {
-        "sku": "MS-013-AZUL-10",
-        "color": "azul",
-        "size": "10",
-        "stock": 13
-      }
-    ],
-    "badges": [],
-    "featured": false,
-    "popularity": 47,
-    "createdAt": "2025-10-05T12:00:00.000Z"
-  },
-  {
-    "id": "014",
-    "slug": "moletom-infantil",
-    "name": "Moletom Infantil",
-    "description": "Moletom infantil com capuz e punhos ajustados. Lavável na máquina.",
-    "categorySlug": "vestuario",
-    "subcategorySlug": "infantil",
-    "collectionSlugs": [
-      "essenciais"
-    ],
-    "priceInCents": 14990,
-    "compareAtPriceInCents": 17990,
-    "images": [
-      {
-        "src": "catalog/images/moletom-infantil-amarelo.svg",
-        "alt": "Moletom Infantil na cor amarelo, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/moletom-infantil-azul.svg",
-        "alt": "Moletom Infantil na cor azul, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/moletom-infantil-detalhe.svg",
-        "alt": "Detalhe ampliado de Moletom Infantil",
-        "width": 800,
-        "height": 800
-      }
-    ],
-    "options": {
-      "colors": [
-        {
-          "slug": "amarelo",
-          "label": "Amarelo",
-          "hex": "#f9ab00"
-        },
-        {
-          "slug": "azul",
-          "label": "Azul",
-          "hex": "#1a73e8"
-        }
-      ],
-      "sizes": [
-        "4",
-        "6",
-        "8",
-        "10"
-      ]
-    },
-    "variants": [
-      {
-        "sku": "MS-014-AMARELO-4",
-        "color": "amarelo",
-        "size": "4",
-        "stock": 10
-      },
-      {
-        "sku": "MS-014-AMARELO-6",
-        "color": "amarelo",
-        "size": "6",
-        "stock": 3
-      },
-      {
-        "sku": "MS-014-AMARELO-8",
-        "color": "amarelo",
-        "size": "8",
-        "stock": 8
-      },
-      {
-        "sku": "MS-014-AMARELO-10",
-        "color": "amarelo",
-        "size": "10",
-        "stock": 13
-      },
-      {
-        "sku": "MS-014-AZUL-4",
-        "color": "azul",
-        "size": "4",
-        "stock": 5
-      },
-      {
-        "sku": "MS-014-AZUL-6",
-        "color": "azul",
-        "size": "6",
-        "stock": 10
-      },
-      {
-        "sku": "MS-014-AZUL-8",
-        "color": "azul",
-        "size": "8",
-        "stock": 3
-      },
-      {
-        "sku": "MS-014-AZUL-10",
-        "color": "azul",
-        "size": "10",
-        "stock": 8
+        "sku": "MS-009-BORDO-GG",
+        "color": "bordo",
+        "size": "GG",
+        "stock": 14
       }
     ],
     "badges": [
       "sale"
     ],
     "featured": false,
-    "popularity": 50,
-    "createdAt": "2025-05-02T12:00:00.000Z"
+    "popularity": 66,
+    "createdAt": "2025-07-15T12:00:00.000Z"
+  },
+  {
+    "id": "010",
+    "slug": "moletom-google-g-retro-azul",
+    "name": "Moletom Google G Retrô Azul",
+    "description": "Moletom gola careca com estampa retrô e punhos em ribana.",
+    "categorySlug": "vestuario",
+    "subcategorySlug": "moletons",
+    "collectionSlugs": [
+      "google-g"
+    ],
+    "priceInCents": 24490,
+    "compareAtPriceInCents": 48990,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggln5407a_014.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300",
+        "alt": "Moletom Google G Retrô Azul, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggln5407a_023.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300",
+        "alt": "Moletom Google G Retrô Azul, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {
+      "colors": [
+        {
+          "slug": "azul",
+          "label": "Azul",
+          "hex": "#1a73e8"
+        }
+      ],
+      "sizes": [
+        "P",
+        "M",
+        "G",
+        "GG"
+      ]
+    },
+    "variants": [
+      {
+        "sku": "MS-010-AZUL-P",
+        "color": "azul",
+        "size": "P",
+        "stock": 6
+      },
+      {
+        "sku": "MS-010-AZUL-M",
+        "color": "azul",
+        "size": "M",
+        "stock": 11
+      },
+      {
+        "sku": "MS-010-AZUL-G",
+        "color": "azul",
+        "size": "G",
+        "stock": 4
+      },
+      {
+        "sku": "MS-010-AZUL-GG",
+        "color": "azul",
+        "size": "GG",
+        "stock": 9
+      }
+    ],
+    "badges": [
+      "sale"
+    ],
+    "featured": false,
+    "popularity": 56,
+    "createdAt": "2025-02-18T12:00:00.000Z"
+  },
+  {
+    "id": "011",
+    "slug": "moletom-nano-banana-butter",
+    "name": "Moletom Nano Banana Butter",
+    "description": "Moletom amarelo-manteiga com bordado do Nano Banana. Tecido encorpado e caimento solto.",
+    "categorySlug": "vestuario",
+    "subcategorySlug": "moletons",
+    "collectionSlugs": [],
+    "priceInCents": 56690,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2429_001.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300&format=jpeg",
+        "alt": "Moletom Nano Banana Butter, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2429_002.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Moletom Nano Banana Butter, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {
+      "colors": [
+        {
+          "slug": "amarelo",
+          "label": "Amarelo",
+          "hex": "#f9ab00"
+        }
+      ],
+      "sizes": [
+        "P",
+        "M",
+        "G",
+        "GG"
+      ]
+    },
+    "variants": [
+      {
+        "sku": "MS-011-AMARELO-P",
+        "color": "amarelo",
+        "size": "P",
+        "stock": 13
+      },
+      {
+        "sku": "MS-011-AMARELO-M",
+        "color": "amarelo",
+        "size": "M",
+        "stock": 6
+      },
+      {
+        "sku": "MS-011-AMARELO-G",
+        "color": "amarelo",
+        "size": "G",
+        "stock": 11
+      },
+      {
+        "sku": "MS-011-AMARELO-GG",
+        "color": "amarelo",
+        "size": "GG",
+        "stock": 4
+      }
+    ],
+    "badges": [
+      "new"
+    ],
+    "featured": false,
+    "popularity": 74,
+    "createdAt": "2026-10-05T12:00:00.000Z"
+  },
+  {
+    "id": "012",
+    "slug": "moletom-unissex-google-mocha",
+    "name": "Moletom Unissex Google Mocha",
+    "description": "Moletom de algodão orgânico na cor mocha, com logo discreta no peito.",
+    "categorySlug": "vestuario",
+    "subcategorySlug": "moletons",
+    "collectionSlugs": [
+      "sustentavel"
+    ],
+    "priceInCents": 39190,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2399_027.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300",
+        "alt": "Moletom Unissex Google Mocha, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2399_045.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300",
+        "alt": "Moletom Unissex Google Mocha, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {
+      "colors": [
+        {
+          "slug": "mocha",
+          "label": "Mocha",
+          "hex": "#715c57"
+        }
+      ],
+      "sizes": [
+        "P",
+        "M",
+        "G",
+        "GG"
+      ]
+    },
+    "variants": [
+      {
+        "sku": "MS-012-MOCHA-P",
+        "color": "mocha",
+        "size": "P",
+        "stock": 8
+      },
+      {
+        "sku": "MS-012-MOCHA-M",
+        "color": "mocha",
+        "size": "M",
+        "stock": 13
+      },
+      {
+        "sku": "MS-012-MOCHA-G",
+        "color": "mocha",
+        "size": "G",
+        "stock": 6
+      },
+      {
+        "sku": "MS-012-MOCHA-GG",
+        "color": "mocha",
+        "size": "GG",
+        "stock": 11
+      }
+    ],
+    "badges": [],
+    "featured": false,
+    "popularity": 55,
+    "createdAt": "2025-11-03T12:00:00.000Z"
+  },
+  {
+    "id": "013",
+    "slug": "fleece-google-creme",
+    "name": "Fleece Google Creme",
+    "description": "Jaqueta de fleece felpudo com zíper inteiro e bolsos com zíper.",
+    "categorySlug": "vestuario",
+    "subcategorySlug": "jaquetas",
+    "collectionSlugs": [
+      "holiday-2026"
+    ],
+    "priceInCents": 51790,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/gglff_038.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300",
+        "alt": "Fleece Google Creme, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/gglff_018.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300",
+        "alt": "Fleece Google Creme, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {
+      "colors": [
+        {
+          "slug": "creme",
+          "label": "Creme",
+          "hex": "#faeed4"
+        }
+      ],
+      "sizes": [
+        "P",
+        "M",
+        "G",
+        "GG"
+      ]
+    },
+    "variants": [
+      {
+        "sku": "MS-013-CREME-P",
+        "color": "creme",
+        "size": "P",
+        "stock": 3
+      },
+      {
+        "sku": "MS-013-CREME-M",
+        "color": "creme",
+        "size": "M",
+        "stock": 8
+      },
+      {
+        "sku": "MS-013-CREME-G",
+        "color": "creme",
+        "size": "G",
+        "stock": 13
+      },
+      {
+        "sku": "MS-013-CREME-GG",
+        "color": "creme",
+        "size": "GG",
+        "stock": 6
+      }
+    ],
+    "badges": [
+      "new"
+    ],
+    "featured": false,
+    "popularity": 60,
+    "createdAt": "2026-10-08T12:00:00.000Z"
+  },
+  {
+    "id": "014",
+    "slug": "colete-google-cloud-azul-marinho",
+    "name": "Colete Google Cloud Azul-marinho",
+    "description": "Colete acolchoado leve, repelente à água, com a nuvem do Google Cloud.",
+    "categorySlug": "vestuario",
+    "subcategorySlug": "jaquetas",
+    "collectionSlugs": [],
+    "priceInCents": 49390,
+    "compareAtPriceInCents": 65790,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2209_016.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300",
+        "alt": "Colete Google Cloud Azul-marinho, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2209_027.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300",
+        "alt": "Colete Google Cloud Azul-marinho, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {
+      "colors": [
+        {
+          "slug": "marinho",
+          "label": "Azul-marinho",
+          "hex": "#174ea6"
+        }
+      ],
+      "sizes": [
+        "P",
+        "M",
+        "G",
+        "GG"
+      ]
+    },
+    "variants": [
+      {
+        "sku": "MS-014-MARINHO-P",
+        "color": "marinho",
+        "size": "P",
+        "stock": 10
+      },
+      {
+        "sku": "MS-014-MARINHO-M",
+        "color": "marinho",
+        "size": "M",
+        "stock": 3
+      },
+      {
+        "sku": "MS-014-MARINHO-G",
+        "color": "marinho",
+        "size": "G",
+        "stock": 8
+      },
+      {
+        "sku": "MS-014-MARINHO-GG",
+        "color": "marinho",
+        "size": "GG",
+        "stock": 13
+      }
+    ],
+    "badges": [
+      "sale"
+    ],
+    "featured": false,
+    "popularity": 51,
+    "createdAt": "2025-02-10T12:00:00.000Z"
   },
   {
     "id": "015",
-    "slug": "mochila-urbana",
-    "name": "Mochila Urbana",
-    "description": "Compartimento acolchoado para notebook de até 15\", alças ergonômicas e tecido impermeável.",
-    "categorySlug": "bolsas-acessorios",
-    "subcategorySlug": "mochilas",
+    "slug": "colete-matelasse-super-g-preto",
+    "name": "Colete Matelassê Super G Preto",
+    "description": "Colete matelassê com gola alta e o Super G bordado.",
+    "categorySlug": "vestuario",
+    "subcategorySlug": "jaquetas",
     "collectionSlugs": [
-      "essenciais"
+      "google-g"
     ],
-    "priceInCents": 34990,
+    "priceInCents": 27290,
+    "compareAtPriceInCents": 54590,
     "images": [
       {
-        "src": "catalog/images/mochila-urbana-preto.svg",
-        "alt": "Mochila Urbana na cor preto, vista frontal",
+        "src": "https://your.merch.google/media/catalog/product/g/g/gglteddygilet_009_1.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300",
+        "alt": "Colete Matelassê Super G Preto, foto do produto",
         "width": 800,
         "height": 800
       },
       {
-        "src": "catalog/images/mochila-urbana-marinho.svg",
-        "alt": "Mochila Urbana na cor azul-marinho, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/mochila-urbana-detalhe.svg",
-        "alt": "Detalhe ampliado de Mochila Urbana",
+        "src": "https://your.merch.google/media/catalog/product/g/g/gglteddygilet_002_1.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300",
+        "alt": "Colete Matelassê Super G Preto, outra vista",
         "width": 800,
         "height": 800
       }
@@ -1465,24 +1042,499 @@
           "slug": "preto",
           "label": "Preto",
           "hex": "#202124"
-        },
+        }
+      ],
+      "sizes": [
+        "P",
+        "M",
+        "G",
+        "GG"
+      ]
+    },
+    "variants": [
+      {
+        "sku": "MS-015-PRETO-P",
+        "color": "preto",
+        "size": "P",
+        "stock": 0
+      },
+      {
+        "sku": "MS-015-PRETO-M",
+        "color": "preto",
+        "size": "M",
+        "stock": 10
+      },
+      {
+        "sku": "MS-015-PRETO-G",
+        "color": "preto",
+        "size": "G",
+        "stock": 3
+      },
+      {
+        "sku": "MS-015-PRETO-GG",
+        "color": "preto",
+        "size": "GG",
+        "stock": 0
+      }
+    ],
+    "badges": [
+      "sale"
+    ],
+    "featured": false,
+    "popularity": 48,
+    "createdAt": "2025-01-22T12:00:00.000Z"
+  },
+  {
+    "id": "016",
+    "slug": "jaqueta-google-joey",
+    "name": "Jaqueta Google Joey",
+    "description": "Jaqueta leve com capuz embutido na gola, dobrável na própria bolsa.",
+    "categorySlug": "vestuario",
+    "subcategorySlug": "jaquetas",
+    "collectionSlugs": [],
+    "priceInCents": 30090,
+    "compareAtPriceInCents": 60190,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2274_014.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300",
+        "alt": "Jaqueta Google Joey, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2274_038.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300",
+        "alt": "Jaqueta Google Joey, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {
+      "colors": [
         {
-          "slug": "marinho",
-          "label": "Azul-marinho",
-          "hex": "#174ea6"
+          "slug": "preto",
+          "label": "Preto",
+          "hex": "#202124"
+        }
+      ],
+      "sizes": [
+        "P",
+        "M",
+        "G",
+        "GG"
+      ]
+    },
+    "variants": [
+      {
+        "sku": "MS-016-PRETO-P",
+        "color": "preto",
+        "size": "P",
+        "stock": 12
+      },
+      {
+        "sku": "MS-016-PRETO-M",
+        "color": "preto",
+        "size": "M",
+        "stock": 5
+      },
+      {
+        "sku": "MS-016-PRETO-G",
+        "color": "preto",
+        "size": "G",
+        "stock": 10
+      },
+      {
+        "sku": "MS-016-PRETO-GG",
+        "color": "preto",
+        "size": "GG",
+        "stock": 3
+      }
+    ],
+    "badges": [
+      "sale"
+    ],
+    "featured": false,
+    "popularity": 46,
+    "createdAt": "2025-04-04T12:00:00.000Z"
+  },
+  {
+    "id": "017",
+    "slug": "bone-google-preto",
+    "name": "Boné Google Preto",
+    "description": "Boné de beisebol em sarja com a logo bordada e regulagem traseira em metal.",
+    "categorySlug": "vestuario",
+    "subcategorySlug": "bones-gorros",
+    "collectionSlugs": [],
+    "priceInCents": 14690,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2441_001_1.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300&format=jpeg",
+        "alt": "Boné Google Preto, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2441_003_1.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Boné Google Preto, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {
+      "colors": [
+        {
+          "slug": "preto",
+          "label": "Preto",
+          "hex": "#202124"
         }
       ]
     },
     "variants": [
       {
-        "sku": "MS-015-PRETO",
+        "sku": "MS-017-PRETO",
         "color": "preto",
-        "stock": 5
+        "stock": 7
+      }
+    ],
+    "badges": [
+      "new"
+    ],
+    "featured": true,
+    "popularity": 91,
+    "createdAt": "2026-10-01T12:00:00.000Z"
+  },
+  {
+    "id": "018",
+    "slug": "gorro-google-holidays-2026",
+    "name": "Gorro Google Holidays 2026",
+    "description": "Gorro de tricô canelado com padronagem de fim de ano.",
+    "categorySlug": "vestuario",
+    "subcategorySlug": "bones-gorros",
+    "collectionSlugs": [
+      "holiday-2026"
+    ],
+    "priceInCents": 10490,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2460_15198.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300",
+        "alt": "Gorro Google Holidays 2026, foto do produto",
+        "width": 800,
+        "height": 800
       },
       {
-        "sku": "MS-015-MARINHO",
-        "color": "marinho",
-        "stock": 12
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2460_15177.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300",
+        "alt": "Gorro Google Holidays 2026, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {
+      "colors": [
+        {
+          "slug": "vermelho",
+          "label": "Vermelho",
+          "hex": "#d93025"
+        }
+      ]
+    },
+    "variants": [
+      {
+        "sku": "MS-018-VERMELHO",
+        "color": "vermelho",
+        "stock": 14
+      }
+    ],
+    "badges": [
+      "new"
+    ],
+    "featured": false,
+    "popularity": 73,
+    "createdAt": "2026-10-18T12:00:00.000Z"
+  },
+  {
+    "id": "019",
+    "slug": "gorro-pescador-google",
+    "name": "Gorro Pescador Google",
+    "description": "Gorro curto estilo pescador em tricô grosso, com etiqueta bordada.",
+    "categorySlug": "vestuario",
+    "subcategorySlug": "bones-gorros",
+    "collectionSlugs": [],
+    "priceInCents": 14690,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2514_15362.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300",
+        "alt": "Gorro Pescador Google, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2514_15364.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300",
+        "alt": "Gorro Pescador Google, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {
+      "colors": [
+        {
+          "slug": "cinza",
+          "label": "Cinza",
+          "hex": "#9aa0a6"
+        }
+      ]
+    },
+    "variants": [
+      {
+        "sku": "MS-019-CINZA",
+        "color": "cinza",
+        "stock": 0
+      }
+    ],
+    "badges": [],
+    "featured": false,
+    "popularity": 45,
+    "createdAt": "2025-12-01T12:00:00.000Z"
+  },
+  {
+    "id": "020",
+    "slug": "camiseta-infantil-chrome-dino-verde",
+    "name": "Camiseta Infantil Chrome Dino Verde",
+    "description": "Camiseta infantil com o dinossauro em pixel art. Lavável na máquina.",
+    "categorySlug": "vestuario",
+    "subcategorySlug": "infantil",
+    "collectionSlugs": [
+      "chrome-dino"
+    ],
+    "priceInCents": 16090,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2144_001.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300&format=jpeg",
+        "alt": "Camiseta Infantil Chrome Dino Verde, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2144_002.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Camiseta Infantil Chrome Dino Verde, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {
+      "colors": [
+        {
+          "slug": "verde",
+          "label": "Verde",
+          "hex": "#188038"
+        }
+      ],
+      "sizes": [
+        "4",
+        "6",
+        "8",
+        "10"
+      ]
+    },
+    "variants": [
+      {
+        "sku": "MS-020-VERDE-4",
+        "color": "verde",
+        "size": "4",
+        "stock": 4
+      },
+      {
+        "sku": "MS-020-VERDE-6",
+        "color": "verde",
+        "size": "6",
+        "stock": 9
+      },
+      {
+        "sku": "MS-020-VERDE-8",
+        "color": "verde",
+        "size": "8",
+        "stock": 14
+      },
+      {
+        "sku": "MS-020-VERDE-10",
+        "color": "verde",
+        "size": "10",
+        "stock": 7
+      }
+    ],
+    "badges": [],
+    "featured": false,
+    "popularity": 57,
+    "createdAt": "2025-04-02T12:00:00.000Z"
+  },
+  {
+    "id": "021",
+    "slug": "body-googler-em-treinamento",
+    "name": "Body Googler em Treinamento",
+    "description": "Body de algodão orgânico com botões de pressão, para os futuros Googlers.",
+    "categorySlug": "vestuario",
+    "subcategorySlug": "infantil",
+    "collectionSlugs": [],
+    "priceInCents": 19590,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2319_001.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300&format=jpeg",
+        "alt": "Body Googler em Treinamento, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2319_002.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Body Googler em Treinamento, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {
+      "colors": [
+        {
+          "slug": "azul",
+          "label": "Azul",
+          "hex": "#1a73e8"
+        }
+      ],
+      "sizes": [
+        "6-12M",
+        "12-18M",
+        "18-24M"
+      ]
+    },
+    "variants": [
+      {
+        "sku": "MS-021-AZUL-6-12M",
+        "color": "azul",
+        "size": "6-12M",
+        "stock": 11
+      },
+      {
+        "sku": "MS-021-AZUL-12-18M",
+        "color": "azul",
+        "size": "12-18M",
+        "stock": 4
+      },
+      {
+        "sku": "MS-021-AZUL-18-24M",
+        "color": "azul",
+        "size": "18-24M",
+        "stock": 9
+      }
+    ],
+    "badges": [],
+    "featured": false,
+    "popularity": 49,
+    "createdAt": "2025-06-30T12:00:00.000Z"
+  },
+  {
+    "id": "022",
+    "slug": "camiseta-infantil-g-bike-amarela",
+    "name": "Camiseta Infantil G Bike Amarela",
+    "description": "Camiseta infantil amarela com a bicicleta colorida do campus.",
+    "categorySlug": "vestuario",
+    "subcategorySlug": "infantil",
+    "collectionSlugs": [
+      "g-bike"
+    ],
+    "priceInCents": 20990,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2303_001.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300&format=jpeg",
+        "alt": "Camiseta Infantil G Bike Amarela, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2303_002.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Camiseta Infantil G Bike Amarela, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {
+      "colors": [
+        {
+          "slug": "amarelo",
+          "label": "Amarelo",
+          "hex": "#f9ab00"
+        }
+      ],
+      "sizes": [
+        "4",
+        "6",
+        "8",
+        "10"
+      ]
+    },
+    "variants": [
+      {
+        "sku": "MS-022-AMARELO-4",
+        "color": "amarelo",
+        "size": "4",
+        "stock": 6
+      },
+      {
+        "sku": "MS-022-AMARELO-6",
+        "color": "amarelo",
+        "size": "6",
+        "stock": 11
+      },
+      {
+        "sku": "MS-022-AMARELO-8",
+        "color": "amarelo",
+        "size": "8",
+        "stock": 4
+      },
+      {
+        "sku": "MS-022-AMARELO-10",
+        "color": "amarelo",
+        "size": "10",
+        "stock": 9
+      }
+    ],
+    "badges": [],
+    "featured": false,
+    "popularity": 44,
+    "createdAt": "2025-08-10T12:00:00.000Z"
+  },
+  {
+    "id": "023",
+    "slug": "mochila-google-com-cordao",
+    "name": "Mochila Google com Cordão",
+    "description": "Mochila com fechamento por cordão, aba magnética e compartimento acolchoado para notebook.",
+    "categorySlug": "bolsas-acessorios",
+    "subcategorySlug": "mochilas",
+    "collectionSlugs": [],
+    "priceInCents": 44090,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2510_002.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300&format=jpeg",
+        "alt": "Mochila Google com Cordão, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2510_001.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Mochila Google com Cordão, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {
+      "colors": [
+        {
+          "slug": "preto",
+          "label": "Preto",
+          "hex": "#202124"
+        }
+      ]
+    },
+    "variants": [
+      {
+        "sku": "MS-023-PRETO",
+        "color": "preto",
+        "stock": 13
       }
     ],
     "badges": [
@@ -1493,26 +1545,24 @@
     "createdAt": "2025-03-28T12:00:00.000Z"
   },
   {
-    "id": "016",
-    "slug": "mochila-dev-notebook",
-    "name": "Mochila Dev Notebook",
-    "description": "Abertura total estilo mala, organizador de cabos e bolso antifurto nas costas.",
+    "id": "024",
+    "slug": "mini-mochila-google",
+    "name": "Mini Mochila Google",
+    "description": "Mochila compacta para o dia a dia, com bolso frontal e alças acolchoadas.",
     "categorySlug": "bolsas-acessorios",
     "subcategorySlug": "mochilas",
-    "collectionSlugs": [
-      "dev"
-    ],
-    "priceInCents": 39990,
+    "collectionSlugs": [],
+    "priceInCents": 20290,
     "images": [
       {
-        "src": "catalog/images/mochila-dev-notebook-cinza.svg",
-        "alt": "Mochila Dev Notebook na cor cinza, vista frontal",
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2475_001.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300&format=jpeg",
+        "alt": "Mini Mochila Google, foto do produto",
         "width": 800,
         "height": 800
       },
       {
-        "src": "catalog/images/mochila-dev-notebook-detalhe.svg",
-        "alt": "Detalhe ampliado de Mochila Dev Notebook",
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2475_005.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Mini Mochila Google, outra vista",
         "width": 800,
         "height": 800
       }
@@ -1520,53 +1570,47 @@
     "options": {
       "colors": [
         {
-          "slug": "cinza",
-          "label": "Cinza",
-          "hex": "#9aa0a6"
+          "slug": "preto",
+          "label": "Preto",
+          "hex": "#202124"
         }
       ]
     },
     "variants": [
       {
-        "sku": "MS-016-CINZA",
-        "color": "cinza",
-        "stock": 12
+        "sku": "MS-024-PRETO",
+        "color": "preto",
+        "stock": 8
       }
     ],
     "badges": [
       "new"
     ],
     "featured": false,
-    "popularity": 70,
-    "createdAt": "2026-10-25T12:00:00.000Z"
+    "popularity": 68,
+    "createdAt": "2026-09-28T12:00:00.000Z"
   },
   {
-    "id": "017",
-    "slug": "ecobag-de-algodao",
-    "name": "Ecobag de Algodão",
-    "description": "Sacola de algodão cru reforçada, com alças longas e bolso interno.",
+    "id": "025",
+    "slug": "sacola-de-algodao-google",
+    "name": "Sacola de Algodão Google",
+    "description": "Sacola de algodão cru com alças longas e a logo em quatro cores.",
     "categorySlug": "bolsas-acessorios",
     "subcategorySlug": "bolsas-sacolas",
     "collectionSlugs": [
-      "eco"
+      "sustentavel"
     ],
-    "priceInCents": 4990,
+    "priceInCents": 2790,
     "images": [
       {
-        "src": "catalog/images/ecobag-de-algodao-areia.svg",
-        "alt": "Ecobag de Algodão na cor areia, vista frontal",
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2536_002.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300",
+        "alt": "Sacola de Algodão Google, foto do produto",
         "width": 800,
         "height": 800
       },
       {
-        "src": "catalog/images/ecobag-de-algodao-oliva.svg",
-        "alt": "Ecobag de Algodão na cor verde-oliva, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/ecobag-de-algodao-detalhe.svg",
-        "alt": "Detalhe ampliado de Ecobag de Algodão",
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2536_003.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Sacola de Algodão Google, outra vista",
         "width": 800,
         "height": 800
       }
@@ -1577,24 +1621,14 @@
           "slug": "areia",
           "label": "Areia",
           "hex": "#e6d5b8"
-        },
-        {
-          "slug": "oliva",
-          "label": "Verde-oliva",
-          "hex": "#5f6b3a"
         }
       ]
     },
     "variants": [
       {
-        "sku": "MS-017-AREIA",
+        "sku": "MS-025-AREIA",
         "color": "areia",
-        "stock": 7
-      },
-      {
-        "sku": "MS-017-OLIVA",
-        "color": "oliva",
-        "stock": 14
+        "stock": 3
       }
     ],
     "badges": [
@@ -1605,218 +1639,24 @@
     "createdAt": "2025-04-22T12:00:00.000Z"
   },
   {
-    "id": "018",
-    "slug": "bolsa-tiracolo-aurora",
-    "name": "Bolsa Tiracolo Aurora",
-    "description": "Bolsa transversal com alça ajustável e fechamento em zíper.",
+    "id": "026",
+    "slug": "bolsa-transversal-google",
+    "name": "Bolsa Transversal Google",
+    "description": "Bolsa transversal com alça ajustável, fechamento em zíper e bolso interno.",
     "categorySlug": "bolsas-acessorios",
     "subcategorySlug": "bolsas-sacolas",
-    "collectionSlugs": [
-      "aurora"
-    ],
-    "priceInCents": 15990,
-    "compareAtPriceInCents": 19990,
+    "collectionSlugs": [],
+    "priceInCents": 18890,
     "images": [
       {
-        "src": "catalog/images/bolsa-tiracolo-aurora-lilas.svg",
-        "alt": "Bolsa Tiracolo Aurora na cor lilás, vista frontal",
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2474_001.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300&format=jpeg",
+        "alt": "Bolsa Transversal Google, foto do produto",
         "width": 800,
         "height": 800
       },
       {
-        "src": "catalog/images/bolsa-tiracolo-aurora-detalhe.svg",
-        "alt": "Detalhe ampliado de Bolsa Tiracolo Aurora",
-        "width": 800,
-        "height": 800
-      }
-    ],
-    "options": {
-      "colors": [
-        {
-          "slug": "lilas",
-          "label": "Lilás",
-          "hex": "#a142f4"
-        }
-      ]
-    },
-    "variants": [
-      {
-        "sku": "MS-018-LILAS",
-        "color": "lilas",
-        "stock": 14
-      }
-    ],
-    "badges": [
-      "sale"
-    ],
-    "featured": false,
-    "popularity": 57,
-    "createdAt": "2025-11-11T12:00:00.000Z"
-  },
-  {
-    "id": "019",
-    "slug": "kit-de-pins-pixel",
-    "name": "Kit de Pins Pixel",
-    "description": "Conjunto com três pins esmaltados de pixel art e trava de borracha.",
-    "categorySlug": "bolsas-acessorios",
-    "subcategorySlug": "chaveiros-pins",
-    "collectionSlugs": [
-      "dev"
-    ],
-    "priceInCents": 3990,
-    "images": [
-      {
-        "src": "catalog/images/kit-de-pins-pixel.svg",
-        "alt": "Kit de Pins Pixel, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/kit-de-pins-pixel-detalhe.svg",
-        "alt": "Detalhe ampliado de Kit de Pins Pixel",
-        "width": 800,
-        "height": 800
-      }
-    ],
-    "options": {},
-    "variants": [
-      {
-        "sku": "MS-019",
-        "stock": 9
-      }
-    ],
-    "badges": [],
-    "featured": false,
-    "popularity": 45,
-    "createdAt": "2025-02-02T12:00:00.000Z"
-  },
-  {
-    "id": "020",
-    "slug": "chaveiro-monograma",
-    "name": "Chaveiro Monograma",
-    "description": "Chaveiro de acrílico com argola de metal e o monograma M.",
-    "categorySlug": "bolsas-acessorios",
-    "subcategorySlug": "chaveiros-pins",
-    "collectionSlugs": [
-      "essenciais"
-    ],
-    "priceInCents": 2990,
-    "images": [
-      {
-        "src": "catalog/images/chaveiro-monograma-azul.svg",
-        "alt": "Chaveiro Monograma na cor azul, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/chaveiro-monograma-vermelho.svg",
-        "alt": "Chaveiro Monograma na cor vermelho, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/chaveiro-monograma-amarelo.svg",
-        "alt": "Chaveiro Monograma na cor amarelo, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/chaveiro-monograma-verde.svg",
-        "alt": "Chaveiro Monograma na cor verde, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/chaveiro-monograma-detalhe.svg",
-        "alt": "Detalhe ampliado de Chaveiro Monograma",
-        "width": 800,
-        "height": 800
-      }
-    ],
-    "options": {
-      "colors": [
-        {
-          "slug": "azul",
-          "label": "Azul",
-          "hex": "#1a73e8"
-        },
-        {
-          "slug": "vermelho",
-          "label": "Vermelho",
-          "hex": "#d93025"
-        },
-        {
-          "slug": "amarelo",
-          "label": "Amarelo",
-          "hex": "#f9ab00"
-        },
-        {
-          "slug": "verde",
-          "label": "Verde",
-          "hex": "#188038"
-        }
-      ]
-    },
-    "variants": [
-      {
-        "sku": "MS-020-AZUL",
-        "color": "azul",
-        "stock": 4
-      },
-      {
-        "sku": "MS-020-VERMELHO",
-        "color": "vermelho",
-        "stock": 11
-      },
-      {
-        "sku": "MS-020-AMARELO",
-        "color": "amarelo",
-        "stock": 6
-      },
-      {
-        "sku": "MS-020-VERDE",
-        "color": "verde",
-        "stock": 13
-      }
-    ],
-    "badges": [],
-    "featured": false,
-    "popularity": 52,
-    "createdAt": "2025-06-06T12:00:00.000Z"
-  },
-  {
-    "id": "021",
-    "slug": "garrafa-termica-500-ml",
-    "name": "Garrafa Térmica 500 ml",
-    "description": "Aço inox com parede dupla: mantém bebidas geladas por 24 h e quentes por 12 h.",
-    "categorySlug": "lifestyle",
-    "subcategorySlug": "garrafas-canecas",
-    "collectionSlugs": [
-      "eco"
-    ],
-    "priceInCents": 12990,
-    "images": [
-      {
-        "src": "catalog/images/garrafa-termica-500-ml-preto.svg",
-        "alt": "Garrafa Térmica 500 ml na cor preto, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/garrafa-termica-500-ml-branco.svg",
-        "alt": "Garrafa Térmica 500 ml na cor branco, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/garrafa-termica-500-ml-verde.svg",
-        "alt": "Garrafa Térmica 500 ml na cor verde, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/garrafa-termica-500-ml-detalhe.svg",
-        "alt": "Detalhe ampliado de Garrafa Térmica 500 ml",
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2474_002.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Bolsa Transversal Google, outra vista",
         "width": 800,
         "height": 800
       }
@@ -1827,403 +1667,91 @@
           "slug": "preto",
           "label": "Preto",
           "hex": "#202124"
-        },
-        {
-          "slug": "branco",
-          "label": "Branco",
-          "hex": "#f8f9fa"
-        },
-        {
-          "slug": "verde",
-          "label": "Verde",
-          "hex": "#188038"
         }
       ]
     },
     "variants": [
       {
-        "sku": "MS-021-PRETO",
+        "sku": "MS-026-PRETO",
         "color": "preto",
-        "stock": 11
-      },
-      {
-        "sku": "MS-021-BRANCO",
-        "color": "branco",
-        "stock": 6
-      },
-      {
-        "sku": "MS-021-VERDE",
-        "color": "verde",
-        "stock": 0
-      }
-    ],
-    "badges": [
-      "bestseller"
-    ],
-    "featured": true,
-    "popularity": 96,
-    "createdAt": "2025-03-03T12:00:00.000Z"
-  },
-  {
-    "id": "022",
-    "slug": "caneca-de-ceramica-350-ml",
-    "name": "Caneca de Cerâmica 350 ml",
-    "description": "Caneca de cerâmica esmaltada, pode ir ao micro-ondas e à lava-louças.",
-    "categorySlug": "lifestyle",
-    "subcategorySlug": "garrafas-canecas",
-    "collectionSlugs": [
-      "essenciais"
-    ],
-    "priceInCents": 5990,
-    "images": [
-      {
-        "src": "catalog/images/caneca-de-ceramica-350-ml-branco.svg",
-        "alt": "Caneca de Cerâmica 350 ml na cor branco, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/caneca-de-ceramica-350-ml-preto.svg",
-        "alt": "Caneca de Cerâmica 350 ml na cor preto, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/caneca-de-ceramica-350-ml-detalhe.svg",
-        "alt": "Detalhe ampliado de Caneca de Cerâmica 350 ml",
-        "width": 800,
-        "height": 800
-      }
-    ],
-    "options": {
-      "colors": [
-        {
-          "slug": "branco",
-          "label": "Branco",
-          "hex": "#f8f9fa"
-        },
-        {
-          "slug": "preto",
-          "label": "Preto",
-          "hex": "#202124"
-        }
-      ]
-    },
-    "variants": [
-      {
-        "sku": "MS-022-BRANCO",
-        "color": "branco",
-        "stock": 6
-      },
-      {
-        "sku": "MS-022-PRETO",
-        "color": "preto",
-        "stock": 13
-      }
-    ],
-    "badges": [
-      "bestseller"
-    ],
-    "featured": false,
-    "popularity": 90,
-    "createdAt": "2025-01-15T12:00:00.000Z"
-  },
-  {
-    "id": "023",
-    "slug": "copo-termico-com-tampa",
-    "name": "Copo Térmico com Tampa",
-    "description": "Copo reutilizável com tampa deslizante, perfeito para o café da manhã.",
-    "categorySlug": "lifestyle",
-    "subcategorySlug": "garrafas-canecas",
-    "collectionSlugs": [
-      "eco"
-    ],
-    "priceInCents": 7990,
-    "compareAtPriceInCents": 9990,
-    "images": [
-      {
-        "src": "catalog/images/copo-termico-com-tampa-azul.svg",
-        "alt": "Copo Térmico com Tampa na cor azul, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/copo-termico-com-tampa-detalhe.svg",
-        "alt": "Detalhe ampliado de Copo Térmico com Tampa",
-        "width": 800,
-        "height": 800
-      }
-    ],
-    "options": {
-      "colors": [
-        {
-          "slug": "azul",
-          "label": "Azul",
-          "hex": "#1a73e8"
-        }
-      ]
-    },
-    "variants": [
-      {
-        "sku": "MS-023-AZUL",
-        "color": "azul",
-        "stock": 13
-      }
-    ],
-    "badges": [
-      "sale"
-    ],
-    "featured": false,
-    "popularity": 55,
-    "createdAt": "2025-08-19T12:00:00.000Z"
-  },
-  {
-    "id": "024",
-    "slug": "caneca-esmaltada",
-    "name": "Caneca Esmaltada",
-    "description": "Caneca de metal esmaltado, leve e resistente para acampar ou para a mesa do escritório.",
-    "categorySlug": "lifestyle",
-    "subcategorySlug": "garrafas-canecas",
-    "collectionSlugs": [
-      "eco"
-    ],
-    "priceInCents": 6990,
-    "images": [
-      {
-        "src": "catalog/images/caneca-esmaltada-verde.svg",
-        "alt": "Caneca Esmaltada na cor verde, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/caneca-esmaltada-branco.svg",
-        "alt": "Caneca Esmaltada na cor branco, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/caneca-esmaltada-detalhe.svg",
-        "alt": "Detalhe ampliado de Caneca Esmaltada",
-        "width": 800,
-        "height": 800
-      }
-    ],
-    "options": {
-      "colors": [
-        {
-          "slug": "verde",
-          "label": "Verde",
-          "hex": "#188038"
-        },
-        {
-          "slug": "branco",
-          "label": "Branco",
-          "hex": "#f8f9fa"
-        }
-      ]
-    },
-    "variants": [
-      {
-        "sku": "MS-024-VERDE",
-        "color": "verde",
-        "stock": 8
-      },
-      {
-        "sku": "MS-024-BRANCO",
-        "color": "branco",
-        "stock": 3
-      }
-    ],
-    "badges": [],
-    "featured": false,
-    "popularity": 42,
-    "createdAt": "2025-09-01T12:00:00.000Z"
-  },
-  {
-    "id": "025",
-    "slug": "caderno-pontilhado-a5",
-    "name": "Caderno Pontilhado A5",
-    "description": "Capa dura, 160 páginas pontilhadas de 90 g/m² e marcador de fita.",
-    "categorySlug": "lifestyle",
-    "subcategorySlug": "escritorio",
-    "collectionSlugs": [
-      "dev"
-    ],
-    "priceInCents": 5490,
-    "images": [
-      {
-        "src": "catalog/images/caderno-pontilhado-a5-preto.svg",
-        "alt": "Caderno Pontilhado A5 na cor preto, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/caderno-pontilhado-a5-azul.svg",
-        "alt": "Caderno Pontilhado A5 na cor azul, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/caderno-pontilhado-a5-detalhe.svg",
-        "alt": "Detalhe ampliado de Caderno Pontilhado A5",
-        "width": 800,
-        "height": 800
-      }
-    ],
-    "options": {
-      "colors": [
-        {
-          "slug": "preto",
-          "label": "Preto",
-          "hex": "#202124"
-        },
-        {
-          "slug": "azul",
-          "label": "Azul",
-          "hex": "#1a73e8"
-        }
-      ]
-    },
-    "variants": [
-      {
-        "sku": "MS-025-PRETO",
-        "color": "preto",
-        "stock": 3
-      },
-      {
-        "sku": "MS-025-AZUL",
-        "color": "azul",
         "stock": 10
-      }
-    ],
-    "badges": [],
-    "featured": false,
-    "popularity": 60,
-    "createdAt": "2025-07-07T12:00:00.000Z"
-  },
-  {
-    "id": "026",
-    "slug": "kit-de-adesivos-dev",
-    "name": "Kit de Adesivos Dev",
-    "description": "Doze adesivos de vinil resistentes à água para notebook e garrafa.",
-    "categorySlug": "lifestyle",
-    "subcategorySlug": "escritorio",
-    "collectionSlugs": [
-      "dev"
-    ],
-    "priceInCents": 2490,
-    "images": [
-      {
-        "src": "catalog/images/kit-de-adesivos-dev.svg",
-        "alt": "Kit de Adesivos Dev, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/kit-de-adesivos-dev-detalhe.svg",
-        "alt": "Detalhe ampliado de Kit de Adesivos Dev",
-        "width": 800,
-        "height": 800
-      }
-    ],
-    "options": {},
-    "variants": [
-      {
-        "sku": "MS-026",
-        "stock": 0
-      }
-    ],
-    "badges": [],
-    "featured": false,
-    "popularity": 38,
-    "createdAt": "2025-02-20T12:00:00.000Z"
-  },
-  {
-    "id": "027",
-    "slug": "almofada-aurora",
-    "name": "Almofada Aurora",
-    "description": "Almofada de veludo com enchimento de fibra, capa removível e lavável.",
-    "categorySlug": "lifestyle",
-    "subcategorySlug": "casa",
-    "collectionSlugs": [
-      "aurora"
-    ],
-    "priceInCents": 11990,
-    "images": [
-      {
-        "src": "catalog/images/almofada-aurora-lilas.svg",
-        "alt": "Almofada Aurora na cor lilás, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/almofada-aurora-azul.svg",
-        "alt": "Almofada Aurora na cor azul, vista frontal",
-        "width": 800,
-        "height": 800
-      },
-      {
-        "src": "catalog/images/almofada-aurora-detalhe.svg",
-        "alt": "Detalhe ampliado de Almofada Aurora",
-        "width": 800,
-        "height": 800
-      }
-    ],
-    "options": {
-      "colors": [
-        {
-          "slug": "lilas",
-          "label": "Lilás",
-          "hex": "#a142f4"
-        },
-        {
-          "slug": "azul",
-          "label": "Azul",
-          "hex": "#1a73e8"
-        }
-      ]
-    },
-    "variants": [
-      {
-        "sku": "MS-027-LILAS",
-        "color": "lilas",
-        "stock": 5
-      },
-      {
-        "sku": "MS-027-AZUL",
-        "color": "azul",
-        "stock": 12
       }
     ],
     "badges": [
       "new"
     ],
     "featured": false,
-    "popularity": 62,
-    "createdAt": "2026-10-15T12:00:00.000Z"
+    "popularity": 64,
+    "createdAt": "2026-10-03T12:00:00.000Z"
   },
   {
-    "id": "028",
-    "slug": "kit-boas-vindas",
-    "name": "Kit Boas-Vindas",
-    "description": "Caneca, caderno, garrafa e adesivos em uma caixa reutilizável. O presente certo para novos colegas.",
-    "categorySlug": "presentes",
-    "subcategorySlug": "kits",
+    "id": "027",
+    "slug": "ecobag-reciclada-g-bike",
+    "name": "Ecobag Reciclada G Bike",
+    "description": "Ecobag de poliéster reciclado com a bicicleta do campus estampada.",
+    "categorySlug": "bolsas-acessorios",
+    "subcategorySlug": "bolsas-sacolas",
     "collectionSlugs": [
-      "essenciais"
+      "g-bike",
+      "sustentavel"
     ],
-    "priceInCents": 29990,
-    "compareAtPriceInCents": 34990,
+    "priceInCents": 5590,
     "images": [
       {
-        "src": "catalog/images/kit-boas-vindas.svg",
-        "alt": "Kit Boas-Vindas, vista frontal",
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2306_001.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300&format=jpeg",
+        "alt": "Ecobag Reciclada G Bike, foto do produto",
         "width": 800,
         "height": 800
       },
       {
-        "src": "catalog/images/kit-boas-vindas-detalhe.svg",
-        "alt": "Detalhe ampliado de Kit Boas-Vindas",
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2306_002.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Ecobag Reciclada G Bike, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {
+      "colors": [
+        {
+          "slug": "marinho",
+          "label": "Azul-marinho",
+          "hex": "#174ea6"
+        }
+      ]
+    },
+    "variants": [
+      {
+        "sku": "MS-027-MARINHO",
+        "color": "marinho",
+        "stock": 0
+      }
+    ],
+    "badges": [],
+    "featured": false,
+    "popularity": 40,
+    "createdAt": "2025-08-15T12:00:00.000Z"
+  },
+  {
+    "id": "028",
+    "slug": "chaveiro-google-g",
+    "name": "Chaveiro Google G",
+    "description": "Chaveiro de silicone com argola de metal, em quatro cores.",
+    "categorySlug": "bolsas-acessorios",
+    "subcategorySlug": "chaveiros-pins",
+    "collectionSlugs": [
+      "google-g"
+    ],
+    "priceInCents": 2790,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2424_002.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300&format=jpeg",
+        "alt": "Chaveiro Google G, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2424_001.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Chaveiro Google G, outra vista",
         "width": 800,
         "height": 800
       }
@@ -2236,33 +1764,33 @@
       }
     ],
     "badges": [
-      "sale"
+      "bestseller"
     ],
-    "featured": true,
-    "popularity": 80,
-    "createdAt": "2025-11-20T12:00:00.000Z"
+    "featured": false,
+    "popularity": 89,
+    "createdAt": "2025-06-06T12:00:00.000Z"
   },
   {
     "id": "029",
-    "slug": "kit-dev-starter",
-    "name": "Kit Dev Starter",
-    "description": "Camiseta Modo Escuro, pins de pixel e caderno pontilhado para quem está começando.",
-    "categorySlug": "presentes",
-    "subcategorySlug": "kits",
+    "slug": "pin-google-g",
+    "name": "Pin Google G",
+    "description": "Pin esmaltado com trava de borracha, para mochila ou jaqueta.",
+    "categorySlug": "bolsas-acessorios",
+    "subcategorySlug": "chaveiros-pins",
     "collectionSlugs": [
-      "dev"
+      "google-g"
     ],
-    "priceInCents": 19990,
+    "priceInCents": 2790,
     "images": [
       {
-        "src": "catalog/images/kit-dev-starter.svg",
-        "alt": "Kit Dev Starter, vista frontal",
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2423_001.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300&format=jpeg",
+        "alt": "Pin Google G, foto do produto",
         "width": 800,
         "height": 800
       },
       {
-        "src": "catalog/images/kit-dev-starter-detalhe.svg",
-        "alt": "Detalhe ampliado de Kit Dev Starter",
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2423_004.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Pin Google G, outra vista",
         "width": 800,
         "height": 800
       }
@@ -2278,30 +1806,105 @@
       "new"
     ],
     "featured": false,
-    "popularity": 68,
-    "createdAt": "2026-10-28T12:00:00.000Z"
+    "popularity": 46,
+    "createdAt": "2026-09-15T12:00:00.000Z"
   },
   {
     "id": "030",
-    "slug": "pelucia-mascote-bit",
-    "name": "Pelúcia Mascote Bit",
-    "description": "O Bit, nosso mascote, em pelúcia antialérgica de 25 cm.",
-    "categorySlug": "presentes",
-    "subcategorySlug": "pelucias",
+    "slug": "garrafa-termica-google-g",
+    "name": "Garrafa Térmica Google G",
+    "description": "Garrafa de aço inox com parede dupla: mantém bebidas geladas por 24 h e quentes por 12 h.",
+    "categorySlug": "lifestyle",
+    "subcategorySlug": "garrafas-canecas",
     "collectionSlugs": [
-      "dev"
+      "google-g",
+      "sustentavel"
     ],
-    "priceInCents": 9990,
+    "priceInCents": 20290,
     "images": [
       {
-        "src": "catalog/images/pelucia-mascote-bit-amarelo.svg",
-        "alt": "Pelúcia Mascote Bit na cor amarelo, vista frontal",
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2428_001.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300&format=jpeg",
+        "alt": "Garrafa Térmica Google G, foto do produto",
         "width": 800,
         "height": 800
       },
       {
-        "src": "catalog/images/pelucia-mascote-bit-detalhe.svg",
-        "alt": "Detalhe ampliado de Pelúcia Mascote Bit",
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2428_005.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Garrafa Térmica Google G, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {},
+    "variants": [
+      {
+        "sku": "MS-030",
+        "stock": 14
+      }
+    ],
+    "badges": [
+      "bestseller"
+    ],
+    "featured": true,
+    "popularity": 96,
+    "createdAt": "2025-03-03T12:00:00.000Z"
+  },
+  {
+    "id": "031",
+    "slug": "garrafa-termica-g-bike",
+    "name": "Garrafa Térmica G Bike",
+    "description": "Garrafa térmica com bico esportivo, do tamanho do suporte de bicicleta.",
+    "categorySlug": "lifestyle",
+    "subcategorySlug": "garrafas-canecas",
+    "collectionSlugs": [
+      "g-bike"
+    ],
+    "priceInCents": 25190,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2305_001.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300&format=jpeg",
+        "alt": "Garrafa Térmica G Bike, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2305_006.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Garrafa Térmica G Bike, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {},
+    "variants": [
+      {
+        "sku": "MS-031",
+        "stock": 9
+      }
+    ],
+    "badges": [],
+    "featured": false,
+    "popularity": 50,
+    "createdAt": "2025-08-20T12:00:00.000Z"
+  },
+  {
+    "id": "032",
+    "slug": "copo-termico-google-corzo",
+    "name": "Copo Térmico Google Corzo",
+    "description": "Copo térmico com tampa deslizante, para o café do caminho.",
+    "categorySlug": "lifestyle",
+    "subcategorySlug": "garrafas-canecas",
+    "collectionSlugs": [],
+    "priceInCents": 13290,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2385_001.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300&format=jpeg",
+        "alt": "Copo Térmico Google Corzo, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2385_003.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Copo Térmico Google Corzo, outra vista",
         "width": 800,
         "height": 800
       }
@@ -2309,22 +1912,369 @@
     "options": {
       "colors": [
         {
-          "slug": "amarelo",
-          "label": "Amarelo",
-          "hex": "#f9ab00"
+          "slug": "branco",
+          "label": "Branco",
+          "hex": "#f8f9fa"
         }
       ]
     },
     "variants": [
       {
-        "sku": "MS-030-AMARELO",
-        "color": "amarelo",
-        "stock": 14
+        "sku": "MS-032-BRANCO",
+        "color": "branco",
+        "stock": 4
       }
     ],
     "badges": [],
     "featured": false,
-    "popularity": 78,
-    "createdAt": "2025-12-01T12:00:00.000Z"
+    "popularity": 54,
+    "createdAt": "2025-08-19T12:00:00.000Z"
+  },
+  {
+    "id": "033",
+    "slug": "garrafa-chrome-dino",
+    "name": "Garrafa Chrome Dino",
+    "description": "Garrafa reutilizável com estampa em pixel art e tampa de rosca.",
+    "categorySlug": "lifestyle",
+    "subcategorySlug": "garrafas-canecas",
+    "collectionSlugs": [
+      "chrome-dino"
+    ],
+    "priceInCents": 22390,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2120_ggl2120_001_6230.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Garrafa Chrome Dino, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2064_031.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300",
+        "alt": "Garrafa Chrome Dino, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {},
+    "variants": [
+      {
+        "sku": "MS-033",
+        "stock": 11
+      }
+    ],
+    "badges": [],
+    "featured": false,
+    "popularity": 59,
+    "createdAt": "2025-05-25T12:00:00.000Z"
+  },
+  {
+    "id": "034",
+    "slug": "caderno-a5-reciclado-google",
+    "name": "Caderno A5 Reciclado Google",
+    "description": "Caderno A5 com capa de papel reciclado e 120 páginas pautadas.",
+    "categorySlug": "lifestyle",
+    "subcategorySlug": "escritorio",
+    "collectionSlugs": [
+      "sustentavel"
+    ],
+    "priceInCents": 6990,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2420_001.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300&format=jpeg",
+        "alt": "Caderno A5 Reciclado Google, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2420_002.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Caderno A5 Reciclado Google, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {
+      "colors": [
+        {
+          "slug": "verde",
+          "label": "Verde",
+          "hex": "#188038"
+        }
+      ]
+    },
+    "variants": [
+      {
+        "sku": "MS-034-VERDE",
+        "color": "verde",
+        "stock": 6
+      }
+    ],
+    "badges": [
+      "bestseller"
+    ],
+    "featured": false,
+    "popularity": 88,
+    "createdAt": "2025-07-07T12:00:00.000Z"
+  },
+  {
+    "id": "035",
+    "slug": "caderno-a5-capa-dura-g-bike",
+    "name": "Caderno A5 Capa Dura G Bike",
+    "description": "Caderno de capa dura com a bicicleta do campus e marcador de fita.",
+    "categorySlug": "lifestyle",
+    "subcategorySlug": "escritorio",
+    "collectionSlugs": [
+      "g-bike"
+    ],
+    "priceInCents": 11190,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2307_001.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300&format=jpeg",
+        "alt": "Caderno A5 Capa Dura G Bike, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2307_003.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Caderno A5 Capa Dura G Bike, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {},
+    "variants": [
+      {
+        "sku": "MS-035",
+        "stock": 13
+      }
+    ],
+    "badges": [],
+    "featured": false,
+    "popularity": 42,
+    "createdAt": "2025-08-12T12:00:00.000Z"
+  },
+  {
+    "id": "036",
+    "slug": "kit-de-adesivos-google-g",
+    "name": "Kit de Adesivos Google G",
+    "description": "Adesivos de vinil resistentes à água para notebook e garrafa.",
+    "categorySlug": "lifestyle",
+    "subcategorySlug": "escritorio",
+    "collectionSlugs": [
+      "google-g"
+    ],
+    "priceInCents": 2790,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2426_001.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300&format=jpeg",
+        "alt": "Kit de Adesivos Google G, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2426_003.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Kit de Adesivos Google G, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {},
+    "variants": [
+      {
+        "sku": "MS-036",
+        "stock": 8
+      }
+    ],
+    "badges": [
+      "new"
+    ],
+    "featured": false,
+    "popularity": 47,
+    "createdAt": "2026-09-20T12:00:00.000Z"
+  },
+  {
+    "id": "037",
+    "slug": "guarda-chuva-medio-google",
+    "name": "Guarda-chuva Médio Google",
+    "description": "Guarda-chuva de abertura automática com hastes de fibra resistentes ao vento.",
+    "categorySlug": "lifestyle",
+    "subcategorySlug": "casa",
+    "collectionSlugs": [],
+    "priceInCents": 31490,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2352_001.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300&format=jpeg",
+        "alt": "Guarda-chuva Médio Google, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2352_003.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Guarda-chuva Médio Google, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {},
+    "variants": [
+      {
+        "sku": "MS-037",
+        "stock": 3
+      }
+    ],
+    "badges": [],
+    "featured": false,
+    "popularity": 41,
+    "createdAt": "2025-11-20T12:00:00.000Z"
+  },
+  {
+    "id": "038",
+    "slug": "globo-de-neve-chrome-dino",
+    "name": "Globo de Neve Chrome Dino",
+    "description": "Globo de vidro com neve e o dinossauro em pixel art na base.",
+    "categorySlug": "presentes",
+    "subcategorySlug": "colecionaveis",
+    "collectionSlugs": [
+      "chrome-dino",
+      "holiday-2026"
+    ],
+    "priceInCents": 18190,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2328_002.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300&format=jpeg",
+        "alt": "Globo de Neve Chrome Dino, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2328_005.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Globo de Neve Chrome Dino, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {},
+    "variants": [
+      {
+        "sku": "MS-038",
+        "stock": 10
+      }
+    ],
+    "badges": [
+      "new"
+    ],
+    "featured": true,
+    "popularity": 80,
+    "createdAt": "2026-10-25T12:00:00.000Z"
+  },
+  {
+    "id": "039",
+    "slug": "bicicleta-miniatura-google",
+    "name": "Bicicleta Miniatura Google",
+    "description": "Miniatura de metal da bicicleta colorida do campus, com rodas que giram.",
+    "categorySlug": "presentes",
+    "subcategorySlug": "colecionaveis",
+    "collectionSlugs": [
+      "g-bike"
+    ],
+    "priceInCents": 31490,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2315_001.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300&format=jpeg",
+        "alt": "Bicicleta Miniatura Google, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2315_003.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Bicicleta Miniatura Google, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {},
+    "variants": [
+      {
+        "sku": "MS-039",
+        "stock": 5
+      }
+    ],
+    "badges": [],
+    "featured": false,
+    "popularity": 62,
+    "createdAt": "2025-09-09T12:00:00.000Z"
+  },
+  {
+    "id": "040",
+    "slug": "quebra-cabeca-de-blocos-chrome-dino",
+    "name": "Quebra-cabeça de Blocos Chrome Dino",
+    "description": "Blocos de montar para criar o dinossauro em 3D. A partir de 8 anos.",
+    "categorySlug": "presentes",
+    "subcategorySlug": "brinquedos",
+    "collectionSlugs": [
+      "chrome-dino"
+    ],
+    "priceInCents": 16090,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2231_003.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300&format=jpeg",
+        "alt": "Quebra-cabeça de Blocos Chrome Dino, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2231_001.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Quebra-cabeça de Blocos Chrome Dino, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {},
+    "variants": [
+      {
+        "sku": "MS-040",
+        "stock": 12
+      }
+    ],
+    "badges": [],
+    "featured": false,
+    "popularity": 53,
+    "createdAt": "2025-10-01T12:00:00.000Z"
+  },
+  {
+    "id": "041",
+    "slug": "kit-de-magica-chrome-dino",
+    "name": "Kit de Mágica Chrome Dino",
+    "description": "Cartola, varinha e capa em miniatura para os fãs do dinossauro.",
+    "categorySlug": "presentes",
+    "subcategorySlug": "brinquedos",
+    "collectionSlugs": [
+      "chrome-dino"
+    ],
+    "priceInCents": 10490,
+    "images": [
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2269_002.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&canvas=300:300&format=jpeg",
+        "alt": "Kit de Mágica Chrome Dino, foto do produto",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "https://your.merch.google/media/catalog/product/g/g/ggl2269_004.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=300&width=300&format=jpeg",
+        "alt": "Kit de Mágica Chrome Dino, outra vista",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "options": {},
+    "variants": [
+      {
+        "sku": "MS-041",
+        "stock": 7
+      }
+    ],
+    "badges": [],
+    "featured": false,
+    "popularity": 39,
+    "createdAt": "2025-12-05T12:00:00.000Z"
   }
 ]
