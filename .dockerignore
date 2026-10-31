@@ -1,0 +1,19 @@
+# Contexto do build = raiz do workspace. Só entra o necessário para `ng build`.
+**/node_modules
+dist
+.angular
+.git
+.vscode
+.idea
+.claude
+coverage
+test-results
+playwright-report
+blob-report
+e2e
+docs
+tools
+*.md
+**/*.spec.ts
+.env
+.env.*
