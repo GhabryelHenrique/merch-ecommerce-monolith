@@ -41,4 +41,4 @@ COPY --from=build --chown=node:node /app/dist ./dist
 # injects at runtime.
 EXPOSE 8080
 
-CMD ["node", "dist/angular-ssr-cloud-run/server/server.mjs"]
+CMD ["node", "dist/monolith/server/server.mjs"]
