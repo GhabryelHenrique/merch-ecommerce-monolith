@@ -1,3 +1,4 @@
+import { PlatformLocation } from '@angular/common';
 import { DOCUMENT, InjectionToken, inject } from '@angular/core';
 
 /**
@@ -23,11 +24,28 @@ export function resolveAssetUrl(path: string, base: string, documentBaseUri: str
   return new URL(path.replace(/^\/+/, ''), normalizedRoot).href;
 }
 
+/**
+ * `document.baseURI` no navegador. No SSR o DOM do servidor (domino) não implementa
+ * `baseURI` e lança `NotYetImplemented`; aí a base sai do `PlatformLocation`, que no
+ * servidor conhece a URL do request.
+ */
+function documentBaseUri(document: Document, location: PlatformLocation): string {
+  try {
+    if (document.baseURI) {
+      return document.baseURI;
+    }
+  } catch {
+    // segue para o PlatformLocation
+  }
+  return new URL(location.getBaseHrefFromDOM() || '/', location.href).href;
+}
+
 /** Captura base e documento no contexto de injeção e devolve um resolvedor reutilizável. */
 export function injectAssetUrl(): (path: string) => string {
   const base = inject(ASSETS_BASE_URL);
   const document = inject(DOCUMENT);
-  return (path) => resolveAssetUrl(path, base, document.baseURI);
+  const location = inject(PlatformLocation);
+  return (path) => resolveAssetUrl(path, base, documentBaseUri(document, location));
 }
 
 /** Atalho para uso direto em contexto de injeção (campos de classe, factories). */

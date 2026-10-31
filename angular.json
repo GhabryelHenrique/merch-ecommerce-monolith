@@ -39,6 +39,18 @@
               "includePaths": [
                 "projects/monolith/src/styles"
               ]
+            },
+            "server": "projects/monolith/src/main.server.ts",
+            "outputMode": "server",
+            "security": {
+              "allowedHosts": [
+                "localhost",
+                "127.0.0.1",
+                "*.run.app"
+              ]
+            },
+            "ssr": {
+              "entry": "projects/monolith/src/server.ts"
             }
           },
           "configurations": {

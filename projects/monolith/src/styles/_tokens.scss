@@ -34,6 +34,10 @@
   --color-danger-soft: #fce8e6;
   --color-info-soft: #e8f0fe;
   --color-focus: #1967d2;
+
+  // Cores — barra de telemetria (palestra de SSR): servidor x navegador
+  --color-telemetry-server: #1967d2; // 5.2:1 sobre --color-surface-alt
+  --color-telemetry-client: #8430ce; // 5.7:1 sobre --color-surface-alt
   --color-overlay: rgb(32 33 36 / 60%);
   --color-skeleton: #e8eaed;
   --color-skeleton-shine: #f1f3f4;

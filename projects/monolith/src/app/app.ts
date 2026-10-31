@@ -1,10 +1,10 @@
 import { Component, type ElementRef, viewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Footer, Header, PromoBar, ToastHost, focusMainOnNavigation } from '@merch/core';
+import { Footer, Header, PromoBar, TelemetryBar, ToastHost, focusMainOnNavigation } from '@merch/core';
 
 @Component({
   selector: 'merch-root',
-  imports: [RouterOutlet, PromoBar, Header, Footer, ToastHost],
+  imports: [RouterOutlet, TelemetryBar, PromoBar, Header, Footer, ToastHost],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

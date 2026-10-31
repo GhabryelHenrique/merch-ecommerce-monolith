@@ -6,4 +6,6 @@ export { Header } from './layout/header/header';
 export { PromoBar } from './layout/promo-bar/promo-bar';
 export { ToastHost } from './layout/toast-host/toast-host';
 export { NotFound } from './not-found/not-found';
+export { TelemetryBar } from './layout/telemetry-bar/telemetry-bar';
+export { provideSsrTransferCacheOriginMap, ssrLoopbackInterceptor } from './ssr/loopback';
 export { focusMainOnNavigation } from './navigation/focus-main';

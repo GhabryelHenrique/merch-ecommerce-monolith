@@ -1,0 +1,61 @@
+@let t = telemetry();
+
+<aside class="bar" [class.bar--csr]="!t" aria-label="Telemetria de renderização">
+  @if (t) {
+    <div class="group group--primary">
+      <span class="label">render</span>
+      <span class="value value--strong">{{ renderOrigin() }}</span>
+      <span class="divider" aria-hidden="true">·</span>
+      <span class="value">{{ renderedAtLabel() }}</span>
+      <span class="divider" aria-hidden="true">·</span>
+      <span class="value value--strong">{{ t.renderMs }}ms</span>
+      @if (showBoot()) {
+        <span class="divider" aria-hidden="true">·</span>
+        <span class="label">boot</span>
+        <span class="value value--boot">{{ bootLabel() }}</span>
+      }
+    </div>
+
+    <div class="group">
+      <span class="label">instância</span>
+      <span class="value">{{ t.instanceId }}</span>
+      <span class="divider" aria-hidden="true">·</span>
+      <span class="label">req</span>
+      <span class="value">#{{ t.requestNumber }}</span>
+      <span class="divider" aria-hidden="true">·</span>
+      <span class="label">uptime</span>
+      <span class="value">{{ uptimeLabel() }}</span>
+    </div>
+
+    <div class="group">
+      <span class="badge" [class.badge--cold]="t.coldStart" [class.badge--warm]="!t.coldStart">
+        {{ t.coldStart ? 'COLD START' : 'WARM' }}
+      </span>
+      @if (hydrated()) {
+        <span class="badge badge--hydrated">HYDRATED</span>
+      }
+    </div>
+
+    <div class="group group--infra">
+      <span class="label">PORT</span>
+      <span class="value">{{ t.port }}</span>
+      <span class="divider" aria-hidden="true">·</span>
+      <span class="label">em andamento</span>
+      <span class="value">{{ t.inFlight }} <span class="muted">(pico {{ t.peakInFlight }})</span></span>
+      @if (t.revision) {
+        <span class="divider" aria-hidden="true">·</span>
+        <span class="label">K_REVISION</span>
+        <span class="value">{{ t.revision }}</span>
+      }
+      <span class="divider" aria-hidden="true">·</span>
+      <span class="value muted">{{ t.platform }}</span>
+    </div>
+  } @else {
+    <div class="group group--primary">
+      <span class="label">render</span>
+      <span class="value value--strong">{{ renderOrigin() }}</span>
+      <span class="divider" aria-hidden="true">·</span>
+      <span class="value muted">nenhum HTML veio do servidor — o navegador montou esta página sozinho</span>
+    </div>
+  }
+</aside>
