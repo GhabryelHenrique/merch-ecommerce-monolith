@@ -1,0 +1,48 @@
+:host {
+  display: block;
+}
+
+.visual {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-2);
+}
+
+.current {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}
+
+.current--sale {
+  color: var(--color-sale);
+}
+
+.compare {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.discount {
+  padding: 0 var(--space-1);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  background: var(--color-sale-soft);
+  color: var(--color-sale);
+}
+
+.installments {
+  flex-basis: 100%;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+:host(.price--lg) .current {
+  font-size: var(--font-size-2xl);
+}
+
+:host(.price--lg) .compare {
+  font-size: var(--font-size-md);
+}

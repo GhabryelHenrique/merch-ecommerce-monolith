@@ -1,0 +1,33 @@
+:host {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  background: var(--color-surface-strong);
+  color: var(--color-text);
+}
+
+:host(.badge--new) {
+  background: var(--color-primary-soft);
+  color: var(--color-primary-hover);
+}
+
+:host(.badge--bestseller) {
+  background: var(--color-warning-soft);
+  color: var(--color-warning);
+}
+
+:host(.badge--sale) {
+  background: var(--color-sale);
+  color: var(--color-text-inverse);
+}
+
+:host(.badge--soldout) {
+  background: var(--color-text);
+  color: var(--color-text-inverse);
+}

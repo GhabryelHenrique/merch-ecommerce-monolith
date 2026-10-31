@@ -1,0 +1,28 @@
+:host {
+  display: block;
+  min-height: 1em;
+  border-radius: var(--radius-md);
+  background: linear-gradient(
+      90deg,
+      var(--color-skeleton) 0%,
+      var(--color-skeleton-shine) 50%,
+      var(--color-skeleton) 100%
+    )
+    0 0 / 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+:host(.skeleton--text) {
+  height: 1em;
+  border-radius: var(--radius-sm);
+}
+
+:host(.skeleton--circle) {
+  border-radius: var(--radius-round);
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}

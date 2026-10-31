@@ -39,7 +39,7 @@ module.exports = defineConfig([
     files: ['**/*.ts'],
     rules: {
       '@angular-eslint/directive-selector': ['error', { type: 'attribute', prefix: 'merch', style: 'camelCase' }],
-      '@angular-eslint/component-selector': ['error', { type: 'element', prefix: 'merch', style: 'kebab-case' }],
+      '@angular-eslint/component-selector': ['error', { type: ['element', 'attribute'], prefix: 'merch', style: 'kebab-case' }],
       '@typescript-eslint/no-explicit-any': 'error',
       'no-restricted-imports': restrict(),
     },
