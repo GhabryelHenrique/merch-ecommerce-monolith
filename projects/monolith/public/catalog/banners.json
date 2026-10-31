@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "eyebrow": "Nova coleção",
+    "title": "Aurora chegou",
+    "subtitle": "Moletons, camisetas e acessórios em tons de amanhecer. Edição limitada.",
+    "ctaLabel": "Conhecer a coleção",
+    "ctaUrl": "/c/todos?colecao=aurora",
+    "image": {
+      "src": "catalog/images/banner-hero.svg",
+      "alt": "",
+      "width": 1600,
+      "height": 900
+    }
+  },
+  "seasonal": {
+    "eyebrow": "Temporada de presentes",
+    "title": "Presentes que todo mundo usa",
+    "subtitle": "Kits prontos para presentear, com embalagem reutilizável.",
+    "ctaLabel": "Ver presentes",
+    "ctaUrl": "/c/presentes",
+    "image": {
+      "src": "catalog/images/banner-sazonal.svg",
+      "alt": "",
+      "width": 1600,
+      "height": 700
+    }
+  },
+  "sustainability": {
+    "title": "Feito para durar",
+    "text": "Usamos algodão reciclado, tintas à base d’água e embalagens sem plástico em toda a Linha Eco.",
+    "ctaLabel": "Conhecer a Linha Eco",
+    "ctaUrl": "/c/todos?colecao=eco"
+  }
+}

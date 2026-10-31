@@ -1,0 +1,82 @@
+[
+  {
+    "slug": "vestuario",
+    "name": "Vestuário",
+    "description": "Camisetas, moletons, jaquetas e bonés para o dia a dia.",
+    "subcategories": [
+      {
+        "slug": "camisetas",
+        "name": "Camisetas"
+      },
+      {
+        "slug": "moletons",
+        "name": "Moletons"
+      },
+      {
+        "slug": "jaquetas",
+        "name": "Jaquetas"
+      },
+      {
+        "slug": "bones-gorros",
+        "name": "Bonés e gorros"
+      },
+      {
+        "slug": "infantil",
+        "name": "Infantil"
+      }
+    ]
+  },
+  {
+    "slug": "bolsas-acessorios",
+    "name": "Bolsas & Acessórios",
+    "description": "Mochilas, bolsas, pins e chaveiros para levar a marca com você.",
+    "subcategories": [
+      {
+        "slug": "mochilas",
+        "name": "Mochilas"
+      },
+      {
+        "slug": "bolsas-sacolas",
+        "name": "Bolsas e sacolas"
+      },
+      {
+        "slug": "chaveiros-pins",
+        "name": "Chaveiros e pins"
+      }
+    ]
+  },
+  {
+    "slug": "lifestyle",
+    "name": "Lifestyle",
+    "description": "Garrafas, canecas, papelaria e itens para casa.",
+    "subcategories": [
+      {
+        "slug": "garrafas-canecas",
+        "name": "Garrafas e canecas"
+      },
+      {
+        "slug": "escritorio",
+        "name": "Escritório"
+      },
+      {
+        "slug": "casa",
+        "name": "Casa"
+      }
+    ]
+  },
+  {
+    "slug": "presentes",
+    "name": "Presentes",
+    "description": "Kits prontos e pelúcias para presentear.",
+    "subcategories": [
+      {
+        "slug": "kits",
+        "name": "Kits"
+      },
+      {
+        "slug": "pelucias",
+        "name": "Pelúcias"
+      }
+    ]
+  }
+]

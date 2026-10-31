@@ -1,0 +1,54 @@
+[
+  {
+    "slug": "aurora",
+    "name": "Coleção Aurora",
+    "tagline": "Cores do amanhecer para a nova estação",
+    "description": "Tons de azul e lilás inspirados no céu da manhã, em peças macias e versáteis.",
+    "theme": "campaign-1",
+    "image": {
+      "src": "catalog/images/colecao-aurora.svg",
+      "alt": "",
+      "width": 800,
+      "height": 600
+    }
+  },
+  {
+    "slug": "essenciais",
+    "name": "Linha Essencial",
+    "tagline": "Os básicos que combinam com tudo",
+    "description": "Peças atemporais em cores neutras, feitas para durar e usar todos os dias.",
+    "theme": "campaign-2",
+    "image": {
+      "src": "catalog/images/colecao-essenciais.svg",
+      "alt": "",
+      "width": 800,
+      "height": 600
+    }
+  },
+  {
+    "slug": "dev",
+    "name": "Coleção Dev",
+    "tagline": "Para quem vive entre commits e cafés",
+    "description": "Estampas de pixel, código e terminal para quem desenvolve software.",
+    "theme": "campaign-4",
+    "image": {
+      "src": "catalog/images/colecao-dev.svg",
+      "alt": "",
+      "width": 800,
+      "height": 600
+    }
+  },
+  {
+    "slug": "eco",
+    "name": "Linha Eco",
+    "tagline": "Materiais reciclados e reutilizáveis",
+    "description": "Algodão reciclado, garrafas reutilizáveis e embalagens sem plástico.",
+    "theme": "campaign-3",
+    "image": {
+      "src": "catalog/images/colecao-eco.svg",
+      "alt": "",
+      "width": 800,
+      "height": 600
+    }
+  }
+]

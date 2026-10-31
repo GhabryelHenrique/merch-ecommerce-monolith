@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { ProductApi } from '../data/product-api';
 
 @Component({
-  imports: [],
   selector: 'merch-home-page',
-  styleUrl: './home-page.scss',
+  imports: [NgOptimizedImage],
   templateUrl: './home-page.html',
+  styleUrl: './home-page.scss',
 })
-export class HomePage {}
+export class HomePage {
+  protected readonly api = inject(ProductApi);
+}

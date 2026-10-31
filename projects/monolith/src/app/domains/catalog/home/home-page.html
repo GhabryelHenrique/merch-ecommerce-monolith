@@ -1,1 +1,5 @@
 <h1>Merch Store — destaques</h1>
+<p>{{ api.products().length }} produtos em {{ api.categories().length }} categorias carregados.</p>
+@if (api.products()[0]; as first) {
+  <img [ngSrc]="first.images[0].src" [alt]="first.images[0].alt" width="200" height="200" />
+}

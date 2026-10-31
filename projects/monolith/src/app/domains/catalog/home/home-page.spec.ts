@@ -1,21 +1,17 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { TestBed } from '@angular/core/testing';
+import { ProductApi } from '../data/product-api';
 import { HomePage } from './home-page';
 
 describe('HomePage', () => {
-  let component: HomePage;
-  let fixture: ComponentFixture<HomePage>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  it('renderiza o título', () => {
+    TestBed.configureTestingModule({
       imports: [HomePage],
-    }).compileComponents();
-
-    fixture = TestBed.createComponent(HomePage);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+      providers: [provideHttpClient(), provideHttpClientTesting(), ProductApi],
+    });
+    const fixture = TestBed.createComponent(HomePage);
+    fixture.detectChanges();
+    expect((fixture.nativeElement as HTMLElement).querySelector('h1')?.textContent).toContain('Merch Store');
   });
 });
