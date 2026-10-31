@@ -1,0 +1,30 @@
+<section class="carousel" [attr.aria-labelledby]="headingId()">
+  <div class="head">
+    <h2 class="title" [id]="headingId()">{{ heading() }}</h2>
+    <div class="controls">
+      <button
+        type="button"
+        class="nav"
+        [disabled]="atStart()"
+        [attr.aria-label]="'Rolar ' + heading().toLowerCase() + ' para trás'"
+        (click)="scroll(-1)"
+      >
+        <merch-icon name="chevron-left" />
+      </button>
+      <button
+        type="button"
+        class="nav"
+        [disabled]="atEnd()"
+        [attr.aria-label]="'Rolar ' + heading().toLowerCase() + ' para frente'"
+        (click)="scroll(1)"
+      >
+        <merch-icon name="chevron-right" />
+      </button>
+    </div>
+  </div>
+  <ul #track role="list" class="track" (scroll)="onScroll()">
+    @for (product of products(); track product.id) {
+      <li class="slide"><merch-product-card [product]="product" /></li>
+    }
+  </ul>
+</section>

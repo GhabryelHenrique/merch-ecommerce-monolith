@@ -1,0 +1,59 @@
+<div class="page">
+  @if (notFound()) {
+    <merch-empty-state
+      heading="Categoria não encontrada"
+      description="Essa categoria não existe ou foi removida."
+      icon="alert"
+      [headingLevel]="1"
+    >
+      <a merch-button routerLink="/">Voltar para a página inicial</a>
+    </merch-empty-state>
+  } @else {
+    <header class="head">
+      <merch-breadcrumb [items]="breadcrumb()" />
+      <h1 class="title">{{ view()?.title ?? 'Carregando…' }}</h1>
+      @if (view()?.description; as description) {
+        <p class="description">{{ description }}</p>
+      }
+    </header>
+
+    <div class="toolbar">
+      <merch-filter-bar
+        [subcategories]="view()?.subcategories ?? []"
+        [collections]="collections()"
+        [subcategory]="subcategoria()"
+        [collection]="colecao()"
+        [price]="preco()"
+        [onSale]="promocao() === '1'"
+        [sort]="sort()"
+        [hasActiveFilters]="hasActiveFilters()"
+        (changed)="applyFilter($event)"
+        (cleared)="clearFilters()"
+      />
+      <p class="count" role="status">{{ loading() ? '' : countText() }}</p>
+    </div>
+
+    <section aria-labelledby="produtos-titulo">
+      <h2 id="produtos-titulo" class="visually-hidden">Produtos</h2>
+      @if (loading() || error()) {
+        <merch-catalog-state [error]="error()" (retry)="retry()" />
+      } @else if (results().length === 0) {
+        <merch-empty-state
+          heading="Nenhum produto encontrado"
+          description="Tente remover alguns filtros para ver mais opções."
+          icon="search"
+        >
+          <button merch-button type="button" (click)="clearFilters()">Limpar filtros</button>
+        </merch-empty-state>
+      } @else {
+        <merch-product-grid [products]="visible()" [priorityCount]="4" />
+        @if (remaining() > 0) {
+          <div class="more">
+            <p class="more-status">Mostrando {{ visible().length }} de {{ results().length }}</p>
+            <button merch-button variant="secondary" type="button" (click)="loadMore()">Carregar mais</button>
+          </div>
+        }
+      }
+    </section>
+  }
+</div>

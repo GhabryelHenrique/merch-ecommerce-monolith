@@ -1,0 +1,17 @@
+<section class="banner" [attr.aria-labelledby]="headingId()">
+  <div class="art">
+    <img [ngSrc]="banner().image.src" alt="" fill [priority]="hero()" />
+  </div>
+  <div class="content">
+    <p class="eyebrow">{{ banner().eyebrow }}</p>
+    @if (hero()) {
+      <h1 class="title" [id]="headingId()">{{ banner().title }}</h1>
+    } @else {
+      <h2 class="title" [id]="headingId()">{{ banner().title }}</h2>
+    }
+    <p class="subtitle">{{ banner().subtitle }}</p>
+    <a merch-button [size]="hero() ? 'lg' : 'md'" [routerLink]="cta().path" [queryParams]="cta().query">
+      {{ banner().ctaLabel }}
+    </a>
+  </div>
+</section>

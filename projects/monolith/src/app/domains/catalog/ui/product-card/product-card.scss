@@ -1,0 +1,86 @@
+:host {
+  display: block;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  height: 100%;
+}
+
+.media {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-alt);
+}
+
+img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--easing-standard);
+}
+
+.card:hover img {
+  transform: scale(1.04);
+}
+
+.card--soldout img {
+  opacity: 0.6;
+}
+
+.badges {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.body {
+  display: grid;
+  gap: var(--space-1);
+  padding: 0 var(--space-1);
+}
+
+.name {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-snug);
+}
+
+.name a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+// Link "esticado": o card inteiro é clicável com um único alvo de foco.
+.name a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+}
+
+.name a:focus-visible {
+  outline: none;
+}
+
+.name a:focus-visible::after {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.card:hover .name a {
+  text-decoration: underline;
+}
+
+.meta {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}

@@ -2,6 +2,7 @@ import { IMAGE_LOADER, type ImageLoaderConfig } from '@angular/common';
 import type { Routes } from '@angular/router';
 import { ASSETS_BASE_URL, injectAssetUrl } from '@merch/shared/util';
 import { ProductApi } from './data/product-api';
+import { categoryTitle, searchTitle } from './data/title-resolvers';
 
 /**
  * Rota pai `''` com os providers do domínio: o catálogo é autossuficiente
@@ -26,8 +27,19 @@ export const CATALOG_ROUTES: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        title: 'Merch Store',
+        title: 'Merch Store · Loja de demonstração',
         loadComponent: () => import('./home/home-page').then((m) => m.HomePage),
+      },
+      {
+        path: 'c/:categorySlug',
+        title: categoryTitle,
+        loadComponent: () => import('./category/category-page').then((m) => m.CategoryPage),
+      },
+      {
+        path: 'busca',
+        title: searchTitle,
+        runGuardsAndResolvers: 'paramsOrQueryParamsChange',
+        loadComponent: () => import('./search/search-page').then((m) => m.SearchPage),
       },
     ],
   },

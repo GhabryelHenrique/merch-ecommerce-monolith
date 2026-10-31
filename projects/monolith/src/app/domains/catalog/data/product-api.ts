@@ -1,6 +1,8 @@
 import { httpResource } from '@angular/common/http';
 import { Service, computed } from '@angular/core';
+import { toObservable } from '@angular/core/rxjs-interop';
 import { injectAssetUrl } from '@merch/shared/util';
+import { filter, firstValueFrom } from 'rxjs';
 import type { Banners, Category, Collection, Product } from './models';
 
 /**
@@ -35,6 +37,20 @@ export class ProductApi {
 
   readonly productsLoading = computed(() => this.productsResource.isLoading());
   readonly productsError = computed(() => this.productsResource.error() !== undefined);
+
+  /** Produtos e categorias terminaram de carregar (com sucesso ou erro). */
+  private readonly settled$ = toObservable(
+    computed(
+      () =>
+        (this.productsResource.hasValue() || this.productsResource.error() !== undefined) &&
+        (this.categoriesResource.hasValue() || this.categoriesResource.error() !== undefined),
+    ),
+  );
+
+  /** Resolve quando os dados principais estão prontos — usado pelos resolvers de título. */
+  ready(): Promise<unknown> {
+    return firstValueFrom(this.settled$.pipe(filter(Boolean)));
+  }
 
   /** Mapa slug → produto, para lookup O(1) na página de produto. */
   private readonly bySlug = computed(() => new Map(this.products().map((p) => [p.slug, p])));

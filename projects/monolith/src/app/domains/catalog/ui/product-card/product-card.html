@@ -1,0 +1,26 @@
+<article class="card" [class.card--soldout]="soldOut()">
+  <div class="media">
+    <img [ngSrc]="image().src" [alt]="image().alt" [width]="image().width" [height]="image().height" [priority]="priority()" />
+    <div class="badges">
+      @if (soldOut()) {
+        <merch-badge tone="soldout">Esgotado</merch-badge>
+      } @else {
+        @if (isNew()) {
+          <merch-badge tone="new">Novo</merch-badge>
+        }
+        @if (isBestseller()) {
+          <merch-badge tone="bestseller">Mais vendido</merch-badge>
+        }
+      }
+    </div>
+  </div>
+  <div class="body">
+    <h3 class="name">
+      <a [routerLink]="link()">{{ product().name }}</a>
+    </h3>
+    <merch-price [priceInCents]="product().priceInCents" [compareAtPriceInCents]="product().compareAtPriceInCents" />
+    @if (colorCount() > 1) {
+      <p class="meta">{{ colorCount() }} cores</p>
+    }
+  </div>
+</article>

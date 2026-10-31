@@ -1,0 +1,79 @@
+@use 'breakpoints' as bp;
+
+:host {
+  display: block;
+}
+
+.banner {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+}
+
+// Mobile: arte em cima, texto embaixo. Desktop: texto sobre a arte, à esquerda.
+.art {
+  position: relative;
+  aspect-ratio: 16 / 9;
+}
+
+.art img {
+  object-fit: cover;
+}
+
+.content {
+  position: relative; // acima da arte (o <img fill> é posicionado)
+  display: grid;
+  gap: var(--space-3);
+  justify-items: start;
+  padding: var(--space-6);
+}
+
+.eyebrow {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: var(--font-size-3xl);
+}
+
+.subtitle {
+  max-width: 32rem;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-lg);
+}
+
+:host(.banner--hero) .title {
+  font-size: var(--font-size-display);
+}
+
+@include bp.up(md) {
+  .banner {
+    grid-template-areas: 'stack';
+    min-height: 26rem;
+  }
+
+  .art,
+  .content {
+    grid-area: stack;
+  }
+
+  .art {
+    aspect-ratio: auto;
+  }
+
+  .content {
+    align-content: center;
+    max-width: 55%;
+    padding: var(--space-12);
+  }
+
+  :host(.banner--hero) .banner {
+    min-height: 32rem;
+  }
+}

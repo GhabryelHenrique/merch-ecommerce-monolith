@@ -1,20 +1,45 @@
-<h1>Merch Store — destaques</h1>
-<p>{{ api.products().length }} produtos em {{ api.categories().length }} categorias carregados.</p>
-<div style="display: grid; gap: 16px; padding: 16px; max-width: 480px">
-  <merch-price [priceInCents]="8990" [compareAtPriceInCents]="12990" [showInstallments]="true" size="lg" />
-  <div style="display: flex; gap: 8px">
-    <merch-badge tone="new">Novo</merch-badge><merch-badge tone="bestseller">Mais vendido</merch-badge
-    ><merch-badge tone="sale">-30%</merch-badge><merch-badge tone="soldout">Esgotado</merch-badge>
-  </div>
-  <div style="display: flex; gap: 8px; flex-wrap: wrap">
-    <button merch-button>Primário</button>
-    <button merch-button variant="secondary">Secundário</button>
-    <button merch-button variant="ghost">Ghost</button>
-    <button merch-button [loading]="true">Salvando</button>
-  </div>
-  <merch-quantity-stepper [max]="3" />
-  <merch-breadcrumb [items]="[{ label: 'Início', url: '/' }, { label: 'Camisetas' }]" />
-  <merch-skeleton aspectRatio="4 / 1" />
-  <p>Carrinho: {{ cart.count() }} itens</p>
+<div class="page">
+  @if (banners(); as b) {
+    <merch-campaign-banner [banner]="b.hero" [hero]="true" headingId="hero-titulo" />
+  } @else {
+    <h1 class="visually-hidden">Merch Store</h1>
+    <merch-skeleton aspectRatio="16 / 7" />
+  }
+
+  @defer (on viewport) {
+    @if (popular().length > 0) {
+      <merch-product-carousel heading="Populares" headingId="populares-titulo" [products]="popular()" />
+    }
+  } @placeholder {
+    <merch-skeleton aspectRatio="4 / 1" />
+  }
+
+  @defer (on viewport) {
+    @if (banners(); as b) {
+      <merch-campaign-banner [banner]="b.seasonal" headingId="sazonal-titulo" />
+    }
+  } @placeholder {
+    <merch-skeleton aspectRatio="16 / 6" />
+  }
+
+  @defer (on viewport) {
+    <section aria-labelledby="colecoes-titulo">
+      <h2 id="colecoes-titulo" class="section-title">Coleções</h2>
+      <ul role="list" class="collections">
+        @for (collection of collections(); track collection.slug) {
+          <li><merch-collection-card [collection]="collection" /></li>
+        }
+      </ul>
+    </section>
+  } @placeholder {
+    <merch-skeleton aspectRatio="3 / 1" />
+  }
+
+  @defer (on viewport) {
+    @if (banners(); as b) {
+      <merch-sustainability-strip [content]="b.sustainability" />
+    }
+  } @placeholder {
+    <merch-skeleton aspectRatio="6 / 1" />
+  }
 </div>
-<merch-empty-state heading="Nada por aqui" description="Estado vazio de exemplo." icon="cart" />

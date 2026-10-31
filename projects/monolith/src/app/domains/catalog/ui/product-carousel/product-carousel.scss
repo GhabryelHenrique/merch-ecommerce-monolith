@@ -1,0 +1,65 @@
+@use 'breakpoints' as bp;
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.title {
+  font-size: var(--font-size-2xl);
+}
+
+.controls {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.nav {
+  display: grid;
+  place-items: center;
+  width: var(--tap-target);
+  height: var(--tap-target);
+  border: var(--border-width) solid var(--color-border-strong);
+  border-radius: var(--radius-pill);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.nav:disabled {
+  border-color: var(--color-border);
+  color: var(--color-border-strong);
+}
+
+.track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 70%;
+  gap: var(--space-4);
+  margin: 0;
+  padding: var(--space-1) var(--space-1) var(--space-4);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
+.slide {
+  scroll-snap-align: start;
+}
+
+@include bp.up(md) {
+  .track {
+    grid-auto-columns: calc((100% - 2 * var(--space-4)) / 3);
+  }
+}
+
+@include bp.up(lg) {
+  .track {
+    grid-auto-columns: calc((100% - 3 * var(--space-6)) / 4);
+    gap: var(--space-6);
+  }
+}

@@ -1,0 +1,47 @@
+.page {
+  display: grid;
+  gap: var(--space-8);
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: var(--space-6) var(--layout-gutter) 0;
+}
+
+.head {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.title {
+  font-size: var(--font-size-3xl);
+}
+
+.description {
+  max-width: 40rem;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-lg);
+}
+
+.toolbar {
+  display: grid;
+  gap: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.count {
+  min-height: 1.5em;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.more {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-12);
+}
+
+.more-status {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}

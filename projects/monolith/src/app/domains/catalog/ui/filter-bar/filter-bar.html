@@ -1,0 +1,51 @@
+<form class="filters" aria-label="Filtros e ordenação" (submit)="$event.preventDefault()">
+  @if (subcategories().length > 0) {
+    <div class="field">
+      <label for="filtro-subcategoria">Tipo</label>
+      <select id="filtro-subcategoria" (change)="select('subcategoria', $event)">
+        <option value="" [selected]="!subcategory()">Todos</option>
+        @for (s of subcategories(); track s.slug) {
+          <option [value]="s.slug" [selected]="s.slug === subcategory()">{{ s.name }}</option>
+        }
+      </select>
+    </div>
+  }
+
+  <div class="field">
+    <label for="filtro-colecao">Coleção</label>
+    <select id="filtro-colecao" (change)="select('colecao', $event)">
+      <option value="" [selected]="!collection()">Todas</option>
+      @for (c of collections(); track c.slug) {
+        <option [value]="c.slug" [selected]="c.slug === collection()">{{ c.name }}</option>
+      }
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="filtro-preco">Preço</label>
+    <select id="filtro-preco" (change)="select('preco', $event)">
+      <option value="" [selected]="!price()">Qualquer preço</option>
+      @for (r of priceRanges; track r.slug) {
+        <option [value]="r.slug" [selected]="r.slug === price()">{{ r.label }}</option>
+      }
+    </select>
+  </div>
+
+  <div class="field field--check">
+    <input id="filtro-promocao" type="checkbox" [checked]="onSale()" (change)="toggleSale($event)" />
+    <label for="filtro-promocao">Só promoções</label>
+  </div>
+
+  <div class="field field--sort">
+    <label for="filtro-ordem">Ordenar por</label>
+    <select id="filtro-ordem" (change)="select('ordem', $event)">
+      @for (o of sortOptions; track o.value) {
+        <option [value]="o.value" [selected]="o.value === sort()">{{ o.label }}</option>
+      }
+    </select>
+  </div>
+
+  @if (hasActiveFilters()) {
+    <button type="button" class="clear" (click)="cleared.emit()">Limpar filtros</button>
+  }
+</form>

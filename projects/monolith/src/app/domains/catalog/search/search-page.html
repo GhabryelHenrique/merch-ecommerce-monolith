@@ -1,0 +1,40 @@
+<div class="page">
+  <header class="head">
+    @if (term()) {
+      <h1 class="title">Resultados para “{{ term() }}”</h1>
+      <p class="count" role="status">{{ loading() ? '' : countText() }}</p>
+    } @else {
+      <h1 class="title">Buscar produtos</h1>
+      <p class="count">Use a busca no topo da página para encontrar produtos.</p>
+    }
+  </header>
+
+  @if (loading() || error()) {
+    <merch-catalog-state [error]="error()" (retry)="retry()" />
+  } @else if (term() && results().length > 0) {
+    <section aria-labelledby="resultados-titulo">
+      <h2 id="resultados-titulo" class="visually-hidden">Resultados</h2>
+      <merch-product-grid [products]="results()" [priorityCount]="4" />
+    </section>
+  } @else {
+    @if (term()) {
+      <merch-empty-state
+        heading="Nenhum produto encontrado"
+        description="Confira a grafia ou navegue pelas categorias abaixo."
+        icon="search"
+      />
+    }
+    <section class="suggestions" aria-labelledby="sugestoes-titulo">
+      <h2 id="sugestoes-titulo" class="suggestions-title">Navegue pelas categorias</h2>
+      <ul role="list" class="chips">
+        <li><a merch-button variant="secondary" size="sm" routerLink="/c/novidades">Novidades</a></li>
+        @for (category of suggestions(); track category.slug) {
+          <li>
+            <a merch-button variant="secondary" size="sm" [routerLink]="['/c', category.slug]">{{ category.name }}</a>
+          </li>
+        }
+        <li><a merch-button variant="secondary" size="sm" routerLink="/c/promocoes">Promoções</a></li>
+      </ul>
+    </section>
+  }
+</div>
