@@ -1,0 +1,79 @@
+@use 'breakpoints' as bp;
+
+.line {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: var(--space-3) var(--space-4);
+  padding: var(--space-4) 0;
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.thumb {
+  width: 5rem;
+  height: 5rem;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-alt);
+}
+
+.info {
+  display: grid;
+  align-content: start;
+  gap: var(--space-1);
+}
+
+.name {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+}
+
+.name a {
+  color: var(--color-text);
+}
+
+.variant {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.actions {
+  display: flex;
+  grid-column: 1 / -1;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.remove {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: var(--tap-target);
+  padding: 0 var(--space-3);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.remove:hover {
+  color: var(--color-danger);
+}
+
+@include bp.up(md) {
+  .line {
+    grid-template-columns: 6rem 1fr auto;
+    align-items: center;
+  }
+
+  .thumb {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .actions {
+    grid-column: auto;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}

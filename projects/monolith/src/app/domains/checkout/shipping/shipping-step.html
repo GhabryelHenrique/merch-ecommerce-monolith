@@ -1,0 +1,105 @@
+<merch-checkout-layout step="entrega" heading="Entrega">
+  <form [formRoot]="address" class="form" aria-labelledby="entrega-dados">
+    <h2 id="entrega-dados" class="section-title">Dados para entrega</h2>
+    <p class="note">Todos os campos são obrigatórios, exceto o complemento.</p>
+
+    <div class="field field--full">
+      <label for="nome">Nome completo</label>
+      <input id="nome" autocomplete="name" [formField]="address.name"
+        [attr.aria-invalid]="!!errors().name" [attr.aria-describedby]="errors().name ? 'nome-erro' : null" />
+      @if (errors().name; as e) { <p id="nome-erro" class="error">{{ e }}</p> }
+    </div>
+
+    <div class="field field--full">
+      <label for="email">E-mail</label>
+      <input id="email" type="email" autocomplete="email" [formField]="address.email"
+        [attr.aria-invalid]="!!errors().email" [attr.aria-describedby]="errors().email ? 'email-erro' : null" />
+      @if (errors().email; as e) { <p id="email-erro" class="error">{{ e }}</p> }
+    </div>
+
+    <div class="field">
+      <label for="cep">CEP</label>
+      <input id="cep" inputmode="numeric" autocomplete="postal-code" placeholder="00000-000"
+        [formField]="address.cep"
+        [attr.aria-invalid]="!!errors().cep" [attr.aria-describedby]="errors().cep ? 'cep-erro' : 'cep-dica'" />
+      @if (errors().cep; as e) {
+        <p id="cep-erro" class="error">{{ e }}</p>
+      } @else {
+        <p id="cep-dica" class="hint">Use 99999-999 para simular uma falha no pedido.</p>
+      }
+    </div>
+
+    <div class="field field--wide">
+      <label for="rua">Rua</label>
+      <input id="rua" autocomplete="address-line1" [formField]="address.street"
+        [attr.aria-invalid]="!!errors().street" [attr.aria-describedby]="errors().street ? 'rua-erro' : null" />
+      @if (errors().street; as e) { <p id="rua-erro" class="error">{{ e }}</p> }
+    </div>
+
+    <div class="field">
+      <label for="numero">Número</label>
+      <input id="numero" inputmode="numeric" [formField]="address.number"
+        [attr.aria-invalid]="!!errors().number" [attr.aria-describedby]="errors().number ? 'numero-erro' : null" />
+      @if (errors().number; as e) { <p id="numero-erro" class="error">{{ e }}</p> }
+    </div>
+
+    <div class="field field--wide">
+      <label for="complemento">Complemento <span class="optional">(opcional)</span></label>
+      <input id="complemento" autocomplete="address-line2" [formField]="address.complement" />
+    </div>
+
+    <div class="field">
+      <label for="bairro">Bairro</label>
+      <input id="bairro" [formField]="address.district"
+        [attr.aria-invalid]="!!errors().district" [attr.aria-describedby]="errors().district ? 'bairro-erro' : null" />
+      @if (errors().district; as e) { <p id="bairro-erro" class="error">{{ e }}</p> }
+    </div>
+
+    <div class="field">
+      <label for="cidade">Cidade</label>
+      <input id="cidade" autocomplete="address-level2" [formField]="address.city"
+        [attr.aria-invalid]="!!errors().city" [attr.aria-describedby]="errors().city ? 'cidade-erro' : null" />
+      @if (errors().city; as e) { <p id="cidade-erro" class="error">{{ e }}</p> }
+    </div>
+
+    <div class="field">
+      <label for="uf">UF</label>
+      <select id="uf" autocomplete="address-level1" [formField]="address.state"
+        [attr.aria-invalid]="!!errors().state" [attr.aria-describedby]="errors().state ? 'uf-erro' : null">
+        <option value="">Selecione</option>
+        @for (uf of states; track uf) {
+          <option [value]="uf">{{ uf }}</option>
+        }
+      </select>
+      @if (errors().state; as e) { <p id="uf-erro" class="error">{{ e }}</p> }
+    </div>
+
+    <fieldset class="options field--full" [attr.aria-describedby]="optionError() ? 'frete-erro' : null">
+      <legend class="section-title">Opções de entrega</legend>
+      @if (options().length === 0) {
+        <p class="hint">Informe um CEP válido para ver as opções de frete.</p>
+      } @else {
+        @for (o of options(); track o.id) {
+          <label class="option" [class.option--selected]="option() === o.id">
+            <input #firstOption type="radio" name="frete" [value]="o.id" [checked]="option() === o.id" (change)="chooseOption(o.id)" />
+            <span class="option-label">{{ o.label }} <span class="option-days">— até {{ o.days }} dias úteis</span></span>
+            <span class="option-price">
+              @if (o.priceInCents === 0) {
+                Grátis
+              } @else {
+                {{ o.priceInCents / 100 | currency }}
+              }
+            </span>
+          </label>
+        }
+      }
+      @if (optionError()) {
+        <p id="frete-erro" class="error">Escolha uma opção de entrega.</p>
+      }
+    </fieldset>
+
+    <div class="actions field--full">
+      <button merch-button type="submit" size="lg">Continuar para o pagamento</button>
+    </div>
+  </form>
+</merch-checkout-layout>

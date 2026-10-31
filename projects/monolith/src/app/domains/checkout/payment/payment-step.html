@@ -1,0 +1,36 @@
+<merch-checkout-layout step="pagamento" heading="Pagamento">
+  <form class="form" novalidate (submit)="continue($event)">
+    <fieldset class="methods" [attr.aria-describedby]="error() ? 'pagamento-erro' : null">
+      <legend class="legend">Forma de pagamento</legend>
+      @for (m of methods; track m.id) {
+        <label class="method" [class.method--selected]="method() === m.id">
+          <input type="radio" name="pagamento" [value]="m.id" [checked]="method() === m.id" (change)="choose(m.id)" />
+          <span class="method-text">
+            <span class="method-label">{{ m.label }}</span>
+            <span class="method-description">{{ m.description }}</span>
+          </span>
+        </label>
+      }
+      @if (error()) {
+        <p id="pagamento-erro" class="error" role="alert">Escolha uma forma de pagamento.</p>
+      }
+    </fieldset>
+
+    @switch (method()) {
+      @case ('pix') {
+        <merch-pix-qr />
+      }
+      @case ('boleto') {
+        <p class="detail">O boleto seria enviado para o seu e-mail após a confirmação. Nada será emitido nesta demonstração.</p>
+      }
+      @case ('cartao-teste') {
+        <p class="detail">O “Cartão de teste” é aprovado automaticamente. Nenhum número de cartão é solicitado ou armazenado.</p>
+      }
+    }
+
+    <div class="actions">
+      <a routerLink="/checkout/entrega">Voltar para a entrega</a>
+      <button merch-button type="submit" size="lg">Revisar pedido</button>
+    </div>
+  </form>
+</merch-checkout-layout>

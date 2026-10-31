@@ -1,0 +1,65 @@
+<merch-checkout-layout step="revisao" heading="Revisão do pedido">
+  @if (error(); as message) {
+    <div #errorBox class="alert" role="alert" tabindex="-1">
+      <merch-icon name="alert" />
+      <div>
+        <p class="alert-title">Pedido não confirmado</p>
+        <p>{{ message }}</p>
+      </div>
+      <button merch-button variant="secondary" type="button" [loading]="submitting()" (click)="confirm()">
+        <merch-icon name="refresh" [size]="18" /> Tentar novamente
+      </button>
+    </div>
+  }
+
+  <section class="block" aria-labelledby="revisao-itens">
+    <div class="block-head">
+      <h2 id="revisao-itens">Itens</h2>
+      <a routerLink="/checkout/carrinho">Editar<span class="visually-hidden"> itens</span></a>
+    </div>
+    <ul role="list" class="items">
+      @for (item of store.items(); track item.sku) {
+        <li class="item">
+          <span>
+            {{ item.quantity }}× {{ item.name }}
+            @if (item.variantLabel) {
+              <span class="muted">({{ item.variantLabel }})</span>
+            }
+          </span>
+          <span>{{ (item.unitPriceInCents * item.quantity) / 100 | currency }}</span>
+        </li>
+      }
+    </ul>
+  </section>
+
+  @if (store.shipping(); as s) {
+    <section class="block" aria-labelledby="revisao-entrega">
+      <div class="block-head">
+        <h2 id="revisao-entrega">Entrega</h2>
+        <a routerLink="/checkout/entrega">Editar<span class="visually-hidden"> entrega</span></a>
+      </div>
+      <address class="address">
+        {{ s.name }} · {{ s.email }}<br />
+        {{ s.street }}, {{ s.number }}{{ s.complement ? ' — ' + s.complement : '' }}<br />
+        {{ s.district }} · {{ s.city }}/{{ s.state }} · CEP {{ s.cep }}
+      </address>
+      @if (store.selectedShippingOption(); as o) {
+        <p class="muted">{{ o.label }} — até {{ o.days }} dias úteis</p>
+      }
+    </section>
+  }
+
+  <section class="block" aria-labelledby="revisao-pagamento">
+    <div class="block-head">
+      <h2 id="revisao-pagamento">Pagamento</h2>
+      <a routerLink="/checkout/pagamento">Editar<span class="visually-hidden"> pagamento</span></a>
+    </div>
+    <p>{{ payment() }}</p>
+  </section>
+
+  <div summary>
+    <button merch-button type="button" size="lg" [block]="true" [loading]="submitting()" (click)="confirm()">
+      Confirmar pedido
+    </button>
+  </div>
+</merch-checkout-layout>

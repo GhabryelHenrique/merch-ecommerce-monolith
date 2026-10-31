@@ -1,0 +1,122 @@
+@use 'breakpoints' as bp;
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.section-title {
+  grid-column: 1 / -1;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.note {
+  grid-column: 1 / -1;
+  margin-top: calc(-1 * var(--space-2));
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.field {
+  display: grid;
+  align-content: start;
+  gap: var(--space-1);
+  grid-column: 1 / -1;
+}
+
+label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.optional {
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-regular);
+}
+
+input:not([type='radio']),
+select {
+  min-height: var(--tap-target);
+  padding: 0 var(--space-4);
+  border: var(--border-width) solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+}
+
+[aria-invalid='true'] {
+  border-color: var(--color-danger) !important;
+}
+
+.error {
+  color: var(--color-danger);
+  font-size: var(--font-size-sm);
+}
+
+.hint {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.options {
+  display: grid;
+  gap: var(--space-2);
+  grid-column: 1 / -1;
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.options legend {
+  margin-bottom: var(--space-3);
+  padding: 0;
+}
+
+.option {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: var(--border-width) solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-md);
+  cursor: pointer;
+}
+
+.option--selected {
+  border-color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.option input {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--color-primary);
+}
+
+.option-days {
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-regular);
+}
+
+.option-price {
+  font-weight: var(--font-weight-bold);
+}
+
+.actions {
+  grid-column: 1 / -1;
+  margin-top: var(--space-2);
+}
+
+@include bp.up(md) {
+  .field {
+    grid-column: span 1;
+  }
+
+  .field--full,
+  .field--wide {
+    grid-column: 1 / -1;
+  }
+}

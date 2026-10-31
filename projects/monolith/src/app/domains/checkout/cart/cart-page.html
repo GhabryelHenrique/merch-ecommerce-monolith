@@ -1,1 +1,36 @@
-<h1>Carrinho</h1>
+@if (cart.items().length === 0) {
+  <div class="empty">
+    <merch-empty-state
+      heading="Seu carrinho está vazio"
+      description="Explore a loja e adicione produtos para continuar."
+      icon="cart"
+      [headingLevel]="1"
+    >
+      <a merch-button routerLink="/">Continuar comprando</a>
+      <a merch-button variant="secondary" routerLink="/c/novidades">Ver novidades</a>
+    </merch-empty-state>
+  </div>
+} @else {
+  <merch-checkout-layout step="carrinho" heading="Carrinho">
+    <section aria-labelledby="itens-titulo">
+      <h2 id="itens-titulo" class="visually-hidden">Itens</h2>
+      <ul role="list" class="lines">
+        @for (item of cart.items(); track item.sku) {
+          <li>
+            <merch-cart-line
+              [item]="item"
+              (quantityChange)="cart.updateQuantity(item.sku, $event)"
+              (remove)="cart.remove(item.sku)"
+            />
+          </li>
+        }
+      </ul>
+    </section>
+    <a routerLink="/" class="back">Continuar comprando</a>
+
+    <div summary class="summary-actions">
+      <merch-coupon-form />
+      <a merch-button routerLink="/checkout/entrega" size="lg" [block]="true">Continuar</a>
+    </div>
+  </merch-checkout-layout>
+}
